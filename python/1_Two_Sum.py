@@ -1,7 +1,7 @@
 class Solution(object):
     def twoSum(self, nums, target):
         d = {}
-        # set key to default if the key is not in dict
+        # set key as default if the key is not in dict
         for num, dat in enumerate(nums):
             d.setdefault(dat,[]).append(num)
 
