@@ -1,4 +1,5 @@
 class Solution(object):
+    # time complexity
     def longestPalindrome(self, s):
         substring = ''
         for i in xrange(len(s)):
