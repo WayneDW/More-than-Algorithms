@@ -1,4 +1,5 @@
 class Solution(object):
+    # get longest substring
     def lengthOfLongestSubstring(self, s):
         last = -1
         maximum = 0
