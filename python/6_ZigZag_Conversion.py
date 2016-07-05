@@ -1,4 +1,5 @@
 class Solution:
+    # python may run out of time
     def convert(self, s, numRows):
         sub = ""
         if numRows < 2 or len(s) <= numRows:
