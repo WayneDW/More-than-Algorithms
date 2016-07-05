@@ -1,4 +1,5 @@
 class Solution(object):
+    # Linked list
     def addTwoNumbers(self, l1, l2):
         head = ListNode(0)
         l = head
