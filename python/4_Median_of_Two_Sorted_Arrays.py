@@ -1,4 +1,5 @@
 class Solution(object):
+    # hard
     def findMedianSortedArrays(self, num1, num2):
         m = len(num1)
         n = len(num2)
