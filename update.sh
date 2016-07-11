@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-if [ "$#" -ne 1 ] ; then
-  echo "Please type in the words you want to commit!"
+if [ "$#" -ne 2 ] ; then
+  echo "Please type in the question number and the words that you want to commit!"
   exit 1
 fi
 
-git init *
-git commit -m "$1"
+git add ./python/$1*.py ./c++/$1*.cpp
+git commit -m "$2"
 git push
