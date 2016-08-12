@@ -7,7 +7,7 @@ class leetCode:
     # using __init__ for future function updates
     def __init__(self, f):
         self.f = f
-    def list(self):
+    def title(self, num):
         fileList = open(self.f)
         num_list = {}
         for l in fileList:
@@ -25,17 +25,8 @@ class leetCode:
                 if tag == 1 and par[pars] == "":
                     break
             num_list[id] = id + title
-        return num_list
-    def title(self, num):
-        # input the question number
-        # output the framework file name
-        '''
-        if int(num) < 10:
-            return self.list()[str(num)[1]]
-        else:
-            return self.list()[num]
-        '''
-        return self.list()[num]
+        return num_list[num]
+
 # check if file exists, do nothing if it does, avoid overwrite
 class framework:
     def __init__(self, name):
