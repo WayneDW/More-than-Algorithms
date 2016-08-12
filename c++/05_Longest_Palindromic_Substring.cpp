@@ -23,3 +23,4 @@ public:
         return s.substr(start + 1, end - start - 1);
     }
 };
+
