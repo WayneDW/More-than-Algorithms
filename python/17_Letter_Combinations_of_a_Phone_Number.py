@@ -18,33 +18,27 @@ class Solution(object):
                  '8':['t','u','v'],
                  '9':['w','x','y','z']
 				 }
-		res = []
-		def update(res, par):
+		res = [""]
+		for num in range(len(digits)):
 			tmp = []
 			for i in res:
-				for j in par:
+				for j in Lists[digits[num]]:
 					tmp.append(i + j)
-			return tmp
-		for num in range(len(digits)):
-			if num == 0:
-				for i in Lists[digits[num]]:
-					res.append(i)
-
-			else:
-				res = update(res, Lists[digits[num]])
-				'''
-				# Never use such loops, otherwise there will be infinite loops
-				for i in res:
-					for j in Lists[digits[num]]:
-						res.append(i + j)
-				'''
-
+			res = tmp
+			'''
+			# Never use such loops, otherwise there will be infinite loops
+			for i in res:
+				for j in Lists[digits[num]]:
+					res.append(i + j)
+			'''
+		if digits == "":
+			res.remove("")
 		return res
 
 
 def main():
     s = Solution()
-    print s.letterCombinations("23")
+    print s.letterCombinations("")
 
 if __name__ == "__main__":
     main()
