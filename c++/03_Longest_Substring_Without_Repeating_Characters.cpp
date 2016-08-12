@@ -12,8 +12,6 @@ public:
             dict[s[i]] = i;
             maximum = max(i - last, maximum);
         }
-        
-        return maximum;
-        
+        return maximum; 
     }
 };
