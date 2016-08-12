@@ -28,9 +28,7 @@ class Solution:
         else:
             return min(num, INT_MAX)
             
-            
-            
-
+        
 
 def main():
     s = Solution()
