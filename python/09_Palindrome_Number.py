@@ -19,9 +19,6 @@ class Solution:
             exp -= 2
         return True
             
-        
-
-
 
 def main():
     s = Solution()
