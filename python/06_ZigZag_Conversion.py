@@ -1,3 +1,10 @@
+'''
+P   A   H   N
+A P L S I I G
+Y   I   R
+And then read line by line: "PAHNAPLSIIGYIR"
+'''
+
 class Solution:
     # python may run out of time
     def convert(self, s, numRows):
