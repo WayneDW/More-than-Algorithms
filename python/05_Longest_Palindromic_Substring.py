@@ -10,7 +10,6 @@ class Solution(object):
             subS = self.ifPalin(s, i, i + 1)
             if len(subS) > len(substring):
                 substring = subS
-            
         return substring
 
     def ifPalin(self, s, start, end):
