@@ -27,6 +27,7 @@ public:
 };
 
 
+
 int main() {
     Solution s;
     bool d;
