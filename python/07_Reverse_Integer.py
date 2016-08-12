@@ -15,7 +15,6 @@ class Solution:
             x /= 10
         return sign * output
 
-
 def main():
     s = Solution()
     print s.reverse(1)
