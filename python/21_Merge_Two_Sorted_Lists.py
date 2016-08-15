@@ -17,7 +17,7 @@ class Solution(object):
         """
         head = ListNode(0)
         tmp = head
-        while l1 && l2:
+        while l1 and l2:
         	if l1.val < l2.val:
         		tmp.next = l1
         		l1 = l1.next
