@@ -34,10 +34,13 @@ public:
 	    		first = first->next;
 	    		second = second->next;
 	    	}
+	    	// modify the next value belong to second
 	    	second->next = second->next->next;
     	}
     	else { // delete head node
     		head = head->next;
+    		// only modify the address of second, doesn't do modify
+    		//second = second->next;
     	}
      	return head;
     } 
@@ -72,13 +75,13 @@ int main() {
 	Insert(5, 5);
 	ListNode *tmp = head;
     while (tmp != NULL){
-    	cout << "original val: " << tmp->val << " address: " << tmp->next << endl;
+    	cout << "original val: " << tmp->val << " next: " << tmp->next << " address: " << tmp << endl;
     	tmp = tmp->next;
     }
     
     ListNode *out = s.removeNthFromEnd(head, 5);
     while (out != NULL){
-    	cout << "val after change: " << out->val << " address: " << out->next << endl;
+    	cout << "val after change: " << out->val << " next: " << out->next << " address: " << out << endl;
     	out = out->next;
     }
 }
