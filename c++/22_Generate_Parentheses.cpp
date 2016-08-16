@@ -28,15 +28,14 @@ public:
     		//combo += '(';
     		combo.push_back('(');
     		backTracking(n, left + 1, right, combo, allCombo);
-    		//combo.pop_back();
+    		combo.pop_back();
     	}
     	if (right < left) {
     		combo.push_back(')');
     		backTracking(n, left, right + 1, combo, allCombo);
-    		//combo.pop_back();
+    		combo.pop_back();
     	}
-    }
-        
+    }    
 };
 
 int main() {
