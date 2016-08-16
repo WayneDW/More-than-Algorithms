@@ -6,9 +6,6 @@
 
 using namespace std;
 
-// reference: 
-// http://bangbingsyb.blogspot.com/2014/11/leetcode-generate-parentheses.html
-
 class Solution {
 public:
     vector<string> generateParenthesis(int n) {
