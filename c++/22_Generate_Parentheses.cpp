@@ -18,23 +18,15 @@ public:
     	return allCombo;
 
     }
+    // passing by reference, be sure to change allCombo
     void backTracking(int n, int left, int right, string combo, vector<string> &allCombo) {
     	
-    	if (left == n && right == n) {
+    	if (left == n && right == n)
     		allCombo.push_back(combo);
-    		return;
-    	}
-    	if (left < n) {
-    		//combo += '(';
-    		combo.push_back('(');
-    		backTracking(n, left + 1, right, combo, allCombo);
-    		combo.pop_back();
-    	}
-    	if (right < left) {
-    		combo.push_back(')');
-    		backTracking(n, left, right + 1, combo, allCombo);
-    		combo.pop_back();
-    	}
+    	if (left < n)
+    		backTracking(n, left + 1, right, combo  + '(', allCombo);
+    	if (right < left)
+    		backTracking(n, left, right + 1, combo + ')', allCombo);
     }    
 };
 
