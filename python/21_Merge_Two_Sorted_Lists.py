@@ -24,7 +24,7 @@ class Solution(object):
         	else:
         		tmp.next = l2
         		l2 = l2.next
-        	tmp = tmp.next
+            tmp = tmp.next
         tmp.next = l1 if l1 else l2
         return head.next
 
