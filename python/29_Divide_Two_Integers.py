@@ -10,26 +10,16 @@ class Solution(object):
     	dd, ds = abs(dividend), abs(divisor)
     	if dd < ds:
     		return 0
-    	#print 2 ** 4
     	if dividend == -2 ** 31 and divisor == -1:
     		return 2 ** 31 - 1
-    	#print dd, ds
     	res = 0
-    	count = 0
-    	#print "divisor", divisor
     	while ds <= dd:
-    		count += 1
-    		#print count 
-    		#if count > 100:
-    		#	break
     		bs_ds = ds # bit shift operator
     		part = 1
     		while not (bs_ds <= dd and bs_ds + bs_ds > dd):
     			bs_ds +=  bs_ds
     			part += part
-    		#print bs_ds, part
     		dd -= bs_ds
-    		#print dd
     		res += part
     	return res * sign
 
