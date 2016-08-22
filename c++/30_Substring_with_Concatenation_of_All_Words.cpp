@@ -44,11 +44,8 @@ public:
     	map<string, int> cnt;
     	for (int i = 0; i < wordNum; i++) {   		
     		string subSubStr = subString.substr(i * wordLen, wordLen);
-    		if (dict.count(subSubStr) > 0) {
+    		if (dict.count(subSubStr) > 0)
     			cnt[subSubStr]++;
-    			if (start == 0)
-    				cout << subSubStr << " " << cnt[subSubStr] << " " <<  dict[subSubStr] << endl;
-    		}
     		else
     			return 0;
     		if (cnt[subSubStr] > dict[subSubStr])
