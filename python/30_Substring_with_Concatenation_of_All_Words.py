@@ -13,6 +13,7 @@ For example, given:
 Bad question, ambiguous target, too different kinds of return values
 '''
 
+
 class Solution(object):
     def findSubstring(self, s, words):
     	if len(words) == 0:
