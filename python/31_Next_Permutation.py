@@ -19,9 +19,7 @@ class Solution(object):
 		while j < n and nums[j] > nums[i]:
 			j += 1
 		j -= 1
-		print nums, i, j
 		nums[i], nums[j] = nums[j], nums[i]
-		print nums
 		nums[i + 1: n] = nums[i + 1: n][::-1]
 		return
 
