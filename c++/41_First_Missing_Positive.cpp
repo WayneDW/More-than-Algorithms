@@ -31,18 +31,9 @@ public:
 };
 
 
-class Solution{
-public:
-
-};
-
-
 int main() {
 	Solution s;
 	int A[] = {3, 2, 5, 0, 7, -1,6, 1, 4};
 	vector<int> B(A, A + sizeof(A) / sizeof(int));
 	cout << s.firstMissingPositive(B) << endl;
-
-
-
 }
