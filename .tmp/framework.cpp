@@ -1,7 +1,8 @@
-#include<iostream>
-#include<vector>
-#include<map>
-#include<string>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -9,7 +10,5 @@ using namespace std;
 
 
 int main() {
-
-
 
 }
