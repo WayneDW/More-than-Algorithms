@@ -25,8 +25,6 @@ class Solution(object):
     		res = "/"
     	return res
 
-
-
 def main():
     s = Solution()
     print s.simplifyPath("/...")
