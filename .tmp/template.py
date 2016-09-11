@@ -1,7 +1,5 @@
 #!/usr/bin/python
 
-class Solution:
-
 
 def main():
     s = Solution()
