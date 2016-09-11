@@ -41,6 +41,7 @@ public:
     }
 };
 
+
 int main() {
 	Solution s;
 	cout << s.simplifyPath("/home/../../..") << endl;

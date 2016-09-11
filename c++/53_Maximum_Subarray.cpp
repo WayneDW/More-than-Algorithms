@@ -20,7 +20,6 @@ public: // dp[i] : sum of maximum value ended at i
     		maxS = max(maxS, dp[i]);
     	}
     	return maxS;
-    	
     }
 };
 

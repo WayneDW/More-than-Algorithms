@@ -24,6 +24,7 @@ class Solution(object):
     	if vec == []:
     		res = "/"
     	return res
+    	
 
 def main():
     s = Solution()
