@@ -23,6 +23,8 @@ class Solution(object):
     	dfs(nums, part)
     	return res
 
+    	
+
 def main():
     s = Solution()
     print s.subsetsWithDup([1,2,2])
