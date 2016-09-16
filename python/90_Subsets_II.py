@@ -23,7 +23,6 @@ class Solution(object):
     	dfs(nums, part)
     	return res
 
-    	
 
 def main():
     s = Solution()
