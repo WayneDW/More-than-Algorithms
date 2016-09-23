@@ -2,8 +2,8 @@
 import unittest
 
 
-class Solution(object):
-    pass
+
+
 
 
 class TestSolution(unittest.TestCase):
