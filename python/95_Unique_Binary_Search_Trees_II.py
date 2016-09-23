@@ -1,19 +1,28 @@
 #!/usr/bin/python
 import unittest
 
-
 class Solution(object):
-    def numTrees(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        dp = [0] * (n + 1)
-        dp[0] = 1
-        for i in range(1, n + 1):
-        	for j in range(i):
-        		dp[i] += dp[j] * dp[i - 1 - j]
-        return dp[n]
+    def generateTrees(self, n):
+        if n == 0:
+            return []
+        return self.dfs(1, n)
+    
+    def dfs(self, Tmin, Tmax):
+    	if Tmin > Tmax:
+    		return [None]
+    	resList = []
+    	# generate leftSubTree and rightSubTree
+    	for k in range(Tmin, Tmax + 1):
+    		leftSubTree = self.dfs(Tmin, k - 1)
+    		rightSubTree = self.dfs(k + 1, Tmax)
+
+	    	for i in leftSubTree:
+	    		for j in rightSubTree:
+	    			rootNote = TreeNode(k)
+	    			rootNote.left = i
+	    			rootNote.right = j
+	    			resList.append(rootNote)
+    	return resList
         
 
 
