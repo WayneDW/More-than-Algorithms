@@ -15,7 +15,7 @@ struct TreeNode {
 class Solution {
 public:
     void recoverTree(TreeNode* root) {
-    	TreeNode *first = NULL, *second = NULL, *prev = NULL;
+    	TreeNode *first = NULL, *second = NULL, *prev = NULL; // must initialization
     	inorder(root, first, second, prev);
     	int tmp = first->val;
     	first->val = second->val;
@@ -46,6 +46,11 @@ int main() {
 	Solution s;
 	TreeNode *a = new TreeNode(1);
 	TreeNode *b = new TreeNode(0);
-	a->left = b;
-	s.recoverTree(a);
+	b->left = a;
+	s.recoverTree(b);
+
+	TreeNode *c = NULL, *d;
+	cout << c << " " << d << endl; // take care of difference, d has address without initialization, c is just NULL
+	//0  0x400c00
+
 }
