@@ -30,6 +30,8 @@ b = []
 a = [1]
 b.append(a)
 a.pop()
+```
+```
 print b
 [[]]
 ```
