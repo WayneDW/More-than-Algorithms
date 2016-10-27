@@ -3,9 +3,8 @@
 
 ### Generate framework 
 
-Generate framework files
 ```python
-./newFramework.py 19
+./framework.py 19
 ```
 Let's deal with 19_Remove_Nth_Node_From_End_of_List
 ```
@@ -13,9 +12,9 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 
 19_Remove_Nth_Node_From_End_of_List.cpp generated successfully!
 ```
-If some file already existed, stop
+If some file already existed, do nothing in that file
 ```python
-./newFramework.py 19
+./framework.py 19
 ```
 ```
 Let's deal with 19_Remove_Nth_Node_From_End_of_List
