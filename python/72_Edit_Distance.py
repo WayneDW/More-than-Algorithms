@@ -1,6 +1,7 @@
 #!/usr/bin/python
 import unittest
 
+
 class Solution(object):
     def minDistance(self, word1, word2):
         m, n = len(word1), len(word2)
