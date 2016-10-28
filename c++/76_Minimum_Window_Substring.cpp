@@ -36,6 +36,8 @@ public:
 };
 
 
+
+
 int main() {
 	Solution s;
     cout << s.minWindow("adobecodebanc", "abc") << endl;
