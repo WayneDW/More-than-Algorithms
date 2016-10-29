@@ -32,12 +32,13 @@ class framework:
     def __init__(self, name):
         self.name = name
     def cp(self):
+        '''
         if not os.path.isfile("./python/" + self.name + ".py"):
             os.system('cp ./.tmp/template.py ./python/' + self.name + '.py')
             print self.name + ".py generated successfully!"
         else:
             print self.name + ".py already existed!"
-
+        '''
         if not os.path.isfile("./c++/" + self.name + ".cpp"):
             os.system('cp ./.tmp/template.cpp ./c++/' + self.name + '.cpp')
             print self.name + ".cpp generated successfully!"
