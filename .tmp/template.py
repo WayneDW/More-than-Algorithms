@@ -15,6 +15,9 @@ class TestSolution(unittest.TestCase):
         #self.assertEqual(self.s.)
         pass
 
+def main():
+    s = Solution()
+
 
 if __name__ == "__main__":
     unittest.main()

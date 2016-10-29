@@ -2,7 +2,9 @@
 
 num=$1
 echo "add question " $num
-git add ./c++/${num}*.cpp ./python/${num}*.py
+rm ./c++/${num}_*[^.cpp] # delete executable file
+git add ./c++/${num}_*.cpp 
+#git add ./python/${num}*.py
 
 :<<block
 if [ $# -eq 0 ]

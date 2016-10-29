@@ -29,6 +29,16 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 string.substr(2, 2) # abcdefg -> cd
 string.substr(2) # abcdefg -> cde
 ```
+```c
+queue<TreeNode*> rather than queue<TreeNode>
+```
+
+```c
+for (int i = 0; i < vec.size(); i++)  # wrong way if we do vector operations in the loop
+
+int len = vec.size();
+for (int i = 0; i < len; i++)
+```
 
 ### Notes in python
 
