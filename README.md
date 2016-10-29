@@ -22,7 +22,14 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 19_Remove_Nth_Node_From_End_of_List.py already existed!
 ```
 
-### Classical mistakes in python
+
+### Notes in C++
+
+```c
+string.substr(2) # abcdefg -> cde
+```
+
+### Notes in python
 
 ```python
 b = []
