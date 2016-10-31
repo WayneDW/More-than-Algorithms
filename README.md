@@ -25,7 +25,16 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 
 ### Notes in C++
 
-```c
+To avoid overflow
+```c++
+p = (unsigned long long) p ...
+```
+
+```
+vector<int> vec(10, 1); // initialize 10 number of 1
+```
+
+```cpp
 string.substr(2, 2) # abcdefg -> cd
 string.substr(2) # abcdefg -> cde
 ```
