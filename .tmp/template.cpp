@@ -7,6 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <climits>
+#include "func.cpp"
 
 using namespace std;
 
@@ -15,4 +16,5 @@ using namespace std;
 
 int main() {
 	Solution s;
+    Examples eg;
 }
