@@ -7,7 +7,7 @@ class leetCode:
     # using __init__ for future function updates
     def __init__(self, f):
         self.f = f
-    def title(self, num):
+    def title(self, num): # input question number
         fileList = open(self.f)
         num_list = {}
         for l in fileList:
@@ -21,11 +21,12 @@ class leetCode:
             for pars in range(1, len(par)):
                 if par[pars] != "" and not re.match(r'(.*)[%\(\)](.*)', par[pars]):
                     title += "_" + par[pars]
+                    #print title
                     tag = 1
                 if tag == 1 and par[pars] == "":
                     break
             num_list[id] = id + title
-        return num_list[num]
+        return num_list[num].replace("'", '') # shell can't recognize what ' is 
 
 # check if file exists, do nothing if it does, avoid overwrite
 class framework:
