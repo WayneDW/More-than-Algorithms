@@ -27,7 +27,7 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 
 To avoid overflow
 ```c++
-p = (unsigned long long) p ...
+p = (unsigned long long) p * m / n ...
 ```
 
 ```
