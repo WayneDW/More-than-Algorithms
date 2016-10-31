@@ -2,7 +2,10 @@
 
 num=$1
 echo "add question " $num
-rm ./c++/${num}_*[^.cpp] # delete executable file
+if [ -f ./c++/${num}_*[^.cpp] ]
+then
+   rm ./c++/${num}_*[^.cpp] # delete executable file 
+fi
 git add ./c++/${num}_*.cpp 
 #git add ./python/${num}*.py
 
