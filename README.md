@@ -22,6 +22,11 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 19_Remove_Nth_Node_From_End_of_List.py already existed!
 ```
 
+### Upload script
+
+```
+./upload.sh 19 Linked List double pointer
+```
 
 ### Notes in C++
 
