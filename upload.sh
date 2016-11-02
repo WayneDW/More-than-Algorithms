@@ -9,7 +9,6 @@ fi
 git add ./c++/${num}_*.cpp 
 #git add ./python/${num}*.py
 
-:<<block
 if [ $# -eq 0 ]
 then
     echo "Input the question number!"
@@ -17,10 +16,9 @@ elif [ $# -eq 1 ]
 then
     echo "You haven't commit the task!"
 else
-    cmt=`expr substr "$*" 3 100` # get substring from input
+    cmt=`expr substr "$*" 3 100` # get the 2nd-100th parameters as commit
     cmt=''$cmt''
     echo $cmt
-    git commit -m `$cmt`
+    git commit -m "${cmt}"
     git push
 fi
-block
