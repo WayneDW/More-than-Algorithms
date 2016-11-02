@@ -14,14 +14,15 @@ using namespace std;
 class Solution {
 public:
     bool isPalindrome(string s) {
-        if (s.empty()) return true;
         int left = 0, right = s.size() - 1;
         while (left < right) {
-            if (left < s.size() - 1 && !isalnum(s[left])) left++;
-            if (right > 0 && !isalnum(s[right])) right--;
+            while (left < s.size() - 1 && !isalnum(s[left])) left++;
+            while (right > 0 && !isalnum(s[right])) right--;
+            //cout << left << " " << right << endl;
             if (left >= right) return true;
-            if (s[left++] != s[right--]) return false; // take care of left++, right++
+            if (tolower(s[left++]) != tolower(s[right--])) return false; // take care of left++, right++
         }
+        return true;
     }
 };
 
@@ -29,5 +30,5 @@ public:
 int main() {
 	Solution s;
     Examples eg;
-    cout << s.isPalindrome("aba ") << endl;
+    cout << s.isPalindrome("......a.....") << endl;
 }
