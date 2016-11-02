@@ -25,6 +25,7 @@ Let's deal with 19_Remove_Nth_Node_From_End_of_List
 
 ### Upload script
 
+Type in the question number and the commit words as the rest of the parameters
 ```
 ./upload.sh 19 Linked List double pointer
 ```
