@@ -13,8 +13,6 @@ void print1dVector(vector<types> vec) {
     cout << endl;
 }
 
-
-
 template <class types>
 void print2dVector(vector<vector<types> > vec) {
     for (int i = 0; i < vec.size(); i++)
