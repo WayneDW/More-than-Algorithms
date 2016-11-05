@@ -42,8 +42,12 @@ vector<int> vec(10, 1); // initialize 10 number of 1
 ```
 
 ```cpp
+// string
 string.substr(2, 2) # abcdefg -> cd
 string.substr(2) # abcdefg -> cde
+
+string.push_back('a');
+string.append("abc");
 ```
 ```c
 queue<TreeNode*> rather than queue<TreeNode>
