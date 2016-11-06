@@ -53,11 +53,24 @@ string.append("abc");
 queue<TreeNode*> rather than queue<TreeNode>
 ```
 
+// vector operation
 ```c
+// simple way to initialization
+int dat[] = {0, 1};
+vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
+
+// delete the 2nd element
+vec.erase(vec.begin() + 1);
+// delete the first 2 elements
+vec.erase(vec.begin(), vec.begin() + 2);
+
 for (int i = 0; i < vec.size(); i++)  # wrong way if we do vector operations in the loop
 
 int len = vec.size();
 for (int i = 0; i < len; i++)
+
+
+
 ```
 
 ### Notes in python
