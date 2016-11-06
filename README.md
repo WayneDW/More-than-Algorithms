@@ -60,10 +60,10 @@ queue<TreeNode*> rather than queue<TreeNode>
 int dat[] = {0, 1};
 vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
 
-// delete the 2nd element
-vec.erase(vec.begin() + 1);
-// delete the first 2 elements
-vec.erase(vec.begin(), vec.begin() + 2);
+vec.erase(vec.begin() + 1); // delete the 2nd element
+vec.erase(vec.end() - 1); // erase the last element
+vec.erase(vec.begin(), vec.begin() + 2); // delete the first 2 elements
+vec.insert(vec.begin(), tmp); // insert value at the beginning
 
 for (int i = 0; i < vec.size(); i++)  # wrong way if we do vector operations in the loop
 
