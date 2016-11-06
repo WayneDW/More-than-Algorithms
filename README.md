@@ -54,7 +54,7 @@ queue<TreeNode*> rather than queue<TreeNode>
 ```
 
 // vector operation
-```c
+```c++
 // simple way to initialization
 int dat[] = {0, 1};
 vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
