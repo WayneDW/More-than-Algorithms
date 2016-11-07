@@ -32,7 +32,7 @@ Type in the question number and the commit words as the rest of the parameters
 
 ### Notes in C++
 
-```
+```c++
 int a = 1;
 if (1 > 0) {
     int a = 2; // no mistake, but don't work
@@ -48,11 +48,7 @@ To avoid overflow
 p = (unsigned long long) p * m / n ...
 ```
 
-```
-vector<int> vec(10, 1); // initialize 10 number of 1
-```
-
-```cpp
+```c++
 // string
 string.substr(2, 2) # abcdefg -> cd
 string.substr(2) # abcdefg -> cde
@@ -60,7 +56,7 @@ string.substr(2) # abcdefg -> cde
 string.push_back('a');
 string.append("abc");
 ```
-```c
+```c++
 queue<TreeNode*> rather than queue<TreeNode>
 ```
 
@@ -68,6 +64,8 @@ queue<TreeNode*> rather than queue<TreeNode>
 ```c++
 /* Vector operation, random access, constant insertion at the end, o(n) otherwise */
 // simple way to initialization
+vector<int> vec(10, 1); // initialize 10 number of 1
+
 int dat[] = {0, 1};
 vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
 
