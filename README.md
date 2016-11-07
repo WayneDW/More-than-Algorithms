@@ -74,7 +74,7 @@ vec.erase(vec.end() - 1); // erase the last element
 vec.erase(vec.begin(), vec.begin() + 2); // delete the first 2 elements
 vec.insert(vec.begin(), tmp); // insert value at the beginning
 
-for (int i = 0; i < vec.size(); i++)  # wrong way if we do vector operations in the loop
+for (int i = 0; i < vec.size(); i++)  // wrong way if we do vector operations in the loop
 
 int len = vec.size();
 for (int i = 0; i < len; i++)
