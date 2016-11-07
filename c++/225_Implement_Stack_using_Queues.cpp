@@ -51,7 +51,7 @@ public:
         for (int i = 0; i < n - 1; i++) {
             que.push(que.top());
             que.pop();
-            res = que.top();
+            res = que.top(); // don't redeclaration
         }
         return res;
     }
