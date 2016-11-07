@@ -32,6 +32,17 @@ Type in the question number and the commit words as the rest of the parameters
 
 ### Notes in C++
 
+```
+int a = 1;
+if (1 > 0) {
+    int a = 2; // no mistake, but don't work
+}
+// print 1
+
+int a = 1;
+int a = 2; // mistake
+```
+
 To avoid overflow
 ```c++
 p = (unsigned long long) p * m / n ...
