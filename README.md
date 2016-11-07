@@ -63,9 +63,9 @@ queue<TreeNode*> rather than queue<TreeNode>
 
 ```c++
 /* Vector operation, random access, constant insertion at the end, o(n) otherwise */
-// simple way to initialization
-vector<int> vec(10, 1); // initialize 10 number of 1
 
+vector<int> vec(10, 1); // initialize 10 number of 1
+// simple way to initialization
 int dat[] = {0, 1};
 vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
 
