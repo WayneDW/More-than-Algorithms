@@ -90,7 +90,7 @@ for (int i = 0; i < len; i++)
 
 ### Notes in Algorithms
 
-'''
+```
 Master Theorem
 
 T(n) = aT(n/b) + n^c
