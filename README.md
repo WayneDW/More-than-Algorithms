@@ -88,6 +88,20 @@ for (int i = 0; i < len; i++)
     ***
 ```
 
+### Notes in Algorithms
+
+'''
+Master Theorem
+
+T(n) = aT(n/b) + n^c
+denote d = log(a) / log(b)
+then time complexity is as follows
+// intuitive thinking: when d = c, the problem has log(n) layers with n^c complexity in each
+i,   c = d --> o(n^d * log(n))  
+ii,  c < d --> o(n^d)
+iii, c > d --> o(n^c)
+```
+
 ### Notes in python
 
 ```python
