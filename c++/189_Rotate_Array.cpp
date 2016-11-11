@@ -15,11 +15,13 @@ using namespace std;
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
+        if (k <= 0) return;
         while (k-- > 0) {
             int tmp = nums.back();
             nums.erase(nums.end() - 1);
             nums.insert(nums.begin(), tmp);
         }
+
     }
 };
 
