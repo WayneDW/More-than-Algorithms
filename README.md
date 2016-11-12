@@ -88,6 +88,15 @@ for (int i = 0; i < len; i++)
     ***
 ```
 
+```c++
+istringstream // convert ostringstream to a set of variables, use >> to set value
+ostringstream // convert output (analogy) to string
+see example c++ 297
+```
+```c++
+stoi // convert string to int
+```
+
 ### Notes in Algorithms
 
 ```
