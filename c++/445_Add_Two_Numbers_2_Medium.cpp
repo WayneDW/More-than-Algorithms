@@ -24,7 +24,7 @@ Output: 7 -> 8 -> 0 -> 7*/
 
 using namespace std;
 
-class Solution {
+class Solution_slow {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
         if (!l2) return l1;
@@ -70,6 +70,49 @@ public:
 };
 
 
+
+class Solution {
+public:
+    ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+        if (!l2) return l1;
+        if (!l1) return l2;
+        ListNode* head = NULL;
+        stack<int> stkA, stkB;
+
+        while (l1) {
+            stkA.push(l1->val);
+            l1 = l1->next;
+        }
+        while (l2) {
+            stkB.push(l2->val);
+            l2 = l2->next;
+        }
+
+        int shift = 0;
+        while (!stkA.empty() || !stkB.empty()) {
+
+            if (!stkA.empty()) {
+                shift += stkA.top();
+                stkA.pop();
+            }
+            if (!stkB.empty()) {
+                shift += stkB.top();
+                stkB.pop();
+            }
+            ListNode* tmp = new ListNode(shift % 10);
+            tmp->next = head;
+            head = tmp;
+            shift /= 10;
+        }
+        if (shift) {
+            ListNode* tmp = new ListNode(shift % 10);
+            tmp->next = head;
+            head = tmp;
+        }
+        return head;
+    }
+};
+
 int main() {
 	Solution s;
     Examples eg;
@@ -92,5 +135,5 @@ int main() {
     l8->next = l9;
     l9->next = l10;
     ListNode* ll = s.addTwoNumbers(l1, l2);
-    cout << ll->val << endl;
+    cout << ll->next->val << endl;
 }
