@@ -5,18 +5,21 @@
 using namespace std;
 
 template <class types>
-void print1dVector(vector<types> vec) {
+void printVector(vector<types> vec) {
     for (int i = 0; i < vec.size(); i++) {
-
         cout << vec[i] << " ";
     }
     cout << endl;
 }
 
 template <class types>
-void print2dVector(vector<vector<types> > vec) {
-    for (int i = 0; i < vec.size(); i++)
-        print1dVector(vec[i]);
+void printVector(vector<vector<types> > vec) {
+    for (int i = 0; i < vec.size(); i++) {
+        for (int j = 0; j < vec[i].size(); j++)
+                cout << vec[i][j] << " ";
+        cout << endl;
+    }
+    cout << endl;
 }
 
 
