@@ -64,10 +64,46 @@ public:
     }
 };
 
+
+class Solution3 {
+public:
+    void reverseWords(string &s) {
+        stack<char> stk;
+        int isLetter = false;
+        for (auto &c : s) {
+            if (!isspace(c)) {
+                stk.push(c);
+                isLetter = true;
+            }
+            else if (isLetter) {
+                stk.push(' ');
+                isLetter = false;
+            }
+        }
+        if (!stk.empty()) stk.pop(); // pop the last space
+        string res;
+        int wordStartPos = 0, wordEndPos = 0;
+        while (!stk.empty()) {
+            cout << stk.top() << "...." << endl;
+            res += stk.top();
+            if (wordEndPos && isspace(stk.top())) {
+                cout << wordStartPos << " " << wordEndPos << endl;
+                reverse(res.begin() + wordStartPos, res.begin() + wordEndPos);
+                wordStartPos = wordEndPos + 1;
+            }
+            stk.pop();
+            wordEndPos++;
+        }
+        if (wordEndPos) reverse(res.end() - wordEndPos + wordStartPos, res.end());
+        s = res;
+    }
+};
+
+
 int main() {
-	Solution2 s;
+	Solution3 s;
     Examples eg;
-    string ss = " as   abc    ";
+    string ss = "       abc           bca    xxb  ";
     s.reverseWords(ss);
     cout << ss << "|" << endl;
 }
