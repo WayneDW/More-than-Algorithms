@@ -12,12 +12,10 @@
 using namespace std;
 
 class LRUCache{
-
     struct Node {
         int key;
         int val;
-        Node* prev;
-        Node* next;
+        Node* prev, *next;
         Node(int k, int v): key(k), val(v), prev(NULL), next(NULL) {} // constructor, no semicolon
     };
 
@@ -44,8 +42,8 @@ class LRUCache{
         }
     }
 
-    void moveToEnd(int key) {
-        if (dt[key] == tail) return; // ready in the tail
+    void moveToEnd(int key) { // move the key to the mostly recent used location
+        if (dt[key] == tail) return; // do nothing if it is already in the tail
         Node* nd = dt[key];
         if (nd == head) { // if key in the head
             head = head->next;
