@@ -22,4 +22,3 @@ public: // dp[i] : sum of maximum value ended at i
     	return maxS;
     }
 };
-
