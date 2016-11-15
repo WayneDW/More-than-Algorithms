@@ -56,6 +56,42 @@ public:
     }
 };
 
+/*
+14
+[12, 13, 14, 15, 16, 17, 18, 19, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf, inf]
+7
+[-inf, -inf, -inf, -inf, -inf, -inf, -inf, -inf, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+*/
+int search(vector<int>& nums, int target) {
+    int left = 0, num, right = nums.size();
+    while (left < right) {
+        int mid = (left + right) / 2;
+        
+        if (target < nums[0]) {
+            if (nums[mid] < nums[0])
+                num = nums[mid];
+            else
+                num = INT_MIN;
+        }
+        else {
+            if (nums[mid] < nums[0])
+                num = INT_MAX;
+            else
+                num = nums[mid];
+        }
+        double num = (nums[mid] < nums[0]) == (target < nums[0])
+                   ? nums[mid]
+                   : target < nums[0] ? -INFINITY : INFINITY;
+                   
+        if (num < target)
+            left = mid + 1;
+        else if (num > target)
+            right = mid;
+        else
+            return mid;
+    }
+    return -1;
+}
 
 int main() {
 	Solution s;
