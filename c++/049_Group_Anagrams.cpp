@@ -1,10 +1,14 @@
 #include <iostream>
 #include <vector>
 #include <map>
+#include <unordered_map>
+#include <unordered_set>
+#include <queue>
+#include <stack>
 #include <string>
 #include <algorithm>
-
-using namespace std;
+#include <climits>
+#include "func.cpp"
 
 /*
 For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
@@ -15,7 +19,7 @@ Return:
   ["bat"]
 ]*/
 
-class Solution {
+class Solution2 {
 public:
 	
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
@@ -36,18 +40,43 @@ public:
 };
 
 
+/*
+For example, given: ["eat", "tea", "tan", "ate", "nat", "bat"], 
+Return:
+[
+  ["ate", "eat","tea"],
+  ["nat","tan"],
+  ["bat"]
+]*/
+
+class Solution {
+public:
+    vector<vector<string> > groupAnagrams(vector<string>& strs) {
+        vector<vector<string> > res;
+        unordered_map<string, int> ht;
+        int num = 0;
+        for (int i = 0; i < strs.size(); i++) {
+            string tmp = strs[i];
+            sort(tmp.begin(), tmp.end());
+            if (ht.count(tmp) == 0) {
+                ht[tmp] = num++;
+                vector<string> line;
+                line.push_back(strs[i]);
+                res.push_back(line);
+            }
+            else {
+                res[ht[tmp]].push_back(strs[i]);
+            }
+        }
+        return res;
+    }
+};
+
 int main() {
 	Solution s;
 	string ss[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
 	vector<string> vecS(ss, ss + 6);
 	vector<vector<string> > res;
-	res = s.dgroupAnagrams(vecS);
-	for (int i = 0; i < res.size(); i++) {
-		for (int j = 0; j < res[i].size(); j++) {
-			cout << res[i][j] << " ";
-		}
-		cout << endl;
-	}
-
-
+	res = s.groupAnagrams(vecS);
+    printVector(res);
 }

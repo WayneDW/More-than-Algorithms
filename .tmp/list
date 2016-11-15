@@ -1,3 +1,71 @@
+372 Super Pow       32.5%   Medium  
+373 Find K Pairs with Smallest Sums         29.0%   Medium  
+374 Guess Number Higher or Lower        32.9%   Easy    
+375 Guess Number Higher or Lower II         33.9%   Medium  
+376 Wiggle Subsequence          34.1%   Medium  
+377 Combination Sum IV          41.1%   Medium  
+378 Kth Smallest Element in a Sorted Matrix         42.5%   Medium  
+379 Design Phone Directory          28.1%   Medium  
+380 Insert Delete GetRandom O(1)        37.0%   Hard    
+381 Insert Delete GetRandom O(1) - Duplicates allowed       26.9%   Hard    
+382 Linked List Random Node         45.8%   Medium  
+383 Ransom Note         45.5%   Easy    
+384 Shuffle an Array        44.6%   Medium  
+385 Mini Parser         29.2%   Medium  
+386 Lexicographical Numbers         37.9%   Medium  
+387 First Unique Character in a String          44.5%   Easy    
+388 Longest Absolute File Path          33.5%   Medium  
+389 Find the Difference         49.8%   Easy    
+390 Elimination Game        35.4%   Medium  
+391 Perfect Rectangle       22.0%   Hard    
+392 Is Subsequence          43.9%   Medium  
+393 UTF-8 Validation        35.0%   Medium  
+394 Decode String       39.6%   Medium  
+395 Longest Substring with At Least K Repeating Characters          34.7%   Medium  
+396 Rotate Function         29.6%   Easy    
+397 Integer Replacement         28.5%   Medium  
+398 Random Pick Index       37.5%   Medium  
+399 Evaluate Division       38.4%   Medium  
+400 Nth Digit       30.2%   Easy    
+401 Binary Watch        43.1%   Easy    
+402 Remove K Digits         25.6%   Medium  
+403 Frog Jump       30.0%   Hard    
+404 Sum of Left Leaves          45.4%   Easy    
+405 Convert a Number to Hexadecimal         40.9%   Easy    
+406 Queue Reconstruction by Height          53.8%   Medium  
+407 Trapping Rain Water II          34.9%   Hard    
+408 Valid Word Abbreviation         26.6%   Easy    
+409 Longest Palindrome          43.7%   Easy    
+410 Split Array Largest Sum         29.4%   Hard    
+411 Minimum Unique Word Abbreviation        30.5%   Hard    
+412 Fizz Buzz       57.6%   Easy    
+413 Arithmetic Slices       53.8%   Medium  
+414 Third Maximum Number        26.2%   Easy    
+415 Add Strings         41.4%   Easy    
+416 Partition Equal Subset Sum          36.7%   Medium  
+417 Pacific Atlantic Water Flow         31.8%   Medium  
+418 Sentence Screen Fitting         25.7%   Medium  
+419 Battleships in a Board          60.0%   Medium  
+420 Strong Password Checker         22.3%   Hard    
+421 Maximum XOR of Two Numbers in an Array          37.3%   Medium  
+422 Valid Word Square       36.2%   Easy    
+423 Reconstruct Original Digits from English        41.2%   Medium  
+424 Longest Repeating Character Replacement         38.6%   Medium  
+425 Word Squares        39.7%   Hard    
+432 All O`one Data Structure        27.1%   Hard    
+435 Non-overlapping Intervals       39.2%   Medium  
+436 Find Right Interval         43.0%   Medium  
+437 Path Sum III        38.2%   Easy    
+438 Find All Anagrams in a String       33.3%   Easy    
+439 Ternary Expression Parser       47.8%   Medium  
+440 K-th Smallest in Lexicographical Order          19.3%   Hard    
+441 Arranging Coins         37.0%   Easy    
+444 Sequence Reconstruction         19.7%   Medium  
+445 Add Two Numbers 2 20% Medium
+446 Arithmetic Slices II - Subsequence          16.3%   Hard    
+447 Number of Boomerangs        39.4%   Easy    
+452 Minimum Number of Arrows to Burst Balloons          41.7%   Medium  
+453 Minimum Moves to Equal Array Elements       44.2%   Easy    
 371 Sum of Two Integers 52.0%       Easy
 370 Range Addition  49.0%       Medium
 369 Plus One Linked List    50.0%       Medium

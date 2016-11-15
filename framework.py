@@ -7,15 +7,17 @@ class leetCode:
     # using __init__ for future function updates
     def __init__(self, f):
         self.f = f
+    def convert(self, id): # return 001 for #1, 098 for #98
+        if len(id) < 2: id = "00" + id
+        elif len(id) < 3: id = "0" + id
+        return id
     def title(self, num): # input question number
         fileList = open(self.f)
         num_list = {}
         for l in fileList:
             l = l.strip().split("\t")
             par = l[0].split(" ")
-            id = par[0]
-            if len(id) < 2:
-                id = "0" + id
+            id = self.convert(par[0])
             title = ""
             tag = 0
             for pars in range(1, len(par)):
@@ -26,7 +28,8 @@ class leetCode:
                 if tag == 1 and par[pars] == "":
                     break
             num_list[id] = id + title
-        return num_list[num].replace("'", '') # shell can't recognize what ' is 
+            key = self.convert(str(num)) # change key format to satisfy dict
+        return num_list[key].replace("'", '') # shell can't recognize what ' is 
 
 # check if file exists, do nothing if it does, avoid overwrite
 class framework:

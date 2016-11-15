@@ -1,3 +1,16 @@
+#include <iostream>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <queue>
+#include <stack>
+#include <string>
+#include <algorithm>
+#include <climits>
+#include "func.cpp"
+
+using namespace std;
+
 class Solution {
 public:
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
@@ -7,7 +20,7 @@ public:
         while (l1 || l2 || carry) {
             sum = carry;
             carry = 0;
-            if (l1) {
+            if (l1) { // this way makes the code more simple
                 sum += l1->val;
                 l1 = l1->next;
             }

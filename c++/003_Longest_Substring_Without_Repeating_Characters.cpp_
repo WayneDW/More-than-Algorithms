@@ -10,7 +10,7 @@ public:
                 last = dict[s[i]];
             }
             dict[s[i]] = i;
-            maximum = max(i - last, maximum);
+            maximum = max(i - last, maximum); // the original one or the next one between two points
         }
         return maximum; 
     }

@@ -17,8 +17,7 @@ public:
     	for (int i = 0; i < n - 2; i++) {
     		int left = i + 1;
     		int right = n - 1;
-    		// the essential part is to get rid of repeat
-    		if (i == 0 or nums[i] != nums[i - 1]) {
+    		if (i == 0 or nums[i] != nums[i - 1]) { // to avoid repeat
 	    		while (left < right) {
 	    			if (nums[i] + nums[left] + nums[right] == 0) {
 	    				int tmps[] = {nums[i], nums[left], nums[right]};

@@ -1,8 +1,10 @@
-#include<iostream>
-#include<vector>
-#include<map>
-#include<string>
-#include<limits.h>
+#include <iostream>
+#include <vector>
+#include <map>
+#include <string>
+#include <algorithm>
+#include <climits>
+#include <math.h>
 
 using namespace std;
 
@@ -18,8 +20,7 @@ public:
         int i, j, tag = 0; 
         int n = str.size();
         unsigned long long out = 0;
-        // a better way of handling this is to use pointer
-        // but this question are not permitted to do that.
+        // c can do a better way of handling this by using pointer
         for (i = 0; i < n; i++) {
             if (str[i] != ' ')
                 break; 

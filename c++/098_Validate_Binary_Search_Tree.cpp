@@ -54,9 +54,26 @@ public:
     }
 };
 
-
+class Solution2 {
+public:
+    bool isValidBST(TreeNode* root) {
+        if (!root || (!root->left && !root->right)) return true;
+        vector<int> res;
+        inorder(root, res);
+        for (int i = 1; i < res.size(); i++) {
+            if (res[i] < res[i-1]) return false;
+        }
+        return true;
+    }
+    void inorder(TreeNode* root, vector<int> &res) {
+        if (!root) return;
+        if (root->left) inorder(root->left, res);
+        res.push_back(root->val);
+        if (root->right) inorder(root->right, res);
+    }
+};
 int main() {
-	Solution1 s;
+	Solution2 s;
 	TreeNode *a = new TreeNode(1);
 	TreeNode *a1 = new TreeNode(2);
 	TreeNode *a2 = new TreeNode(3);
