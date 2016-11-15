@@ -65,8 +65,7 @@ public:
 int search(vector<int>& nums, int target) {
     int left = 0, num, right = nums.size();
     while (left < right) {
-        int mid = (left + right) / 2;
-        
+        int mid = (left + right) / 2;      
         if (target < nums[0]) {
             if (nums[mid] < nums[0])
                 num = nums[mid];
@@ -79,9 +78,6 @@ int search(vector<int>& nums, int target) {
             else
                 num = nums[mid];
         }
-        double num = (nums[mid] < nums[0]) == (target < nums[0])
-                   ? nums[mid]
-                   : target < nums[0] ? -INFINITY : INFINITY;
                    
         if (num < target)
             left = mid + 1;
