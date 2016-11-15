@@ -17,8 +17,8 @@ struct TreeNode {
 };
 
 // recursion
-/*
-class Solution {
+
+class Solution2 {
 public:
     bool isSymmetric(TreeNode* root) {
         return isSym(root, root);
@@ -27,11 +27,11 @@ public:
         if (!tl && !tr) return true;
         if ((!tl && tr) || (tl && !tr)) return false;
         // left subtree and right subtree both points to the same node
-        if (tl == tr) return isSym(tl->left, tl->right);
+        //if (tl == tr) return isSym(tl->left, tl->right); not necessary
         if (tl->val != tr->val) return false;
         return isSym(tl->left, tr->right) && isSym(tl->right, tr->left);
     }
-};*/
+};
 // iteration
 class Solution {
 public:
