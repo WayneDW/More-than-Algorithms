@@ -21,7 +21,7 @@ using namespace std;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
-class Solution {
+class Solution2 {
 public:
     int kthSmallest(TreeNode* root, int k) {
         if (!root || k <= 0) return 0;
@@ -40,6 +40,27 @@ public:
         return 0;
     }
 };
+
+class Solution {
+public:
+    int kthSmallest(TreeNode* root, int k) {
+        int num = 0, res = 0;
+        inorder(root, k, num, res);
+        return res;
+    }
+
+    void inorder(TreeNode* root, int k, int &num, int &res) {
+        if (!root) return;
+        if (root->left) inorder(root->left, k, num, res);
+        num++;
+        if (num == k) {
+            res = root->val;
+            return;
+        }
+        if (root->right) inorder(root->right, k, num, res);
+    }
+};
+
 
 
 int main() {
