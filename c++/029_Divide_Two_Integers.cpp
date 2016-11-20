@@ -43,6 +43,7 @@ public:
     }
 };
 
+
 int main() {
 	Solution s;
 	cout << s.divide(16, 3) << endl;
