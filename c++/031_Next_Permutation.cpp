@@ -10,6 +10,7 @@ using namespace std;
 // Permutation explanation:
 // https://www.nayuki.io/page/next-lexicographical-permutation-algorithm
 
+
 class Solution {
 public:
     void nextPermutation(vector<int>& nums) {
