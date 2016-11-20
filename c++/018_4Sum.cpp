@@ -72,7 +72,6 @@ public:
     }
 };
 
-
 int main() {
     Solution s;
     int dat[] = {-5,5,4,-3,0,0,4,-2, 1, 1, 1, 1};
