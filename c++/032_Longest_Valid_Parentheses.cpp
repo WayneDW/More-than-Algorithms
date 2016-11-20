@@ -6,7 +6,6 @@
 
 using namespace std;
 
-
 // stack version
 class Solution {
 public:
