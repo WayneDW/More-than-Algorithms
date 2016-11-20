@@ -18,7 +18,6 @@ struct ListNode {
 
 ListNode *head = NULL;
 
-
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
