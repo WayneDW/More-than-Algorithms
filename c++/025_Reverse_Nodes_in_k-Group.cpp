@@ -14,6 +14,7 @@ struct ListNode {
 
 ListNode *head = NULL;
 
+
 void Insert(int data, int pos) {
 	ListNode *tmp1 = new ListNode(0);
 	tmp1->val = data;
