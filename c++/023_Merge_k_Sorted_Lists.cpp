@@ -14,6 +14,7 @@ using namespace std;
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+
 class Solution {
 public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
