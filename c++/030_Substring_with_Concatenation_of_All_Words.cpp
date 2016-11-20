@@ -12,6 +12,7 @@ For example, given:
 "wordgoodgoodgoodbestword", ["word","good","best","good"] [8]
 */
 
+
 class Solution {
 public:
     vector<int> findSubstring(string s, vector<string>& words) {
