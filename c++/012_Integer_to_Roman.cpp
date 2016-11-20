@@ -4,6 +4,7 @@
 #include <cmath>
 #include <string>
 
+
 using namespace std;
 
 class Solution {
@@ -27,6 +28,4 @@ public:
 int main() {
     Solution s;
     cout << s.intToRoman(50) << endl;
-
-
 }
