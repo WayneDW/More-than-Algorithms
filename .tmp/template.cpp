@@ -6,6 +6,7 @@
 #include <queue>
 #include <stack>
 #include <string>
+#include <sstream>
 #include <algorithm>
 #include <climits>
 #include "000_basic.cpp"
