@@ -103,6 +103,10 @@ see example c++ 165, 297
 stoi // convert string to int
 ```
 
+```c++
+nullptr // null pointer in C++11
+```
+
 ### Notes in Algorithms
 
 ```
