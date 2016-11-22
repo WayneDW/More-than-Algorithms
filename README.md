@@ -124,13 +124,11 @@ iii, c > d --> o(n^c)
 ### Notes in python
 
 ```python
-b = []
-a = [1]
-b.append(a)
-a.pop()
-```
-```
-print b
+>>> b = []
+>>> a = [1]
+>>> b.append(a)
+>>> a.pop()
+>>> b
 [[]]
 ```
 
@@ -156,7 +154,7 @@ Generators are iterators, but you can only iterate over them once. It's because 
 4
 ```
 
-## Yield
+#### Yield
 
 Yield is a keyword that is used like return, except the function will return a generator.
 ```python
