@@ -32,6 +32,24 @@ Type in the question number and the commit words as the rest of the parameters
 
 ### Notes in C++
 
+Bitwise operation
+
+```c++
+Symbol  Operator
+&   bitwise AND
+|   bitwise inclusive OR
+^   bitwise XOR (eXclusive OR)
+<<  left shift
+>>  right shift
+~   bitwise NOT (one's complement) (unary)
+```
+```c++
+    0101 (decimal 5)
+XOR 0011 (decimal 3)
+  = 0110 (decimal 6)
+
+```
+
 ```c++
 vector<int> v = {0, 1, 2, 3, 4, 5};
 for (auto i : v) // access by value, the type of i is int
