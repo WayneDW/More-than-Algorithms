@@ -74,3 +74,54 @@ public:
             return 0.5*(findKth(a, 0, b, 0, t/2) + findKth(a, 0, b, 0, t/2+1));
     }
 };
+
+    /* Convert to find the Kth element in two sorted arrays: A and B
+     *  a) If odd, just return the Kth element
+     *  b) If even, return average of Kth + (K+1)th element 
+     * 
+     * How to find Kth element:
+     * For K == 1, return min(A[0], B[0]);
+     * For A == NULL, return B[K-1]; 
+     * For B == NULL, return A[K-1]; 
+     * Drop the K/2 elements for each time, untile K == 1 or (A == NULL or B == NULL);
+     *      If A[K/2] < B[K/2], remove elements A[0..K/2] from A, then search (K-K/2)th from the remaining A and B
+     *                    else, remove elements B[0..K/2] from B, then search (K-K/2)th from the remaining A and B 
+     * 
+     *      one condition, there is no K/2 elements in either array (A or B), but there must more that K/2 in other array!
+     *      Just drop K/2 elements in another array directly.
+     *      How to: Assign max value, so above euqation can still work. Eg, (INT_MAX < B[K/2] == false) will drop K/2 from B;
+     */
+    
+    double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+        int m = nums1.size();
+        int n = nums2.size();
+        if (m+n == 0) return 0;
+        
+        if ( (m+n) % 2 == 0 ) {
+            return double(findKth(nums1, 0, nums2, 0, (m+n)/2) + findKth(nums1, 0, nums2, 0, (m+n)/2+1))/2;
+        } else {
+            return double(findKth(nums1, 0, nums2, 0, (m+n+1)/2));
+        }
+    }
+    
+    int findKth(vector<int>& A, int a_start, vector<int> & B, int b_start, int k) {
+        if (a_start >= A.size()) {
+            return B[b_start + k - 1];
+        }
+        if (b_start >= B.size()) {
+            return A[a_start + k - 1];
+        }
+        if (k == 1) {
+            return min(A[a_start], B[b_start]);
+        }
+        
+        //INT_MAX: drop emelemts from other array
+        int a_mid_value = a_start + k/2 -1 < int(A.size() ) ? A[a_start + k/2 -1] : INT_MAX; 
+        int b_mid_value = b_start + k/2 -1 < int(B.size() ) ? B[b_start + k/2 -1] : INT_MAX;
+        if (a_mid_value < b_mid_value) {
+            return findKth(A, a_start + k/2, B, b_start, k - k/2);
+        } else {
+            return findKth(A, a_start, B, b_start + k/2, k - k/2);
+        }
+        
+    }
