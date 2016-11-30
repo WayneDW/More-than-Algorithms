@@ -19,21 +19,27 @@ value 3, the linked list should become 1 -> 2 -> 4 after calling your function.*
 
 class Solution {
 public:
-    void deleteNode1(ListNode* node) {
-        *node = *node->next;
+    void deleteNode2(ListNode* node) { // failed version
+        auto temp = node;
+        *node = *temp->next;
+        cout << node << endl; 
+        delete temp; // this delete didn't point a right next node
+        cout << node << endl;
     }
-    void deleteNode2(ListNode* node) {
-        node->val = node->next->val;
-        node->next = node->next->next;
-    }
-    void deleteNode(ListNode* node) { // for fear of memory leaking
-        auto next = node;
-        node = next->next;
-        delete next;
+    void deleteNode(ListNode* node) { // success version
+        auto temp = node->next;
+        *node = *temp;
+        delete temp;
     }
 };
 
 int main() {
 	Solution s;
-    Examples eg;
+    ListNode* node1 = new ListNode(1);
+    ListNode* node2 = new ListNode(2);
+    ListNode* node3 = new ListNode(3);
+    node1->next = node2;
+    node2->next = node3;
+    s.deleteNode2(node2);
+    cout << node1->next->val << endl;
 }
