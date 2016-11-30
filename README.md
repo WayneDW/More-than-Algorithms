@@ -32,6 +32,20 @@ Type in the question number and the commit words as the rest of the parameters
 
 ### Notes in C++
 
+Linked List
+```c++
+void deleteNode(ListNode* node) {
+    *node = *node->next; // this may suffer from memory leaking
+}
+//But better properly delete the next node:
+
+void deleteNode(ListNode* node) {
+    auto next = node->next;
+    *node = *next;
+    delete next;
+}
+```
+
 Bitwise operation
 
 ```c++
