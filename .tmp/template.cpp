@@ -17,6 +17,6 @@ using namespace std;
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 }
