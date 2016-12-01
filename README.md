@@ -32,7 +32,7 @@ Type in the question number and the commit words as the rest of the parameters
 
 ### Notes in C++
 
-Linked List
+Linked List, e.g. 328
 ```c++
 void deleteNode(ListNode* node) {
     *node = *node->next; // this may suffer from memory leaking
@@ -47,7 +47,7 @@ void deleteNode(ListNode* node) {
 }
 ```
 
-Customized sort function, e.g.
+Customized sort function, e.g. 219
 ```c++
 static bool cmp(pair<int, int> a, pair<int, int> b) {
     if (a.first != b.first) return a.first < b.first;
