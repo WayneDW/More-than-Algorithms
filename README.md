@@ -37,13 +37,15 @@ Linked List
 void deleteNode(ListNode* node) {
     *node = *node->next; // this may suffer from memory leaking
 }
-//But better properly delete the next node:
-
+```
+But better properly delete the next node:
+```c++
 void deleteNode(ListNode* node) {
     auto next = node->next;
     *node = *next;
     delete next;
 }
+```
 
 Customized sort function, e.g.
 ```c++
