@@ -44,6 +44,14 @@ void deleteNode(ListNode* node) {
     *node = *next;
     delete next;
 }
+
+Customized sort function, e.g.
+```c++
+static bool cmp(pair<int, int> a, pair<int, int> b) {
+    if (a.first != b.first) return a.first < b.first;
+    return a.second < b.second;
+}
+sort(vec.begin(), vec.end(), cmp);
 ```
 
 Bitwise operation
