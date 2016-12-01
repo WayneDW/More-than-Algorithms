@@ -37,11 +37,10 @@ using namespace std;
 class Solution {
 public:
     vector<int> countBits(int num) {
-        vector<int> res;
-        int dp[5] = {0};
+        vector<int> dp(num + 1, 0);
         dp[0] = 0;
         for (int i = 1; i <= num; i *= 2) {
-            for (int j = 0; j < i && j + i < num; j++) {
+            for (int j = 0; j < i && j + i <= num; j++) {
                 dp[i+j] = dp[j] + 1;
             }
         }
