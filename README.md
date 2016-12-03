@@ -47,6 +47,12 @@ void deleteNode(ListNode* node) {
 }
 ```
 
+Vector, List, Deque
+```c++
+List: doubly linked list
+Deque: doubly queue
+```
+
 Customized sort function, e.g. 219
 ```c++
 static bool cmp(pair<int, int> a, pair<int, int> b) {
