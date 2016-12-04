@@ -47,6 +47,11 @@ void deleteNode(ListNode* node) {
 }
 ```
 
+
+```c++
+for (auto i : v) // access by value, the type of i is int
+for (auto&& i : v) // access by reference, the type of i is int&
+```
 map, unordered_map
 ```c++
 for(std::map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
@@ -88,11 +93,7 @@ XOR 0011 (decimal 3)
 
 ```
 
-```c++
-vector<int> v = {0, 1, 2, 3, 4, 5};
-for (auto i : v) // access by value, the type of i is int
-for (auto&& i : v) // access by reference, the type of i is int&
-```
+
 
 ```c++
 int a = 1;
@@ -128,6 +129,8 @@ vector<int> vec(10); // initialize 10 number of 0
 vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
 
 // simple way to initialization
+
+vector<int> v = {0, 1, 2, 3, 4, 5}; // better than the following
 int dat[] = {0, 1};
 vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
 ```
