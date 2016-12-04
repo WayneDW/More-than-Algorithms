@@ -5,6 +5,7 @@
 #include <unordered_set>
 #include <queue>
 #include <stack>
+#include <cmath>
 #include <string>
 #include <sstream>
 #include <algorithm>
