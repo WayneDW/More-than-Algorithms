@@ -189,8 +189,8 @@ Iterables
 2
 3
 ```
-#### Generators
-Generators are iterators, but you can only iterate over them once. It's because they do not store all the values in memory, they generate the values on the fly:
+
+Generators: iterators, but you can only iterate over them once. It's because they do not store all the values in memory, they generate the values on the fly:
 ```python
 >>> mygenerator = (x*x for x in range(3))
 >>> for i in mygenerator:
@@ -200,9 +200,7 @@ Generators are iterators, but you can only iterate over them once. It's because 
 4
 ```
 
-#### Yield
-
-Yield is a keyword that is used like return, except the function will return a generator.
+Yield: a keyword that is used like return, except the function will return a generator.
 ```python
 >>> def createGenerator():
 ...    mylist = range(3)
