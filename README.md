@@ -129,12 +129,12 @@ vector<int> vec(10); // initialize 10 number of 0
 vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
 
 // simple way to initialization
-
-vector<int> v = {0, 1, 2, 3, 4, 5}; // better than the following
+vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
 int dat[] = {0, 1};
-vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
+vector<int> vec(dat, dat + sizeof(dat) / sizeof(int)); // unwieldy way
 ```
-Vector operation, random access, constant insertion at the end, o(n) otherwise
+
+Vector operation, constant insertion at the end, o(n) otherwise
 ```c++
 vec.erase(vec.begin() + 1); // delete the 2nd element
 vec.erase(vec.end() - 1); // erase the last element
@@ -148,27 +148,29 @@ for (int i = 0; i < len; i++)
     ***
 ```
 
-istringstream: convert ostringstream to a set of variables
+istringstream
 ```c++
+// convert ostringstream to a set of variables
 istringstream s(string); // to initialize
 int val; // or other types
 s >> val; // set value
 if (! (s >> val)) // to determine if it has reached the end
 ```
 
-ostringstream // convert output (analogy) to string
+ostringstream 
 ```c++
+// convert output (analogy) to string
 see example c++ 165, 297
 ```
 
 convert string to int
 ```c++
-stoi // 
+stoi
 ```
 
 null pointer in C++11
 ```c++
-nullptr // 
+nullptr
 ```
 
 priority_queue
