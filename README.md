@@ -148,22 +148,35 @@ for (int i = 0; i < len; i++)
     ***
 ```
 
+istringstream: convert ostringstream to a set of variables
 ```c++
-istringstream // convert ostringstream to a set of variables
 istringstream s(string); // to initialize
 int val; // or other types
 s >> val; // set value
 if (! (s >> val)) // to determine if it has reached the end
+```
 
 ostringstream // convert output (analogy) to string
+```c++
 see example c++ 165, 297
 ```
+
+convert string to int
 ```c++
-stoi // convert string to int
+stoi // 
 ```
 
+null pointer in C++11
 ```c++
-nullptr // null pointer in C++11
+nullptr // 
+```
+
+priority_queue
+```c++
+priority_queue<int> pq(nums.begin(), nums.end());
+for (int i = 0; i < k - 1; i++)
+    pq.pop(); 
+int topK = pq.top();
 ```
 
 
