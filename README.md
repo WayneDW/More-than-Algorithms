@@ -166,19 +166,6 @@ stoi // convert string to int
 nullptr // null pointer in C++11
 ```
 
-### Notes in Algorithms
-
-```
-Master Theorem
-
-T(n) = aT(n/b) + n^c
-denote d = log(a) / log(b)
-then time complexity is as follows
-// intuitive thinking: when d = c, the problem has log(n) layers with n^c complexity in each
-i,   c = d --> o(n^d * log(n))  
-ii,  c < d --> o(n^d)
-iii, c > d --> o(n^c)
-```
 
 ### Notes in python
 
@@ -234,3 +221,36 @@ Yield is a keyword that is used like return, except the function will return a g
 ```
 
 
+### Notes in Algorithms
+
+```
+Master Theorem
+
+T(n) = aT(n/b) + n^c
+denote d = log(a) / log(b)
+then time complexity is as follows
+// intuitive thinking: when d = c, the problem has log(n) layers with n^c complexity in each
+i,   c = d --> o(n^d * log(n))  
+ii,  c < d --> o(n^d)
+iii, c > d --> o(n^c)
+```
+
+Bucket sort, e.g. Q164
+```
+    Given the MIN and MAX of the array, the gap between MIN and MAX is MAX-MIN, there are n-1 intervals, so the largest
+    interval length, denoted as maxGap, must be larger than ceiling[(MAX-MIN)/(n-1)]
+
+    We construct several buckets with length maxGap, each one is close to another. e.g. [5,1,3,2,4,10]
+
+    Bucket 
+       0   1    2    3
+    |____|____|____|___|
+    1   3|4  6|7  9|10
+
+    we put the numbers into its corresponding bucket
+
+    Min 1 2   4         10
+    Max     3   5       10
+        |____|____|____|___|
+        1   3|4  6|7  9|10
+```
