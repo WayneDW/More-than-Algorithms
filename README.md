@@ -223,9 +223,8 @@ Yield is a keyword that is used like return, except the function will return a g
 
 ### Notes in Algorithms
 
-```
 Master Theorem
-
+```
 T(n) = aT(n/b) + n^c
 denote d = log(a) / log(b)
 then time complexity is as follows
