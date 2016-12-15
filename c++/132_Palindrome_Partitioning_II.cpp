@@ -40,11 +40,13 @@ public:
     }
 };
 
-/* For the following string 
-   [ * * * * * * i * * ] when j = i, dp[i] = dp[i-1] + 1
-   [ * * * * * j i * * ] when j = i - 1, dp[i] = dp[i-2] + 1
-   [ * * * * j * i * * ] when j = i - 2, dp[i] = dp[i-3] + 1 = dp[j-1] + 1
-   [ * * * j * * i * * ] when j = i - 3, and isPalin[i-1][j+1] is true, since s[i] == s[j] 
+/* 
+    dp[i]: the minimum cut from 0 to i
+    For the following string 
+    [ * * * * * * i * * ] when j = i, dp[i] = dp[i-1] + 1
+    [ * * * * * j i * * ] when j = i - 1, dp[i] = dp[i-2] + 1
+    [ * * * * j * i * * ] when j = i - 2, dp[i] = dp[i-3] + 1 = dp[j-1] + 1
+    [ * * * j * * i * * ] when j = i - 3, and isPalin[i-1][j+1] is true, since s[i] == s[j] 
     dp[i-3] is like the minimum cut in [ * * * ]
     the right part is one cut to seperate [ * * * ] | [ j * * i]
     then dp[i] = dp[i-3] + 1 = dp[j-1] + 1
@@ -62,7 +64,7 @@ public:
                 if (s[i] == s[j] && (i - j <= 2 || isPalin[i-1][j+1])) {
                     isPalin[i][j] = true;
                     if (j == 0)
-                        dp[i] = 0;
+                        dp[i] = 0; // this means the whole substr is valid, the cut is 0
                     else
                         dp[i] = min(dp[i], 1 + dp[j-1]); // this means 
                 }
@@ -73,7 +75,7 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     int res = s.minCut("abbab");
     cout << res << endl;
