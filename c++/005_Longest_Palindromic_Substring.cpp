@@ -1,4 +1,15 @@
-class Solution {
+#include <iostream>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <queue>
+#include <stack>
+#include <string>
+#include <algorithm>
+
+using namespace std;
+
+class Solution_2 {
 public:
     string longestPalindrome(string s) {
         int i;
@@ -24,3 +35,28 @@ public:
     }
 };
 
+class Solution {
+public:
+    string longestPalindrome(string s) {
+        if (s.size() == 0) return NULL;
+        string res;
+        int max_len = 1, left, right, best_loc = 0;
+        for (int i = 0; i < s.size();) {
+            left = right = i;
+            // this format fails when cbba with 2 consecutive b, thus we need to check duplicate
+            // while (left > 0 && right < s.size() -1 && s[left] == s[right]) {
+            //     left--;
+            //     right++;
+            // }
+            while (right + 1 < s.size() && s[right + 1] == s[right]) right++; // skip duplicate
+            i = right + 1;
+            while (left - 1 >= 0 && right + 1 <= s.size() -1 && s[left-1] == s[right+1]) { left--; right++;}
+            int cur_len = right - left + 1;
+            if (cur_len > max_len) {
+                max_len = cur_len;
+                best_loc = left;
+            }
+        }
+        return s.substr(best_loc, max_len);
+    }
+};
