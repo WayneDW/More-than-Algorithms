@@ -21,6 +21,11 @@ Output: 0
 
 In this case, no transaction is done, i.e. max profit = 0.*/
 
+/*
+Trick here, only to record the minimum value, return the maximum profit
+
+*/
+
 class Solution {
 public:
     int maxProfit(vector<int>& prices) {
@@ -36,5 +41,5 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
 }
