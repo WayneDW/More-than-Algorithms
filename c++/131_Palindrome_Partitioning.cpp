@@ -60,7 +60,7 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     vector<vector<string> > res = s.partition("aaa");
     print2dVector(res);
