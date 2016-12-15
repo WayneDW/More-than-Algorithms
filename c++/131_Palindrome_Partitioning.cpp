@@ -11,6 +11,20 @@
 
 using namespace std;
 
+
+
+/*
+string = abacccaba
+
+iterate location L from 0 to n-1
+    iterate len from 1 to n
+        check if substr(L, len) is valid
+            if so:
+                element push back a value
+                go into the recursion
+                pop back the lasst value
+*/
+
 class Solution {
 public:
     vector<vector<string> > partition(string s) {
@@ -37,7 +51,7 @@ public:
                     ele.push_back(sub);
                     int loc = len + 1 + depth;
                     dfs(s, loc, ele, res);
-                    ele.pop_back();
+                    ele.pop_back(); // take care
                 }
             }
         }
