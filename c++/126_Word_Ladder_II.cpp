@@ -27,6 +27,7 @@ Return
 
 
 // very tricky question, I didn't work this out.
+// https://discuss.leetcode.com/topic/8231/a-concise-solution-using-bfs-and-backtracing
 class Solution {
 public:
     unordered_map<string, vector<string> > mp; // a map indicating a word's previous word list
