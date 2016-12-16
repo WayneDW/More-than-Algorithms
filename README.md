@@ -80,13 +80,15 @@ int main() {
 ```
 static
 ```c++
-/* http://www.learncpp.com/cpp-tutorial/811-static-member-variables/
-** inside a class: only one copy, shared by all objects of the class
+/* http://www.learncpp.com/cpp-tutorial/811-static-member-variables*/
+/* inside a class: only one copy, shared by all objects of the class*/
 class Something{
 public:
     static int s_value;
 };
-int Something::s_value = 1;
+int Something::s_value = 1; 
+/* Because static member variables are not part of the individual class objects (they get initialized
+when the program starts), you must explicitly define the static member outside of the class */
 int main(){
     Something first;
     Something second;
@@ -97,8 +99,8 @@ int main(){
     return 0;
 }
 >> 2 2
-** inside a file: private in the file
-** inside a function*/
+/* inside a file: private in the file */
+/* inside a function*/
 void func() {
     static int x = 0; 
     /* x is initialized only once across five calls of func() and the variable will get 
