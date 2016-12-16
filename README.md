@@ -31,6 +31,7 @@ Type in the question number and the commit words as the rest of the parameters
 ```
 
 ### Notes in C++
+[Excellent tutorial on C++](http://www.learncpp.com/)
 
 Const/Int poiner
 ```c++
