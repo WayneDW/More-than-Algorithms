@@ -80,7 +80,23 @@ int main() {
 ```
 static
 ```c++
-/* inside a class: only one copy, shared by instances
+/* http://www.learncpp.com/cpp-tutorial/811-static-member-variables/
+** inside a class: only one copy, shared by all objects of the class
+class Something{
+public:
+    static int s_value;
+};
+int Something::s_value = 1;
+int main(){
+    Something first;
+    Something second;
+ 
+    second.s_value = 2;
+ 
+    std::cout << first.s_value << " " << second.s_value << '\n';
+    return 0;
+}
+>> 2 2
 ** inside a file: private in the file
 ** inside a function*/
 void func() {
