@@ -45,6 +45,35 @@ const int * == int const *
 const int * const == int const * const
 ```
 
+
+Reference/Pointer
+```c++
+/*reference: 
+1. a new name for an object, doesn't exist indeed
+2. must be initialized
+3. can't reassigned to NULL; 
+pointer: 
+1. an actual object
+2. can be uninitialized
+3. can be reassigned*/
+```
+```c++
+void add(int a, int &c, int *p) {
+    c = a;
+    *p = 2;
+}
+
+int main() {
+    int a = 0;
+    int *b;
+    add(1, a, b);
+    cout << a << endl;
+    cout << *b << endl;
+}
+>> 1
+>> 2
+```
+
 Linked List, e.g. 328
 ```c++
 void deleteNode(ListNode* node) {
