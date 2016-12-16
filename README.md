@@ -37,7 +37,7 @@ Const/Int poiner
 //read it backwards (as driven by Clockwise/Spiral Rule)...
 int* // pointer to int
 int const * // pointer to const int
-int * const // const pointer to int
+int * const // const pointer to int, initialized at first
 int const * const // const pointer to const int, initialized at first
 
 //Now the first const can be on either side of the type so:
