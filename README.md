@@ -62,6 +62,9 @@ pointer:
 ```c++
 int a = 1;
 int &b = a;
+/*declare a variable, and set b = a, (similar to int *p = &a, declare *p, and set p = &a) 
+while here we set a's address to b's address, thus they have the same value; however 
+if we use int a = b, despite they have the same value, they have difference addresses*/
 cout << b << " ";
 a = 2;
 cout << b << endl;
