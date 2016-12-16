@@ -58,6 +58,15 @@ pointer:
 2. can be uninitialized
 3. can be reassigned*/
 ```
+
+```c++
+int a = 1;
+int &b = a;
+cout << b << " ";
+a = 2;
+cout << b << endl;
+>> 1 2
+```
 ```c++
 void add(int a, int &c, int *p) {c = a; *p = 2;}
 int main() {
