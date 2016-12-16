@@ -268,6 +268,12 @@ for (int i = 0; i < k - 1; i++)
 int topK = pq.top();
 ```
 
+public/protected/private
+```c++
+public: anyone can access
+protected: member function, friends and subclass
+private: member function and friends.
+```
 
 
 ### Notes in python
