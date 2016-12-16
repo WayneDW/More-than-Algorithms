@@ -64,14 +64,21 @@ void add(int a, int &c, int *p) {
 }
 
 int main() {
-    int a = 0;
-    int *b;
+    int a = 0, *b;
     add(1, a, b);
-    cout << a << endl;
+    cout << a << " " << *b << endl;
     cout << *b << endl;
 }
->> 1
->> 2
+>> 1 2
+```
+
+Declare a pointer to a function
+```c++
+int sum(int a, int b) {return a + b;}
+int main() {
+    int (*p)(int, int);
+    p = &sum;
+}
 ```
 
 Linked List, e.g. 328
