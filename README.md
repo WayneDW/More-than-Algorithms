@@ -78,8 +78,9 @@ int main() {
 }
 >> 3
 ```
-Static Local Parameter v.s. Local Parameter
+static
 ```c++
+// inside a function
 void func() {
     static int x = 0; 
     /* x is initialized only once across five calls of func() and the variable will get 
@@ -92,6 +93,13 @@ int main() { //int argc, char *argv[] inside the main is optional in the particu
     func(); // prints 1
     func(); // prints 2
 }
+```
+```c++
+// inside a class: only one copy, shared by instances
+```
+
+```c++
+// inside a file: private in the file
 ```
 
 Linked List, e.g. 328
