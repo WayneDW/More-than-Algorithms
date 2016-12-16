@@ -76,9 +76,25 @@ Declare a pointer to a function
 ```c++
 int sum(int a, int b) {return a + b;}
 int main() {
-    int (*p)(int, int);
+    int (*p)(int, int); // keep (*p)
     p = &sum;
+    cout << (*p)(1,2) << endl;
 }
+>> 3
+```
+Static Local Parameter v.s. Local Parameter
+```c++
+void func() {
+	static int x = 0; 
+	/* x is initialized only once across five calls of func() and the variable will get 
+    incremented five times after these calls. The final value of x will be 5. */
+	x++;
+	printf("%d\n", x); // outputs the value of x
+}
+
+int main() { //int argc, char *argv[] inside the main is optional in the particular program
+	func(); // prints 1
+	func(); // prints 2
 ```
 
 Linked List, e.g. 328
