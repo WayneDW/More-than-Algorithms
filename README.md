@@ -271,8 +271,8 @@ int topK = pq.top();
 public/protected/private
 ```c++
 public: anyone can access
-protected: member function, friends and subclass
-private: member function and friends.
+protected: member, friends and subclass
+private: member and friends.
 ```
 
 
