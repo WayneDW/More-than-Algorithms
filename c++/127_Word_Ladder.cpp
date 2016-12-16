@@ -34,10 +34,8 @@ public:
         while (!q.empty()) {
             int size = q.size();
             length++;
-
             for (int i = 0; i < size; i++) {
-                string tmp = q.front();
-                q.pop();
+                string tmp = q.front(); q.pop();
                 for (int j = 0; j < tmp.size(); j++) {
                     char backup = tmp[j];
                     for (int k = 0; k < 26; k++) {
@@ -46,7 +44,8 @@ public:
                         if (tmp == endWord) return length;
                         if (wordList.count(tmp) > 0) {
                             q.push(tmp);
-                            wordList.erase(tmp); // quite important
+                            // to avoid visiting a word for more than once, we erase it from dict once it is visited.
+                            wordList.erase(tmp); 
                         }
                         tmp[j] = backup;
                     }
