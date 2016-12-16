@@ -99,6 +99,8 @@ int main(){
     return 0;
 }
 >> 2 2
+```
+```c++
 /* inside a file: private in the file */
 /* inside a function*/
 void func() {
