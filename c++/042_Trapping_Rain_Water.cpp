@@ -29,7 +29,7 @@ public:
         stack<int> stk;
         while (pos < height.size()) {
             if (stk.empty() || height[pos] < height[stk.top()]) {
-                stk.push(pos);
+                stk.push(pos); // record position
                 pos++;
             }
             else {
@@ -46,7 +46,7 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     int dat[] = {0,1,0,2,1,0,1,3,2,1,2,1};
     vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
