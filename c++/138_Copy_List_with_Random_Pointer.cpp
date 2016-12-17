@@ -32,7 +32,7 @@ struct RandomListNode {
     Step 1, change the next pointer to: A->E->B->F->C->G
 
     Step 2, add random pointer to E, F, G as the following forms
-            E->random = A->random, then A = A->next->next, F->random = B->random,...
+            E->random = A->random->next, then A = A->next->next, F->random = B->random,...
 
     Step 3, break the two linklist into two parts, so that A->next = B 
 */
@@ -42,7 +42,7 @@ public:
         if (!head) return head;
         RandomListNode *l1, *l2;
 
-        for (l1 = head; l1; l1 = l1->next->next) {
+        for (l1 = head; l1; l1 = l1->next->next) { // nice struture
             RandomListNode *tmp = new RandomListNode(l1->label);
             tmp->next = l1->next; // step 1, E->B
             l1->next = tmp; // step1, A->E
@@ -64,7 +64,7 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     RandomListNode* A = new RandomListNode(1);
     RandomListNode* B = new RandomListNode(2);
