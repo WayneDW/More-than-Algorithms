@@ -72,7 +72,7 @@ public:
 
 
 int main() {
-	Queue s;
+    Queue s;
     Examples eg;
     s.push(1);
     s.push(2);
