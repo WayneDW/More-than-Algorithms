@@ -372,3 +372,17 @@ Bucket sort, e.g. Q164
         |____|____|____|___|
         1   3|4  6|7  9|10
 ```
+
+Binary Search, fundamental but easily to make mistakes, just remember this format
+```c++
+int binarySearch(vector<int> nums, int target) {
+    int left = 0, right = nums.size() - 1;
+    while (left <= right) {
+        int mid = left + (right - left) / 2; // a very good way
+        if (nums[mid] == target) return target;
+        else if (nums[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1;
+ }
+ ```
