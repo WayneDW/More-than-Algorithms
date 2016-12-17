@@ -31,6 +31,20 @@ public:
     }
 };
 
+class Solution { // double pointer 
+public:
+    void moveZeroes(vector<int>& nums) {
+        int i = 0, j = 0; // i-> 0, j-> non-zero
+        while (j < nums.size()) {
+            if (nums[j] != 0) {
+                swap(nums[i], nums[j]);
+                i++;
+            }
+            j++;
+        }
+    }
+};
+
 int main() {
 	Solution s;
     Examples eg;
