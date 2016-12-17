@@ -31,6 +31,105 @@ Type in the question number and the commit words as the rest of the parameters
 ```
 
 ### Notes in C++
+[Excellent tutorial on C++](http://www.learncpp.com/)
+
+Const/Int poiner
+```c++
+//read it backwards (as driven by Clockwise/Spiral Rule)...
+int* // pointer to int
+int const * // pointer to const int
+int * const // const pointer to int, initialized at first
+int const * const // const pointer to const int, initialized at first
+
+//Now the first const can be on either side of the type so:
+const int * == int const *
+const int * const == int const * const
+```
+
+
+Reference/Pointer
+```c++
+/*reference: 
+1. a new name for an object, doesn't exist indeed
+2. must be initialized
+3. can't reassigned to NULL; 
+pointer: 
+1. an actual object
+2. can be uninitialized
+3. can be reassigned*/
+```
+
+```c++
+int a = 1;
+int &b = a;
+/*declare a variable, and set b = a, (similar to int *p = &a, declare *p, and set p = &a) 
+while here we set a's address to b's address, thus they have the same value; however 
+if we use int a = b, despite they have the same value, they have difference addresses*/
+cout << b << " ";
+a = 2;
+cout << b << endl;
+>> 1 2
+```
+```c++
+void add(int a, int &c, int *p) {c = a; *p = 2;}
+int main() {
+    int a = 0, *b;
+    add(1, a, b);
+    cout << a << " " << *b << endl;
+    cout << *b << endl;
+}
+>> 1 2
+```
+
+Declare a pointer to a function
+```c++
+int sum(int a, int b) {return a + b;}
+int main() {
+    int (*p)(int, int); // keep (*p)
+    p = &sum;
+    cout << (*p)(1,2) << endl;
+}
+>> 3
+```
+static
+```c++
+/* http://www.learncpp.com/cpp-tutorial/811-static-member-variables*/
+/* inside a class: only one copy, shared by all objects of the class*/
+class Something{
+public:
+    static int s_value;
+};
+int Something::s_value = 1; 
+/* Because static member variables are not part of the individual class objects (they get initialized
+when the program starts), you must explicitly define the static member outside of the class */
+int main(){
+    Something first;
+    Something second;
+ 
+    second.s_value = 2;
+ 
+    std::cout << first.s_value << " " << second.s_value << '\n';
+    return 0;
+}
+>> 2 2
+```
+```c++
+/* inside a file: private in the file */
+/* inside a function*/
+void func() {
+    static int x = 0; 
+    /* x is initialized only once across five calls of func() and the variable will get 
+    incremented five times after these calls. The final value of x will be 5. */
+    x++;
+    printf("%d\n", x); // outputs the value of x
+}
+
+int main() { //int argc, char *argv[] inside the main is optional in the particular program
+    func(); // prints 1
+    func(); // prints 2
+}
+```
+
 
 Linked List, e.g. 328
 ```c++
@@ -179,6 +278,13 @@ priority_queue<int> pq(nums.begin(), nums.end());
 for (int i = 0; i < k - 1; i++)
     pq.pop(); 
 int topK = pq.top();
+```
+
+public/protected/private
+```c++
+public: anyone can access
+protected: member, friends and subclass
+private: member and friends.
 ```
 
 
