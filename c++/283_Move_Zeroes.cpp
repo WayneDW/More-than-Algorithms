@@ -46,7 +46,7 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     int dat[] = {0, 1, 0, 2,3,4,5};
     vector<int> vec(dat, dat + sizeof(dat) / sizeof(int));
