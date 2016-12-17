@@ -29,20 +29,18 @@ public:
         return res;
     }
     void dfs(int cur, int n, vector<int> &res) {
-        if (cur > n) return;
-        else {
+        if (cur <= n) {
             res.push_back(cur);
-            for (int i = 0; i < 10; i++) {
-                if (cur * 10 + i > n) return;
-                dfs(cur * 10 + i, n, res);
-            }
+            for (int i = 0; i < 10; i++)
+                dfs(10 * cur + i, n, res);
         }
+        else return;
     }
 };
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     vector<int> res = s.lexicalOrder(1123);
     print1dVector(res);
