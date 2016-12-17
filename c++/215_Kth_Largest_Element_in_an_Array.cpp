@@ -8,7 +8,7 @@
 #include <string>
 #include <algorithm>
 #include <climits>
-#include "func.cpp"
+#include "000_basic.cpp"
 
 using namespace std;
 
@@ -30,38 +30,66 @@ using namespace std;
 // otherwise divide the problem in the left part
 // T(n) = T(n/2) + o(n)
 
+class Solution3 { 
+public:
+    int partition(vector<int>& nums, int left, int right) {
+        int pivot = nums[left];
+        int l = left + 1, r = right;
+        while (l <= r) {
+            if (nums[l] < pivot && nums[r] > pivot)
+                swap(nums[l++], nums[r--]);
+            if (nums[l] >= pivot) l++; 
+            if (nums[r] <= pivot) r--;
+        }
+        swap(nums[left], nums[r]);
+        return r;
+    }
+    
+    int findKthLargest(vector<int>& nums, int k) {
+        int left = 0, right = nums.size() - 1;
+        while (true) {
+            int pos = partition(nums, left, right);
+            if (pos == k - 1) return nums[pos];
+            if (pos > k - 1) right = pos - 1;
+            else left = pos + 1;
+        }
+    }
+};
+
 
 class Solution {
 public:
     int findKthLargest(vector<int>& nums, int k) {
-        // heapify
-        heapSize = nums.size();
-        for (int i = (heapSize >> 1) - 1; i >= 0; i--)
-            heapify(nums, i);
-        // pop k-1 times
+        // build a heap
+        int heapSize = nums.size();
+        for (int i = (heapSize >> 1) - 1; i >= 0; i--) {
+            heapify(nums, i, heapSize);
+        }
+        // pop the top k-1 items
         for (int i = 0; i < k - 1; i++)
-            heapPop(nums);
+            heapPop(nums, heapSize);
+        // pop the target
         return nums[0];
-        // return the top
     }
-    void heapify(vector<int>& nums, int idx) {
-        int pivot = idx;
-        int left = (idx << 1) + 1;
-        int right = (idx << 1) + 2;
-        if (left < heapSize && nums[pivot] < nums[left]) pivot = left; 
-        if (right < heapSize && nums[pivot] < nums[right]) pivot = right; 
-        if (idx != pivot) {
-            swap(nums[idx], nums[pivot]);
-            heapify(nums, pivot);
+
+    void heapify(vector<int>& nums, int node, int heapSize) {
+        int left = (node << 1) + 1;
+        int right = (node << 1) + 2;
+        int pivot = node;
+        if (left < heapSize && nums[left] > nums[node]) node = left;
+        if (right < heapSize && nums[right] > nums[node]) node = right;
+        if (pivot != node) {
+            swap(nums[node], nums[pivot]);
+            // make sure the middle part modify the lower part, and the lower part still maintain heap structure
+            heapify(nums, node, heapSize);
         }
     }
-    void heapPop(vector<int>& nums) {
+
+    void heapPop(vector<int>& nums, int& heapSize) {
         swap(nums[0], nums[heapSize-1]);
         heapSize--;
-        heapify(nums, 0);
+        heapify(nums, 0, heapSize);
     }
-private:
-    int heapSize;
 };
 
 
@@ -77,7 +105,7 @@ public:
 
 
 int main() {
-	Solution s;
+	Solution3 s;
     Examples eg;
     int dat[6] = {3,2,1,5,6,4};
     //int dat[7] = {7,6,5,4,3,2,1};
