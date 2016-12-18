@@ -8,7 +8,7 @@
 
 using namespace std;
 
-class Solution {
+class Solution { // tedious solution
 public:
     int abs(int x) {
         if (x >= 0)
@@ -50,6 +50,25 @@ public:
 };
 
 
+class Solution { // better solution
+public:
+    int myAtoi(string str) {
+        int base = 0, i = 0, sign = 1;
+        while (str[i] == ' ') i++;
+        if (str[i] == '+' || str[i] == '-') {
+            sign = 1 - 2 * (str[i++] == '-');
+        }
+        while (str[i] >= '0' && str[i] <= '9') {
+            // str[i] - '0' > 7: for fear of this case -2147483647: output -2147483648
+            if (base > INT_MAX / 10 || (base == INT_MAX / 10 && str[i] - '0' > 7)) {
+                if (sign == 1) return INT_MAX;
+                else return INT_MIN;
+            }
+            base = 10 * base + (str[i++] - '0');
+        }
+        return base * sign;    
+    }
+};
 
 
 int main() {
