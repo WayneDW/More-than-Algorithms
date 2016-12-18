@@ -7,7 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <climits>
-#include "func.cpp"
+#include "000_basic.cpp"
 
 using namespace std;
 
@@ -38,5 +38,4 @@ public:
         return head->next;
     }
 };
-
 
