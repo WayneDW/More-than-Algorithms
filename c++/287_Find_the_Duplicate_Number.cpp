@@ -12,9 +12,9 @@
 
 using namespace std;
 
-class Solution_fake { // it uses values rather than reference of nums, it consumes additional memory
+class Solution { // it uses values rather than reference of nums, it consumes additional memory
 public:
-    int findDuplicate2(vector<int> nums) {
+    int findDuplicate(vector<int> nums) {
         sort(nums.begin(), nums.end());
         if (nums.size() == 0) return 0;
         int last = nums[0];
@@ -27,13 +27,13 @@ public:
     }
 };
 
-
 // a much better idea is to use two pointers, fast and slow
 // think of the array as a linked list based on its own index
 // [3,1,2,5,3,4]  3->5->4->3->5->3
 // which can regarded as 
 // 3->5->4->3
 //    |-----|   
+
 class Solution {
 public:
     int findDuplicate(vector<int>& nums) {
