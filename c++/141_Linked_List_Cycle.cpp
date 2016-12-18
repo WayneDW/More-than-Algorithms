@@ -22,11 +22,9 @@ public: // great idea, create two pointers
             fast = fast->next;
             if (fast->next) {
                 fast = fast->next;
-                if (fast == slow)
-                    return true;
+                if (fast == slow) return true;
             }
-            else
-                break;
+            else break;
         }
         return false;
     }
@@ -34,7 +32,7 @@ public: // great idea, create two pointers
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     ListNode *n = new ListNode(1);
     n->next = n;
