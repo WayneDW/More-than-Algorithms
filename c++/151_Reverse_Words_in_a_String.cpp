@@ -101,7 +101,7 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     string ss = "       abc           bca    xxb";
     s.reverseWords(ss);
