@@ -10,8 +10,6 @@
 
 using namespace std;
 
-
-
 /*
 [3,9,20,null,null,15,7],
     3
@@ -25,7 +23,6 @@ using namespace std;
   [9,20],
   [15,7]
 ]*/
-
 
 class Solution {
 public:
@@ -50,9 +47,8 @@ public:
     }
 };
 
-
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 
     vector<vector<int> > res = s.levelOrder(eg.setTree0());
