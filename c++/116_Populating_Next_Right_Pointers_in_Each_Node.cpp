@@ -37,28 +37,23 @@ class Solution {
 public:
     void connect(TreeLinkNode *root) {
         if (!root) return;
-        queue<TreeLinkNode*> que;
-        que.push(root);
-        while (!que.empty()) {
-            int size = que.size();
-            for (int i = 0; i < size - 1; i++) {
-                TreeLinkNode* sub = que.front();
-                que.pop();
-                sub->next = que.front();
-                if (sub->left) que.push(sub->left);
-                if (sub->right) que.push(sub->right);
+        queue<TreeLinkNode*> q;
+        q.push(root);
+        while(!q.empty()) {
+            int n = q.size();
+            for (int i = 0; i < n; i++) {
+                TreeLinkNode *cur = q.front(); q.pop();
+                if (i != n - 1) cur->next = q.front();
+                else cur->next = NULL;
+                if (cur->left) q.push(cur->left);
+                if (cur->right) q.push(cur->right);
             }
-            TreeLinkNode* sub = que.front();
-            sub->next = NULL;
-            que.pop();
-            if (sub->left) que.push(sub->left);
-            if (sub->right) que.push(sub->right);
-        } 
+        }
     }
 };
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 }
