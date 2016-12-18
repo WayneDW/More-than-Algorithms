@@ -6,9 +6,7 @@ public:
         int n = s.size();
         map<char, int> dict;
         for (int i = 0; i < n; i++) {
-            if ((dict.count(s[i]) != 0) && (last < dict[s[i]])) {
-                last = dict[s[i]];
-            }
+            if ((dict.count(s[i]) != 0) && (last < dict[s[i]])) last = dict[s[i]];
             dict[s[i]] = i;
             maximum = max(i - last, maximum); // the original one or the next one between two points
         }
