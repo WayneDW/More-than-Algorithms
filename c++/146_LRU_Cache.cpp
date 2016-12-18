@@ -42,7 +42,7 @@ class LRUCache{
         }
     }
 
-    void moveToEnd(int key) { // move the key to the mostly recent used location
+    void moveToEnd(int key) { // move the key to the mostly recent used location/ end
         if (dt[key] == tail) return; // do nothing if it is already in the tail
         Node* nd = dt[key];
         if (nd == head) { // if key in the head
@@ -74,24 +74,21 @@ public:
         moveToEnd(key); // move the key to the end of list due to usage
         return dt[key]->val;  
     }
-    
-    void set(int key, int value) {
-        if (get(key) != -1) {
-        //if (dt.count(key) != 0) { // can't use this method this it can't update
-            dt[key]->val = value;
+
+    void set(int key, int val) {
+        if (dt.count(key) > 0) {
+            moveToEnd(key);
+            dt[key]->val = val;
             return;
         }
-        if (isFull()) removeNodeHead(); // remove the least used node
-        insertNodeTail(key, value);
+        if (dt.size() == maxSize) removeNodeHead(); // remove the least used node
+        insertNodeTail(key, val);
     }
 
-    bool isFull() {
-        return dt.size() == maxSize;
-    }
 };
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 }
