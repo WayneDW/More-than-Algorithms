@@ -21,7 +21,6 @@ public:
             substring = ifPalin(s, i, i + 1);
             if (substring.size() > sub.size())
                 sub = substring;
-            
         }
         return sub;
     }
