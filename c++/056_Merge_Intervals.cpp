@@ -17,9 +17,9 @@ using namespace std;
 
 class Solution {
 public:
-	static bool cmp(Interval a, Interval b) { // mistake without static
-		return a.start < b.start;
-	}
+    static bool cmp(Interval a, Interval b) { // mistake without static
+        return a.start < b.start;
+    }
     vector<Interval> merge(vector<Interval>& intervals) {
         int n = intervals.size();
         if (n <= 1) return intervals;
@@ -27,15 +27,15 @@ public:
         sort(intervals.begin(), intervals.end(), cmp);
         res.push_back(intervals[0]);
         for (int i = 1; i < n; i++) {
-        	if (res.back().end < intervals[i].start) {
-        		// two ways of struct initialization
-        		//Interval s = {intervals[i].start, intervals[i].end};
-        		//Interval s = Interval(intervals[i].start, intervals[i].end);
-        		//res.push_back(s);
-        		res.push_back(intervals[i]);
-        	}
-        	else
-        		res.back().end = max(intervals[i].end, res.back().end);
+            if (res.back().end < intervals[i].start) {
+                // two ways of struct initialization
+                //Interval s = {intervals[i].start, intervals[i].end};
+                //Interval s = Interval(intervals[i].start, intervals[i].end);
+                //res.push_back(s);
+                res.push_back(intervals[i]);
+            }
+            else
+                res.back().end = max(intervals[i].end, res.back().end);
         }
         return res;
     }
@@ -44,5 +44,5 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
 }
