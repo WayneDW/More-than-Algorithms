@@ -7,7 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <climits>
-#include "func.cpp"
+#include "000_basic.cpp"
 
 using namespace std;
 
@@ -44,26 +44,32 @@ public:
 };
 
 // concise solution
-class Solution {
+class Solution2 {
 public:
     ListNode* reverseList(ListNode* head) {
-        ListNode* pre = NULL;
-        ListNode* next;
+        ListNode *prev(NULL), *nextN;
         while (head) {
-            next = head->next;
-            head->next = pre;
-            pre = head;
-            head = next;
+            nextN = head->next;
+            head->next = prev;
+            prev = head;
+            head = nextN;
         }
-        return pre;
+        return prev;
     }
 };
 
 // recursive method
 /*
+    step 1, recursion to head = 3, 4->next = 3
+    step 2, here return node at 4
+    step 3, go back to step at 2, here node is also 4, here update 3->next = 2
+    step 4, ...
+
+      1    ->    2    ->    3    ->    4    -> NULL
+
                         NULL
                            \
-      1    ->    2    ->    3    <-    4    -> NULL
+      1    ->    2    ->    3    <-    4       NULL
                                       node
                            head
               NULL
@@ -72,13 +78,14 @@ public:
                                       node
                 head
 */
+
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
-        if (!head && !head->next) return head;
+        if (!head || !head->next) return head;
         ListNode* node = reverseList(head->next);
         head->next->next = head;
-        head->next = NULL;
+        head->next = NULL; // this step only works at the last step
         return node;
     }
 };
@@ -92,5 +99,5 @@ int main() {
     n1->next = n2;
     n2->next = n3;
     ListNode* res = s.reverseList(n1);
-    cout << res->next->val << endl;
+    cout << res->next->next->next->val << endl;
 }
