@@ -39,7 +39,7 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     TreeNode *t0 = new TreeNode(3);
     TreeNode *t1 = new TreeNode(9);
