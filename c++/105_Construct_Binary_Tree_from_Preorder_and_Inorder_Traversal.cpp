@@ -37,7 +37,7 @@ public:
     }
 };
 int main() {
-	Solution2 s;
+    Solution2 s;
     Examples eg;
     vector<int> a, b;
     a.push_back(1);
