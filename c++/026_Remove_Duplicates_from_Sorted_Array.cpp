@@ -28,6 +28,20 @@ public:
 };
 
 
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int n = nums.size();
+        if (n < 2) return n;
+        int idx = 1;
+        for (int i = 1; i < n; i++) {
+            if (nums[i] != nums[i-1])
+                nums[idx++] = nums[i];
+        }
+        return idx;
+    }
+};
+
 int main() {
     Solution s;
     int dat[] = {1, 2, 2, 3, 3, 4};
