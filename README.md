@@ -73,10 +73,9 @@ cout << b << endl;
 ```c++
 void add(int a, int &c, int *p) {c = a; *p = 2;}
 int main() {
-    int a = 0, *b;
-    add(1, a, b);
-    cout << a << " " << *b << endl;
-    cout << *b << endl;
+    int a = 0, b;
+    add(1, a, &b);
+    cout << a << " " << b << endl;
 }
 >> 1 2
 ```
