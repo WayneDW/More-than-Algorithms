@@ -10,20 +10,20 @@ using namespace std;
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-    	int n = nums.size();
-    	if (n <= 1)
-    		return n;
-    	int i = 0;
-    	int j = 1;
-    	while (i < n - j) {
-    		if (nums[i] == nums[i + 1]) {
-    			nums.erase(nums.begin() + i);
-    			j++;
-    		}
-    		else
-    			i++;
-    	}
-    	return nums.size();
+        int n = nums.size();
+        if (n <= 1)
+            return n;
+        int i = 0;
+        int j = 1;
+        while (i < n - j) {
+            if (nums[i] == nums[i + 1]) {
+                nums.erase(nums.begin() + i);
+                j++;
+            }
+            else
+                i++;
+        }
+        return nums.size();
     }
 };
 
