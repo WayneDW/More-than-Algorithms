@@ -7,7 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <climits>
-#include "func.cpp"
+#include "000_basic.cpp"
 
 using namespace std;
 
@@ -47,23 +47,6 @@ public:
     }
 };
 
-class Solution {
-public:
-    void reverseWords(string &s) {
-        int j;
-        string res;
-        for (int i = s.size() - 1; i > -1; i--) {
-            if (isspace(s[i]))
-                j = i;
-            else if (i == 0 || isspace(s[i - 1])){
-                if (res.size() > 0) res.push_back(' ');
-                res.append(s.substr(i, j - i));
-            }
-        }
-        s = res;
-    }
-};
-
 
 class Solution3 { // unknown bugs
 public:
@@ -99,11 +82,28 @@ public:
     }
 };
 
+class Solution {
+public:
+    void reverseWords(string &s) {
+        int j = INT_MAX;
+        string res;
+        for (int i = s.size() - 1; i > -1; i--) {
+            if (isspace(s[i]))
+                j = i;
+            else if (i == 0 || isspace(s[i - 1])){
+                if (res.size() > 0) res.push_back(' ');
+                res.append(s.substr(i, j - i));
+            }
+            cout << j << endl;
+        }
+        s = res;
+    }
+};
 
 int main() {
-	Solution3 s;
+	Solution s;
     Examples eg;
-    string ss = "       abc           bca    xxb  ";
+    string ss = "       abc           bca    xxb";
     s.reverseWords(ss);
     cout << ss << "|" << endl;
 }
