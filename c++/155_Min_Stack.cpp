@@ -25,6 +25,10 @@ class MinStack {
     stack<int> dat;
     stack<int> minDat;
 public:
+    // MinStack() {
+    //     dat.clear(); // stack has no clear
+    //     minDat.clear();
+    // }
     
     void push(int x) {
         if (minDat.empty() || minDat.top() >= x)
@@ -59,6 +63,6 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 }
