@@ -22,17 +22,15 @@ public:
     }
     void dfs(TreeNode* root, int sum, vector<int> tmp, vector<vector<int> > & res) {
         if (!root) {
-            if (sum == 0)
-                res.push_back(tmp);
+            if (sum == 0) res.push_back(tmp);
             return;
         }
         int v = root->val;
         tmp.push_back(v);
         if (root->left) dfs(root->left, sum - v, tmp, res);
         if (root->right) dfs(root->right, sum - v, tmp, res);
-        if (!root->left && !root->right) {
-            if (sum == v)
-                res.push_back(tmp);
+        if (!root->left && !root->right) { // take care the node without child
+            if (sum == v) res.push_back(tmp);
             return;
         } 
     }
@@ -40,6 +38,6 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 }
