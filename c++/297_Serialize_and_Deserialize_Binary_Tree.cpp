@@ -7,7 +7,7 @@
 #include <string>
 #include <algorithm>
 #include <climits>
-#include "func.cpp"
+#include "000_basic.cpp"
 
 using namespace std;
 
@@ -60,7 +60,7 @@ private:
 // codec.deserialize(codec.serialize(root));
 
 int main() {
-	Codec s;
+    Codec s;
     Examples eg;
     TreeNode* t0 = new TreeNode(1);
     TreeNode* t1 = new TreeNode(2);
@@ -68,5 +68,4 @@ int main() {
     t0->left = t1;
     t0->right = t2;
     cout << s.deserialize("1 2 3") << endl;
-
 }
