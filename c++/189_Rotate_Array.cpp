@@ -26,11 +26,10 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     int tmp[] = {1,2,3,4,5,6,7};
     vector<int> vec(tmp, tmp + 7);
     s.rotate(vec, 3);
     print1dVector(vec);
-
 }
