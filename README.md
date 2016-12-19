@@ -73,10 +73,9 @@ cout << b << endl;
 ```c++
 void add(int a, int &c, int *p) {c = a; *p = 2;}
 int main() {
-    int a = 0, *b;
-    add(1, a, b);
-    cout << a << " " << *b << endl;
-    cout << *b << endl;
+    int a = 0, b;
+    add(1, a, &b);
+    cout << a << " " << b << endl;
 }
 >> 1 2
 ```
@@ -229,6 +228,7 @@ vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
 
 // simple way to initialization
 vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
+vec.push(vector<int>{0, 1, 2, 3, 4, 5});
 int dat[] = {0, 1};
 vector<int> vec(dat, dat + sizeof(dat) / sizeof(int)); // unwieldy way
 ```
