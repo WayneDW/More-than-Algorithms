@@ -17,7 +17,6 @@ struct TreeNode {
 };
 
 // recursion
-
 class Solution2 {
 public:
     bool isSymmetric(TreeNode* root) {
@@ -32,6 +31,7 @@ public:
         return isSym(tl->left, tr->right) && isSym(tl->right, tr->left);
     }
 };
+
 // iteration
 class Solution {
 public:
@@ -40,9 +40,6 @@ public:
         queue<TreeNode*> Tl, Tr;
         Tl.push(root->left);
         Tr.push(root->right);
-
-
-
         while (!Tl.empty() && !Tr.empty()) {
             TreeNode *lnode = Tl.front();
             TreeNode *rnode = Tr.front();
@@ -59,13 +56,6 @@ public:
         }
         if (!Tl.empty() || !Tr.empty()) return false;
         return true;
-    }
-};
-
-class Solution {
-public:
-    bool isSymmetric(TreeNode* root) {
-        
     }
 };
 
