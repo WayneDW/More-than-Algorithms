@@ -11,8 +11,7 @@
 
 using namespace std;
 
-/*Given an integer n, return the number of trailing zeroes in n!.
-
+/*Given an integer n, return the number of trailing zeroes in n!
 Note: Your solution should be in logarithmic time complexity.*/
 
 class Solution {
@@ -22,15 +21,14 @@ public:
         int sum = 0, div = 5;
         while (pow-- > 0) {
             sum += n / div;
-            div*= 5;
+            div *= 5;
         }
         return sum;
     }
 };
 
-
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     cout << s.trailingZeroes(50) << endl;
 }
