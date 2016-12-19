@@ -8,37 +8,37 @@
 using namespace std;
 
 
-class Solution {
+class Solution { // in 3 sum, it's o(n2), so sort can be used
 public:
     vector<vector<int> > threeSum(vector<int>& nums) {
-    	int n = nums.size();
-    	vector<vector <int> > out;
-    	sort(nums.begin(), nums.end());
-    	
-    	for (int i = 0; i < n - 2; i++) {
-    		int left = i + 1;
-    		int right = n - 1;
-    		if (i == 0 or nums[i] != nums[i - 1]) { // to avoid repeat
-	    		while (left < right) {
-	    			if (nums[i] + nums[left] + nums[right] == 0) {
-	    				int tmps[] = {nums[i], nums[left], nums[right]};
-	    				vector<int> tmp(tmps, tmps + sizeof(tmps) / sizeof(int));
-	    				out.push_back(tmp);
+        int n = nums.size();
+        vector<vector <int> > out;
+        sort(nums.begin(), nums.end());
+        
+        for (int i = 0; i < n - 2; i++) {
+            int left = i + 1;
+            int right = n - 1;
+            if (i == 0 or nums[i] != nums[i - 1]) { // to avoid repeat
+                while (left < right) {
+                    if (nums[i] + nums[left] + nums[right] == 0) {
+                        int tmps[] = {nums[i], nums[left], nums[right]};
+                        vector<int> tmp(tmps, tmps + sizeof(tmps) / sizeof(int));
+                        out.push_back(tmp);
                         left++;
                         right--;
                         while(nums[left]==nums[left-1]) left++;
                         while(nums[right]==nums[right+1]) right--;
-	    			}
-	    			else if (nums[i] + nums[left] + nums[right] < 0) {
+                    }
+                    else if (nums[i] + nums[left] + nums[right] < 0) {
                         left++;
-	    			}
-	    			else {
+                    }
+                    else {
                         right--;
-	    			}
-	    		}		
-    		}
-    	}
-    	return out;
+                    }
+                }       
+            }
+        }
+        return out;
     }
 };
 
@@ -50,5 +50,5 @@ int main() {
     vector<vector<int> > out;
     out = s.threeSum(nums);
     for (int i = 0; i < out[0].size(); i++)
-    	cout << out[0][i] << endl;
+        cout << out[0][i] << endl;
 }
