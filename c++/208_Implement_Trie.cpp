@@ -18,8 +18,7 @@ public:
     bool type;
     // Initialize your data structure here.
     TrieNode(): type(NULL)  {
-        for (auto &a : child)
-            a = NULL;
+        for (auto &a : child) a = NULL;
     }
 };
 
@@ -72,8 +71,7 @@ private:
 // trie.insert("somestring");
 // trie.search("key");
 
-
 int main() {
-	Trie s;
+    Trie s;
     Examples eg;
 }
