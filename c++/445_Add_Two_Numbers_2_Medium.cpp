@@ -114,7 +114,7 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     ListNode* l1 = new ListNode(9);
     ListNode* l2 = new ListNode(1);
