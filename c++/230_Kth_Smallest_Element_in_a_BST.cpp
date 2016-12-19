@@ -64,7 +64,7 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     TreeNode* t= new TreeNode(1);
     TreeNode* t1= new TreeNode(2);
