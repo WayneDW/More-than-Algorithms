@@ -21,7 +21,7 @@ public:
         if (!root) return 0;
         return max(maxDepth(root->left), maxDepth(root->right)) + 1;
     }
-    bool checkDFS(TreeNode* root) {
+    bool checkDFS(TreeNode* root) { // postorder traverse
         if (!root) return true;
         int l = maxDepth(root->left);
         int r = maxDepth(root->right);
@@ -32,7 +32,7 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     cout << s.isBalanced(eg.setTree0()) << endl;
 }
