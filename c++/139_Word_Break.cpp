@@ -51,7 +51,7 @@ public:
     bool wordBreak(string s, unordered_set<string>& wordDict) {
         int n = s.size();
         if (n == 0) return false;
-        vector<bool> dp(n + 1, false); // dp[i+1] : 0~i is trues
+        vector<bool> dp(n + 1, false); // dp[i+1] : 0~i is true
         dp[0] = true;
         for (int i = 0; i < n; i++) {
             for (int j = i; j >= 0; j--) {
@@ -67,7 +67,7 @@ public:
 
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     unordered_set<string> wordDict;
     wordDict.insert("leet");
