@@ -23,32 +23,46 @@ class Solution {
 public:
     UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
         if (!node) return NULL;
-        UndirectedGraphNode *g1 = node, *g2 = new UndirectedGraphNode(node->label);
+        UndirectedGraphNode *copy = new UndirectedGraphNode(node->label);
         queue<UndirectedGraphNode*> q;
         unordered_map<UndirectedGraphNode*, UndirectedGraphNode*> ht;
-        ht[g1] = g2;
-        q.push(g1);
+        ht[node] = copy;
+        q.push(node);
         while (!q.empty()) {
             UndirectedGraphNode* node = q.front(); q.pop();
-            g2 = ht[node];
+            copy = ht[node];
             vector<UndirectedGraphNode*> neigh = node->neighbors;
             for (int i = 0; i < neigh.size(); i++) {
                 if (ht.count(neigh[i]) == 0) {
                     UndirectedGraphNode* tmp = new UndirectedGraphNode(neigh[i]->label);
                     ht[neigh[i]] = tmp;
-                    g2->neighbors.push_back(tmp);
+                    copy->neighbors.push_back(tmp);
                     q.push(neigh[i]);
                 }
-                else g2->neighbors.push_back(ht[neigh[i]]); // essential part, to avoid endless loop
+                else copy->neighbors.push_back(ht[neigh[i]]); // essential part, to avoid endless loop
             }
         }
         return ht[node];
     }
 };
 
+class Solution {
+public:
+    UndirectedGraphNode *cloneGraph(UndirectedGraphNode *node) {
+        if (!node) return NULL;
+        if (mp.count(node) == 0) {
+            mp[node] = new UndirectedGraphNode(node->label);
+            for (auto neigh: node->neighbors)
+                mp[node]->neighbors.push_back(cloneGraph(neigh));
+        }
+        return mp[node];
+    } 
+private:
+    unordered_map<UndirectedGraphNode*, UndirectedGraphNode*> mp;
+};
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
     UndirectedGraphNode* g1 = new UndirectedGraphNode(1);
     UndirectedGraphNode* g2 = new UndirectedGraphNode(2);
