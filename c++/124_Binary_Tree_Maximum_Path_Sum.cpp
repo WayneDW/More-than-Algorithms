@@ -15,7 +15,7 @@ using namespace std;
 
 
 class Solution {
-    int postOrder(TreeNode* root, int & maxSum) {
+    int postOrder(TreeNode* root, int &maxSum) {
         if (!root) return 0;
         int l = max(0, postOrder(root->left, maxSum));
         int r = max(0, postOrder(root->right, maxSum));
@@ -31,6 +31,6 @@ public:
 };
 
 int main() {
-	Solution s;
+    Solution s;
     Examples eg;
 }
