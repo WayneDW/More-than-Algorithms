@@ -193,14 +193,19 @@ XOR 0011 (decimal 3)
 [Bit flag](http://www.learncpp.com/cpp-tutorial/3-8a-bit-flags-and-bit-masks/)
 
 ```c++
-const unsigned char option4 = 0x08; // hex for 0000 1000, in c++11 use uint8_t instead of unsigned char
+// in c++11 use uint8_t instead of unsigned char
+const unsigned char option4 = 0x08; // hex for 0000 1000
+// Here 0x stands for hexadecimal number
+// 3 = 0011 (binary)
+// F = 15 (base 10) = 1111 (binary)
+// 0x3FFFFFFF = 0011 1111 1111 1111 1111 1111 1111 1111
 if (myflags & option4) ... // if option4 is set, do something
 myflags |= option4; // turn option 4 on.
 myflags |= option4 | option5; // turn options 4 and 5 on.
 myflags &= ~option4; // turn option 4 off
 myflags ^= option4; // flip option4 from on to off, or vice versa
-
 ```
+
 
 
 ```c++
