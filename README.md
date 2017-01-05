@@ -90,7 +90,7 @@ int main() {
 }
 >> 3
 ```
-static
+Static
 ```c++
 /* http://www.learncpp.com/cpp-tutorial/811-static-member-variables*/
 /* inside a class: only one copy, shared by all objects of the class*/
@@ -311,6 +311,11 @@ protected: member, friends and subclass
 private: member and friends.
 ```
 
+for loop
+```c++
+for (i = 0, res += 1; i < 0; i++) // this res adds 1
+for (int i = 0, res += 1; i < 0; i++) // this res doesn't add 1
+```
 
 ### Notes in python
 
