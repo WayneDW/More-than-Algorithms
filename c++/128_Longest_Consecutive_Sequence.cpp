@@ -23,7 +23,7 @@ public:
             if (st.count(i) == 0) continue;
             st.erase(i);
             int prev = i - 1, next = i + 1;
-            while (st.count(prev) > 0) st.erase(prev--); // without erase still works, yet too slow
+            while (st.count(prev) > 0) st.erase(prev--); // without erase still works, yet too slow, avoid repeating
             while (st.count(next) > 0) st.erase(next++);
             cnt = max(cnt, next - prev - 1);
         }
