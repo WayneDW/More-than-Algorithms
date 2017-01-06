@@ -152,10 +152,19 @@ for (auto&& i : v) // access by reference, the type of i is int&
 ```
 map, unordered_map
 ```c++
-for(std::map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
+for(map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
     int k = iter->first;
     int v = iter->second;
 }
+```
+
+set
+```c++
+for (set<int> itr  = os.begin(); itr != os.end() ; ++itr) 
+    cout << *itr << endl;
+// for c++11 or later
+for (auto item : os)
+    cout << item << endl;
 ```
 
 Vector, List, Deque
