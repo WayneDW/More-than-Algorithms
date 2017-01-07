@@ -83,7 +83,7 @@ private:
     
 
 
-    bool query(const char* word, Trie* node) {
+    bool query(const char* word, Trie* node) { // a faster version since char is better
         for (int i = 0; word[i]; i++) {
             if (node && word[i] != '.') node = node->child[word[i] - 'a'];
             else if (node && word[i] == '.') { 
