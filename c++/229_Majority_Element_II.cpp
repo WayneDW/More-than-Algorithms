@@ -23,7 +23,9 @@ Hint:
 How many majority elements could it possibly have?*/
 
 
-/*Two, this is the Boyer-Moore Majority Vote algorithm*/
+/*Two, this is the Boyer-Moore Majority Vote algorithm.
+This question is what I failed in Google's interview*/
+
 class Solution {
 public:
     vector<int> majorityElement(vector<int>& nums) {
