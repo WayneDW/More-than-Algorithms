@@ -326,6 +326,13 @@ for (i = 0, res += 1; i < 0; i++) // this res adds 1
 for (int i = 0, res += 1; i < 0; i++) // this res doesn't add 1
 ```
 
+return
+```c++
+// funtion pass by reference of dict
+return dict[4] = 5;
+// this returns 5 and update the dict
+```
+
 ### Notes in python
 
 ```python
