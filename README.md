@@ -98,6 +98,7 @@ class Something{
 public:
     static int s_value;
 };
+// a good case is #[279](discuss.leetcode.com/topic/23812/static-dp-c-12-ms-python-172-ms-ruby-384-ms/6)
 int Something::s_value = 1; 
 /* Because static member variables are not part of the individual class objects (they get initialized
 when the program starts), you must explicitly define the static member outside of the class */
