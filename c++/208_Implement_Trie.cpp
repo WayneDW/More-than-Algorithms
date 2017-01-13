@@ -14,7 +14,7 @@ using namespace std;
 
 class TrieNode {
 public:
-    TrieNode* child[26];
+    TrieNode* child[26]; // a pointer to an array of 26 integers
     bool type;
     // Initialize your data structure here.
     TrieNode(): type(NULL)  {
