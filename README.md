@@ -236,7 +236,7 @@ p = (unsigned long long) p * m / n ...
 String
 ```c++
 string.substr(2, 2) # abcdefg -> cd
-string.substr(2) # abcdefg -> cde
+string.substr(2) # abcdefg -> cdefg
 
 string.push_back('a');
 string.append("abc");
