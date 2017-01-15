@@ -1,27 +1,69 @@
 #include <iostream>
 #include <vector>
 #include <typeinfo>
+#include <map>
+#include <set>
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
 template <class types>
-void printVector(vector<types> vec) {
-    for (int i = 0; i < vec.size(); i++) {
-        cout << vec[i] << " ";
-    }
+void print(vector<types> vec) {
+    for (auto v: vec) cout << v << " ";
     cout << endl;
 }
 
 template <class types>
-void printVector(vector<vector<types> > vec) {
-    for (int i = 0; i < vec.size(); i++) {
-        for (int j = 0; j < vec[i].size(); j++)
-                cout << vec[i][j] << " ";
+void print(vector<vector<types> > vec) {
+    for (auto v: vec) {
+        for (auto p: v) cout << p << " ";
         cout << endl;
     }
     cout << endl;
 }
 
+template <class types>
+void print(vector<pair<types, types> > vec) {
+    for (auto v: vec) cout << "(" << v.first << ","  << v.second << ")" << " ";
+    cout << endl;
+}
+
+template <class types>
+void print(map<types, types> mp) {
+    for (auto it: mp) cout << "(" << it.first << ","  << it.second << ")" << " ";
+    cout << endl;
+}
+
+template <class types>
+void print(unordered_map<types, types> mp) {
+    for (auto it: mp) cout << "(" << it.first << ","  << it.second << ")" << " ";
+    cout << endl;
+}
+
+template <class types>
+void print(multimap<types, types> mp) {
+    for (auto it: mp) cout << "(" << it.first << ","  << it.second << ")" << " ";
+    cout << endl;
+}
+
+template <class types>
+void print(set<types> st) {
+    for (auto it: st) cout << it << " ";
+    cout << endl;
+}
+
+template <class types>
+void print(unordered_set<types> st) {
+    for (auto it: st) cout << it << " ";
+    cout << endl;
+}
+
+template <class types>
+void print(multiset<types> st) {
+    for (auto it: st) cout << it << " ";
+    cout << endl;
+}
 
 struct ListNode {
     int val;
