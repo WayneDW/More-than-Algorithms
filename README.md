@@ -306,6 +306,15 @@ null pointer in C++11
 nullptr
 ```
 
+multimap v.s. map, key difference: we can have multiple keys
+```c++
+multimap<int, int> mp;
+mp.emplace(1, 2);
+mp.emplace(1, 3);
+print(mp);
+>> (1, 2) (1, 3)
+```
+
 priority_queue
 ```c++
 priority_queue<int> pq(nums.begin(), nums.end());
@@ -419,7 +428,7 @@ Bucket sort, e.g. Q164
         1   3|4  6|7  9|10
 ```
 
-Binary Search, fundamental but easily to make mistakes, just remember this format
+Binary Search, easy to make mistakes in the corner case
 ```c++
 int binarySearch(vector<int> nums, int target) {
     int left = 0, right = nums.size() - 1;
@@ -432,3 +441,10 @@ int binarySearch(vector<int> nums, int target) {
     return -1;
  }
  ```
+KMP algorithm
+
+Segment Tree
+
+Red Black Tree
+ 
+
