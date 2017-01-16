@@ -286,6 +286,20 @@ ostringstream
 // convert output (analogy) to string
 see example c++ 165, 297
 ```
+pass by reference/ value
+
+```c++
+Overhead with passing by reference:
+
+each access needs a dereference, i.e., there is one more memory read
+Overhead with passing by value:
+
+the value needs to be copied on stack or into registers
+For small objects, such as an integer, passing by value will be faster. 
+
+For bigger objects (for example a large structure), the copying would create too much overhead so passing by reference will be faster. e.g. 307, pass nums by reference greatly increase speed.
+```
+
 
 struct initialization
 ```c++
