@@ -30,8 +30,20 @@ Type in the question number and the commit words as the rest of the parameters
 ./upload.sh 19 Linked List double pointer
 ```
 
-### Notes in C++
-[Excellent tutorial on C++](http://www.learncpp.com/)
+### Notes in C++, [tutorial](http://www.learncpp.com/)
+
+The memory a program uses typically contains the following areas: 
+> code segment, where the compiled program sits in memory
+> bss segment, where zero-initialized **global** and **static variables** are stored.
+> data segment, where initialized **global** and **static variables** are stored
+> heap segment, where **dynamically allocated variables** are allocated
+> call stack: function parameters, local variables, and other function-related information are stored
+
+Heap Segment
+Pros: large
+Cons: 
+
+
 
 Const/Int poiner
 ```c++
