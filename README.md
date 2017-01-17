@@ -45,7 +45,14 @@ int const * const // const pointer to const int, initialized at first
 const int * == int const *
 const int * const == int const * const
 ```
-
+inline
+```c++
+// pros: speed up execution of a C++ function, best for short function
+// cons: compiled code quite a bit larger
+inline int min(int x, int y) {
+    return x > y ? y : x;
+}
+```
 
 Reference/Pointer
 ```c++
