@@ -53,6 +53,7 @@ int const * const // const pointer to const int, initialized at first
 const int * == int const *
 const int * const == int const * const
 ```
+
 inline
 ```c++
 // pros: speed up execution of a C++ function, best for short function
@@ -330,6 +331,8 @@ convert string to int
 stoi
 ```
 
+
+
 null pointer in C++11
 ```c++
 nullptr
@@ -371,6 +374,51 @@ return
 return dict[4] = 5;
 // this returns 5 and update the dict
 ```
+
+### Objected Oriented Programming
+
+Member initializer lists can initialize const
+```c++
+int value1 = 1; // copy initialization
+double value2(2.2); // direct initialization
+char value3 {'c'} // uniform initialization, 
+//Rule: favor uniform initialization over direct initialization if you compiler is C++11 compatible
+
+class Something {
+private:
+    const int m_value;
+ 
+public:
+    Something(): m_value(5) { // directly initialize our const member variable
+    } 
+};
+```
+this pointer enables Chaining objects
+```c++
+// *this is a const pointer, you can change the value it points to, but not pointing somethere else
+class Calc {
+private:
+    int m_value;
+ 
+public:
+    Calc() { m_value = 0; }
+    Calc& add(int value) { m_value += value; return *this; }
+    Calc& sub(int value) { m_value -= value; return *this; }
+    int getValue() { return m_value; }
+};
+
+#include <iostream>
+int main() {
+    Calc calc;
+    calc.add(5).sub(3);
+    std::cout << calc.getValue() << '\n';
+    return 0;
+}
+```
+
+seperating .cpp and .h
+* recompile it every time you need it
+* avoid people stealing your code
 
 ### Notes in python
 
