@@ -37,7 +37,6 @@ The memory a program uses typically contains the following areas:
 * code segment, where the compiled program sits in memory
 
 * bss segment, where zero-initialized **global** and **static variables** are stored.
-
 * data segment, where initialized **global** and **static variables** are stored
 
 * heap segment, where **dynamically allocated variables** are allocated
