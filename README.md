@@ -8,9 +8,7 @@
 ```
 Let's deal with 19_Remove_Nth_Node_From_End_of_List
 ```
-19_Remove_Nth_Node_From_End_of_List.py generated successfully!
-
-19_Remove_Nth_Node_From_End_of_List.cpp generated successfully!
+19_Remove_Nth_Node_From_End_of_List.cpp generated successfully! (slightly modify to change it to python)
 ```
 If some file already existed, do nothing in that file
 ```python
@@ -18,9 +16,8 @@ If some file already existed, do nothing in that file
 ```
 
 ```
-Let's deal with 19_Remove_Nth_Node_From_End_of_List
-
-19_Remove_Nth_Node_From_End_of_List.py already existed!
+>> Let's deal with 19_Remove_Nth_Node_From_End_of_List
+19_Remove_Nth_Node_From_End_of_List.cpp already existed!
 ```
 
 ### Upload script
@@ -36,17 +33,12 @@ The memory a program uses typically contains the following areas:
 * code segment, where the compiled program sits in memory
 * bss segment, where zero-initialized **global** and **static variables** are stored.
 * data segment, where initialized **global** and **static variables** are stored
-* heap segment, where **dynamically allocated variables** are allocated
+* heap segment, where **dynamically allocated variables** are allocated, allocated **memory stays** allocated until it is specifically deallocated
   * Pros: a big pool of memory
   * Cons: comparatively slow
-* call stack: function parameters, local variables, and other function-related information are stored
+* call stack: function parameters, local variables, and other function-related information are stored, **destroyed** when it is popped off the stack, recursion is happened here (thus recursion depth is limited number)
   * Pros: fast
-  * Cons: small memory, MB level, 
-
-Heap Segment
-Pros: large
-Cons: 
-
+  * Cons: small memory, 1~8 MB
 
 
 Const/Int poiner
