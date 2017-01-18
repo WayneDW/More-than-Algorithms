@@ -377,6 +377,65 @@ return dict[4] = 5;
 
 ### Objected Oriented Programming
 
+```c++
+class Base {
+public:
+    int m_public; // can be accessed by anybody
+private:
+    int m_private; // can only be accessed by Base members and friends (but not derived classes)
+protected:
+    int m_protected; // can be accessed by Base members, friends, and derived classes
+};
+ 
+class Derived: public Base {
+public:
+    Derived() {
+        m_public = 1; // allowed: can access public base members from derived class
+        m_private = 2; // **not allowed**: can not access private base members from derived class
+        m_protected = 3; // allowed: can access protected base members from derived class
+    }
+};
+ 
+int main() {
+    Base base;
+    base.m_public = 1; // allowed: can access public members from outside class
+    base.m_private = 2; // not allowed: can not access private members from outside class
+    base.m_protected = 3; // **not allowed**: can not access protected members from outside class
+}
+
+class Base {
+public:
+    int m_public;
+private:
+    int m_private;
+protected:
+    int m_protected;
+};
+ 
+class Pri: Base { // note: private inheritance
+public:
+    Pri() {
+        m_public = 1; // okay: m_public is now private in Pri
+        m_private = 2; // not okay: derived classes can't access private members in the base class
+        m_protected = 3; // okay: m_protected is now private in Pri
+    }
+};
+ 
+int main() {
+    // Outside access uses the access specifiers of the class being accessed.
+    // In this case, the access specifiers of base.
+    Base base;
+    base.m_public = 1; // okay: m_public is public in Base
+    base.m_private = 2; // not okay: m_private is private in Base
+    base.m_protected = 3; // not okay: m_protected is protected in Base
+ 
+    Pri pri;
+    pri.m_public = 1; // **not okay**: m_public is now private in Pri
+    pri.m_private = 2; // not okay: m_private is inaccessible in Pri
+    pri.m_protected = 3; // not okay: m_protected is now private in Pri
+}
+```
+
 Member initializer lists can initialize const
 ```c++
 int value1 = 1; // copy initialization
