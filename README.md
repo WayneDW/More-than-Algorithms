@@ -437,6 +437,96 @@ int main() {
 >> A 5 // since base constructor is used first
 ```
 
+Member initializer lists can initialize const
+```c++
+int value1 = 1; // copy initialization
+double value2(2.2); // direct initialization
+char value3 {'c'} // uniform initialization, 
+//Rule: favor uniform initialization over direct initialization if you compiler is C++11 compatible
+
+class Something {
+private:
+    const int m_value;
+ 
+public:
+    Something(): m_value(5) { // directly initialize our const member variable
+    } 
+};
+```
+this pointer enables Chaining objects
+```c++
+// *this is a const pointer, you can change the value it points to, but not pointing somethere else
+class Calc {
+private:
+    int m_value;
+ 
+public:
+    Calc() { m_value = 0; }
+    Calc& add(int value) { m_value += value; return *this; }
+    Calc& sub(int value) { m_value -= value; return *this; }
+    int getValue() { return m_value; }
+};
+
+#include <iostream>
+int main() {
+    Calc calc;
+    calc.add(5).sub(3);
+    std::cout << calc.getValue() << '\n';
+    return 0;
+}
+```
+
+seperating .cpp and .h
+* recompile it every time you need it
+* avoid people stealing your code
+
+A const member function is a member function that guarantees it will not modify the object or call any non-const member functions (as they may modify the object).
+```c++
+int getValue() const { return m_value; }
+```
+
+static member variable
+```c++
+/* inside a class: only one copy, shared by all objects of the class*/
+class Something{
+public:
+    static int s_value;
+};
+// a good case is #[279](discuss.leetcode.com/topic/23812/static-dp-c-12-ms-python-172-ms-ruby-384-ms/6)
+int Something::s_value = 1; 
+/* Because static member variables are not part of the individual class objects (they get initialized
+when the program starts), you must explicitly define the static member outside of the class */
+int main(){
+    Something first;
+    Something second;
+ 
+    second.s_value = 2;
+ 
+    std::cout << first.s_value << " " << second.s_value << '\n';
+    return 0;
+}
+>> 2 2
+```
+static member function
+it has no *this pointer, we can use it without initializing the class
+```c++
+class sample {
+public:
+    static int getNextID() {return 1;}    
+};
+
+int main() {
+    IDGenerator::getNextID();
+}
+```
+enum class
+```c++
+enum FruitType {
+	APPLE,
+	BANANA,
+};
+```
+
 ### Notes in python
 
 ```python
