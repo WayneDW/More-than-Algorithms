@@ -415,10 +415,27 @@ int main() {
     return 0;
 }
 ```
-
 seperating .cpp and .h
 * recompile it every time you need it
 * avoid people stealing your code
+
+Inheritance
+```c++
+class A {
+public:
+    A(double x) { cout << "A " << x << endl; }
+};
+ 
+class B: public A {
+public:
+    B(int x) { cout << "B " << x << endl;}
+};
+
+int main() {
+    B cB(5); 
+}
+>> A 5 // since base constructor is used first
+```
 
 ### Notes in python
 
