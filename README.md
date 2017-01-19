@@ -648,8 +648,24 @@ private:
 ```
 
 #### Exception handling
-
-
+```c++
+try {
+    throw 4.5; // throw exception of type double
+    std::cout << "This never prints\n";
+}
+catch(double x) { // handle exception of type double
+    std::cerr << "We caught a double of value: " << x << '\n' << std::endl;
+}
+```
+stack unwinding
+```
+try { // Look for exceptions that occur within try block and route to attached catch block(s)
+    std::cout << "The sqrt of " << x << " is " << mySqrt(x) << '\n';
+}
+catch (const char* exception) {// catch exceptions of type const char*
+    std::cerr << "Error: " << exception << std::endl;
+}
+```
 
 ### Notes in python
 
