@@ -41,7 +41,7 @@ The memory a program uses typically contains the following areas:
   * Cons: small memory, 1~8 MB
 
 
-Const/Int poiner
+const/Int poiner
 ```c++
 //read it backwards (as driven by Clockwise/Spiral Rule)...
 int* // pointer to int
@@ -63,7 +63,7 @@ inline int min(int x, int y) {
 }
 ```
 
-Reference/Pointer
+reference/pointer
 ```c++
 /*reference: 
 1. a new name for an object, doesn't exist indeed
@@ -96,7 +96,7 @@ int main() {
 >> 1 2
 ```
 
-Declare a pointer to a function
+declare a pointer to a function
 ```c++
 int sum(int a, int b) {return a + b;}
 int main() {
@@ -106,7 +106,7 @@ int main() {
 }
 >> 3
 ```
-Static
+static
 ```c++
 /* http://www.learncpp.com/cpp-tutorial/811-static-member-variables*/
 /* inside a class: only one copy, shared by all objects of the class*/
@@ -147,13 +147,13 @@ int main() { //int argc, char *argv[] inside the main is optional in the particu
 ```
 
 
-Linked List, e.g. 328
+linked List, e.g. 328
 ```c++
 void deleteNode(ListNode* node) {
     *node = *node->next; // this may suffer from memory leaking
 }
 ```
-We should delete the next node:
+we should delete the next node:
 ```c++
 void deleteNode(ListNode* node) {
     auto next = node->next;
@@ -162,35 +162,13 @@ void deleteNode(ListNode* node) {
 }
 ```
 
-
+auto
 ```c++
 for (auto i : v) // access by value, the type of i is int
 for (auto&& i : v) // access by reference, the type of i is int&
 ```
-map, unordered_map
-```c++
-for(map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
-    int k = iter->first;
-    int v = iter->second;
-}
-```
 
-set
-```c++
-for (set<int> itr  = os.begin(); itr != os.end() ; ++itr) 
-    cout << *itr << endl;
-// for c++11 or later
-for (auto item : os)
-    cout << item << endl;
-```
-
-Vector, List, Deque
-```c++
-List: doubly linked list
-Deque: doubly queue
-```
-
-Customized sort function, e.g. 219
+customized sort function, e.g. 219
 ```c++
 static bool cmp(pair<int, int> a, pair<int, int> b) {
     if (a.first != b.first) return a.first < b.first;
@@ -199,8 +177,7 @@ static bool cmp(pair<int, int> a, pair<int, int> b) {
 sort(vec.begin(), vec.end(), cmp);
 ```
 
-Bitwise operation
-
+bitwise operation
 ```c++
 Symbol  Operator
 &   bitwise AND
@@ -216,8 +193,8 @@ XOR 0011 (decimal 3)
   = 0110 (decimal 6)
 
 ```
-[Bit flag](http://www.learncpp.com/cpp-tutorial/3-8a-bit-flags-and-bit-masks/)
 
+[Bit flag](http://www.learncpp.com/cpp-tutorial/3-8a-bit-flags-and-bit-masks/)
 ```c++
 // in c++11 use uint8_t instead of unsigned char
 const unsigned char option4 = 0x08; // hex for 0000 1000
@@ -243,12 +220,12 @@ int a = 1;
 int a = 2; // mistake
 ```
 
-To avoid overflow
+to avoid **overflow**
 ```c++
 p = (unsigned long long) p * m / n ...
 ```
 
-String
+string
 ```c++
 string.substr(2, 2) # abcdefg -> cd
 string.substr(2) # abcdefg -> cdefg
@@ -258,33 +235,6 @@ string.append("abc");
 ```
 ```c++
 queue<TreeNode*> rather than queue<TreeNode>
-```
-
-Vector Initialization
-```c++
-vector<int> vec(10, 1); // initialize 10 number of 1
-vector<int> vec(10); // initialize 10 number of 0
-vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
-
-// simple way to initialization
-vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
-vec.push(vector<int>{0, 1, 2, 3, 4, 5});
-int dat[] = {0, 1};
-vector<int> vec(dat, dat + sizeof(dat) / sizeof(int)); // unwieldy way
-```
-
-Vector operation, constant insertion at the end, o(n) otherwise
-```c++
-vec.erase(vec.begin() + 1); // delete the 2nd element
-vec.erase(vec.end() - 1); // erase the last element
-vec.erase(vec.begin(), vec.begin() + 2); // delete the first 2 elements
-vec.insert(vec.begin(), tmp); // insert value at the beginning
-
-for (int i = 0; i < vec.size(); i++)  // wrong way if we do vector operations in the loop
-
-int len = vec.size();
-for (int i = 0; i < len; i++)
-    ***
 ```
 
 istringstream
@@ -337,23 +287,6 @@ null pointer in C++11
 nullptr
 ```
 
-multimap v.s. map, key difference: we can have multiple keys
-```c++
-multimap<int, int> mp;
-mp.emplace(1, 2);
-mp.emplace(1, 3);
-print(mp);
->> (1, 2) (1, 3)
-```
-
-priority_queue
-```c++
-priority_queue<int> pq(nums.begin(), nums.end());
-for (int i = 0; i < k - 1; i++)
-    pq.pop(); 
-int topK = pq.top();
-```
-
 for loop
 ```c++
 for (i = 0, res += 1; i < 0; i++) // this res adds 1
@@ -365,6 +298,12 @@ return
 // funtion pass by reference of dict
 return dict[4] = 5;
 // this returns 5 and update the dict
+```
+
+Vector, List, Deque
+```c++
+List: doubly linked list
+Deque: doubly queue
 ```
 
 ### Objected Oriented Programming
@@ -670,6 +609,82 @@ catch (const char* exception) {// catch exceptions of type const char*
 Assert v.s. Exception
 * Assertion: a statement that something must be true, otherwise flag error
 * Exception: the correct functioning of a method isn't met. 
+
+#### Standard Template Library
+
+* sequence container: container classes that maintain the ordering of elements in the container
+ * array, deque, string, list
+* associative container: automatically sort their inputs when those inputs are inserted into the container.
+ * set, multiset, map, multimap
+* container adapter: 
+ * stack, queue, priority_queue
+ 
+* cbegin() returns a const (read-only) iterator representing the beginning of the elements in the container.
+* container::iterator provides a read/write iterator
+* container::const_iterator provides a read-only iterator
+
+vector Initialization
+```c++
+vector<int> vec(10, 1); // initialize 10 number of 1
+vector<int> vec(10); // initialize 10 number of 0
+vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
+
+// simple way to initialization
+vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
+vec.push(vector<int>{0, 1, 2, 3, 4, 5});
+int dat[] = {0, 1};
+vector<int> vec(dat, dat + sizeof(dat) / sizeof(int)); // unwieldy way
+```
+
+vector operation, constant insertion at the end, o(n) otherwise
+```c++
+vec.erase(vec.begin() + 1); // delete the 2nd element
+vec.erase(vec.end() - 1); // erase the last element
+vec.erase(vec.begin(), vec.begin() + 2); // delete the first 2 elements
+vec.insert(vec.begin(), tmp); // insert value at the beginning
+
+for (int i = 0; i < vec.size(); i++)  // wrong way if we do vector operations in the loop
+
+int len = vec.size();
+for (int i = 0; i < len; i++)
+    ***
+```
+
+map, unordered_map
+```c++
+for(map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
+    int k = iter->first;
+    int v = iter->second;
+}
+```
+
+set
+```c++
+for (set<int> itr  = os.begin(); itr != os.end() ; ++itr) 
+    cout << *itr << endl;
+// for c++11 or later
+for (auto item : os)
+    cout << item << endl;
+```
+
+
+
+multimap v.s. map, key difference: we can have multiple keys
+```c++
+multimap<int, int> mp;
+mp.emplace(1, 2);
+mp.emplace(1, 3);
+print(mp);
+>> (1, 2) (1, 3)
+```
+
+priority_queue
+```c++
+priority_queue<int> pq(nums.begin(), nums.end());
+for (int i = 0; i < k - 1; i++)
+    pq.pop(); 
+int topK = pq.top();
+```
 
 ### Notes in python
 
