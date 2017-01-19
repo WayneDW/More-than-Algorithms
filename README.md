@@ -581,10 +581,78 @@ int main() {
 enum class
 ```c++
 enum FruitType {
-	APPLE,
-	BANANA,
+    APPLE,
+    BANANA
 };
 ```
+
+Polymorphism
+
+```c++
+class Base {
+public:
+    virtual void print() { cout << "Base" << endl;}
+};
+class Derived : public Base {
+public:
+    virtual void print() { cout << "Derived" << endl; }
+};
+int main() {
+    Derived d;
+    Base *b = &d;
+    b->print(); // print Derived, with virtual, otherwise Base
+}
+```
+
+* override: if the function does not override a base class function, the compiler will return an error.
+* final: restrict the user from overriding a function
+
+```c++
+case 1: 
+class B final : public A { // note use of final specifier here
+public:
+    virtual const char* getName() override { return "B"; }
+};
+case 2:
+virtual const char* getName() override final { return "B"; }
+```
+
+Whenever you are dealing with inheritance, you should make any explicit destructors virtual.
+```c++
+>> Calling ~Derived()
+>> Calling ~Base()
+```
+
+A** pure virtual function** makes it so the base class can not be instantiated, and the derived classes are **forced** to define these function before they can be instantiated. This helps ensure the **derived classes do not forget to redefine functions** that the base class was expecting them to.
+
+```c++
+virtual int getValue() = 0; // a pure virtual function
+```
+
+An interface class is a class that has no member variables, and where all of the functions are pure virtual!
+
+object slicing
+```c++
+// ref references and ptr points to derived. Because ref and ptr are of type Base, ref and ptr can only see the Base part of derived. However, through use of virtual functions, we can access that function
+Base &ref = derived;
+Base *ref = &derived;
+Base base = derived; // only the Base portion of the Derived object is copied
+```
+Note: try to avoid any kind of pass-by-value when it comes to derived classes
+
+
+dynamic_cast: mainly used to convert base-class pointers into derived-class pointers (**downcasting**)
+```c++
+Base *b = new Derived(1, "Apple");
+Derived *d = dynamic_cast<Derived*>(b); // use dynamic cast to convert Base pointer into Derived pointer
+if (d) // make sure d is non-null
+    std::cout << "The name of the Derived is: " << d->getName() << '\n';
+```
+
+dynamic_cast vs static_cast
+* use dynamic_cast for downcasting
+* use static_cast otherwise, faster and dangerous
+* In a word, avoid using them altogether, use virtual function instead
 
 ### Notes in python
 
