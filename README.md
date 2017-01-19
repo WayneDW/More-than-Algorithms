@@ -355,13 +355,6 @@ for (int i = 0; i < k - 1; i++)
 int topK = pq.top();
 ```
 
-public/protected/private
-```c++
-public: anyone can access
-protected: member, friends and subclass
-private: member and friends.
-```
-
 for loop
 ```c++
 for (i = 0, res += 1; i < 0; i++) // this res adds 1
