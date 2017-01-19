@@ -458,9 +458,6 @@ int main() {
 }
 ```
 
-* override: if the function does not override a base class function, the compiler will return an error.
-* final: restrict the user from overriding a function
-
 ```c++
 case 1: 
 class B final : public A { // note use of final specifier here
@@ -758,7 +755,7 @@ for (auto i : v) // access by value, i is read-only
 for (auto&& i : v) // access by reference, i is modifiable
 ```
 
-null pointer in C++11
+null pointer
 ```c++
 nullptr
 ```
@@ -798,6 +795,10 @@ initializer_list
 ```c++
 vector<int> vArray[5] = {3, 2, 7, 5, 8}; // // calls constructor vector<int>(initializer_list<int>);
 ```
+
+* override: if the function does not override a base class function, the compiler will return an error.
+* final: restrict the user from overriding a function
+
 
 ### Notes in python
 
