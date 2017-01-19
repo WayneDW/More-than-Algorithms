@@ -600,7 +600,7 @@ Whenever you are dealing with inheritance, you should make any explicit destruct
 >> Calling ~Base()
 ```
 
-A** pure virtual function** makes it so the base class can not be instantiated, and the derived classes are **forced** to define these function before they can be instantiated. This helps ensure the **derived classes do not forget to redefine functions** that the base class was expecting them to.
+A **pure virtual function** makes it so the base class can not be instantiated, and the derived classes are **forced** to define these function before they can be instantiated. This helps ensure the **derived classes do not forget to redefine functions** that the base class was expecting them to.
 
 ```c++
 virtual int getValue() = 0; // a pure virtual function
