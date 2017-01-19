@@ -667,6 +667,10 @@ catch (const char* exception) {// catch exceptions of type const char*
 }
 ```
 
+Assert v.s. Exception
+* Assertion: a statement that something must be true, otherwise flag error
+* Exception: the correct functioning of a method isn't met. 
+
 ### Notes in python
 
 ```python
