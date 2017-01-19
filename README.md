@@ -389,22 +389,6 @@ public:
     }
 };
  
-int main() {
-    Base base;
-    base.m_public = 1; // allowed: can access public members from outside class
-    base.m_private = 2; // not allowed: can not access private members from outside class
-    base.m_protected = 3; // **not allowed**: can not access protected members from outside class
-}
-
-class Base {
-public:
-    int m_public;
-private:
-    int m_private;
-protected:
-    int m_protected;
-};
- 
 class Pri: Base { // note: private inheritance
 public:
     Pri() {
@@ -413,7 +397,7 @@ public:
         m_protected = 3; // okay: m_protected is now private in Pri
     }
 };
- 
+
 int main() {
     // Outside access uses the access specifiers of the class being accessed.
     // In this case, the access specifiers of base.
@@ -423,7 +407,7 @@ int main() {
     base.m_protected = 3; // not okay: m_protected is protected in Base
  
     Pri pri;
-    pri.m_public = 1; // **not okay**: m_public is now private in Pri
+    pri.m_public = 1; // not okay: m_public is now private in Pri
     pri.m_private = 2; // not okay: m_private is inaccessible in Pri
     pri.m_protected = 3; // not okay: m_protected is now private in Pri
 }
