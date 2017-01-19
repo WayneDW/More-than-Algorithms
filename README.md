@@ -8,7 +8,7 @@
 ```
 Let's deal with 19_Remove_Nth_Node_From_End_of_List
 ```
-19_Remove_Nth_Node_From_End_of_List.cpp generated successfully! (slightly modify to change it to python)
+19_Remove_Nth_Node_From_End_of_List.cpp generated successfully! 
 ```
 If some file already existed, do nothing in that file
 ```python
