@@ -233,11 +233,10 @@ myflags ^= option4; // flip option4 from on to off, or vice versa
 ```
 
 
-
+parameter in a inner loop
 ```c++
 int a = 1;
-if (1 > 0)
-    int a = 2; // no mistake, but don't work
+if (1 > 0) int a = 2; // no mistake, but don't work
 // print 1
 
 int a = 1;
@@ -313,7 +312,8 @@ Overhead with passing by value:
 the value needs to be copied on stack or into registers
 For small objects, such as an integer, passing by value will be faster. 
 
-For bigger objects (for example a large structure), the copying would create too much overhead so passing by reference will be faster. e.g. 307, pass nums by reference greatly increase speed.
+For bigger objects (for example a large structure), the copying would create too much overhead 
+so passing by reference will be faster. e.g. 307, pass nums by reference greatly increase speed.
 ```
 
 
@@ -330,8 +330,6 @@ convert string to int
 ```c++
 stoi
 ```
-
-
 
 null pointer in C++11
 ```c++
@@ -516,7 +514,8 @@ seperating .cpp and .h
 * recompile it every time you need it
 * avoid people stealing your code
 
-A const member function is a member function that guarantees it will not modify the object or call any non-const member functions (as they may modify the object).
+A const member function is a member function that guarantees it will not modify the 
+object or call any non-const member functions (as they may modify the object).
 ```c++
 int getValue() const { return m_value; }
 ```
@@ -546,13 +545,24 @@ int main(){
 static member function
 it has no *this pointer, we can use it without initializing the class
 ```c++
-class sample {
+class IDGenerator {
+private:
+    static int s_nextID; // Here's the declaration for a static member
 public:
-    static int getNextID() {return 1;}    
+     static int getNextID(); // Here's the declaration for a static function
 };
-
+ 
+// Here's the definition of the static member outside the class.  Note we don't use the static keyword here.
+// We'll start generating IDs at 1
+int IDGenerator::s_nextID = 1;
+ 
+// Here's the definition of the static function outside of the class.  Note we don't use the static keyword here.
+int IDGenerator::getNextID() { return s_nextID++; } 
+ 
 int main() {
-    IDGenerator::getNextID();
+    for (int count=0; count < 5; ++count)
+        cout << "The next ID is: " << IDGenerator::getNextID() << '\n';
+    return 0;
 }
 ```
 enum class
@@ -600,7 +610,9 @@ Whenever you are dealing with inheritance, you should make any explicit destruct
 >> Calling ~Base()
 ```
 
-A **pure virtual function** makes it so the base class can not be instantiated, and the derived classes are **forced** to define these function before they can be instantiated. This helps ensure the **derived classes do not forget to redefine functions** that the base class was expecting them to.
+A **pure virtual function** makes it so the base class can not be instantiated, and the derived classes 
+are **forced** to define these function before they can be instantiated. This helps ensure the **derived
+classes do not forget to redefine functions** that the base class was expecting them to.
 
 ```c++
 virtual int getValue() = 0; // a pure virtual function
@@ -610,7 +622,8 @@ An interface class is a class that has no member variables, and where all of the
 
 object slicing
 ```c++
-// ref references and ptr points to derived. Because ref and ptr are of type Base, ref and ptr can only see the Base part of derived. However, through use of virtual functions, we can access that function
+/* ref references and ptr points to derived. Because ref and ptr are of type Base, ref and ptr can only see 
+the Base part of derived. However, through use of virtual functions, we can access that function*/
 Base &ref = derived;
 Base *ref = &derived;
 Base base = derived; // only the Base portion of the Derived object is copied
