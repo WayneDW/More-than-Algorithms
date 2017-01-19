@@ -314,6 +314,7 @@ For small objects, such as an integer, passing by value will be faster.
 
 For bigger objects (for example a large structure), the copying would create too much overhead 
 so passing by reference will be faster. e.g. 307, pass nums by reference greatly increase speed.
+However, if you end up with copying the data, then passing by value is better.
 ```
 
 
@@ -449,66 +450,6 @@ int main() {
     return 0;
 }
 ```
-seperating .cpp and .h
-* recompile it every time you need it
-* avoid people stealing your code
-
-Inheritance
-```c++
-class A {
-public:
-    A(double x) { cout << "A " << x << endl; }
-};
- 
-class B: public A {
-public:
-    B(int x) { cout << "B " << x << endl;}
-};
-
-int main() {
-    B cB(5); 
-}
->> A 5 // since base constructor is used first
-```
-
-Member initializer lists can initialize const
-```c++
-int value1 = 1; // copy initialization
-double value2(2.2); // direct initialization
-char value3 {'c'} // uniform initialization, 
-//Rule: favor uniform initialization over direct initialization if you compiler is C++11 compatible
-
-class Something {
-private:
-    const int m_value;
- 
-public:
-    Something(): m_value(5) { // directly initialize our const member variable
-    } 
-};
-```
-this pointer enables Chaining objects
-```c++
-// *this is a const pointer, you can change the value it points to, but not pointing somethere else
-class Calc {
-private:
-    int m_value;
- 
-public:
-    Calc() { m_value = 0; }
-    Calc& add(int value) { m_value += value; return *this; }
-    Calc& sub(int value) { m_value -= value; return *this; }
-    int getValue() { return m_value; }
-};
-
-#include <iostream>
-int main() {
-    Calc calc;
-    calc.add(5).sub(3);
-    std::cout << calc.getValue() << '\n';
-    return 0;
-}
-```
 
 seperating .cpp and .h
 * recompile it every time you need it
@@ -518,6 +459,41 @@ A const member function is a member function that guarantees it will not modify 
 object or call any non-const member functions (as they may modify the object).
 ```c++
 int getValue() const { return m_value; }
+```
+
+copy constructor
+```c++
+class Solution {
+    ...
+    // Default constructor
+    Fraction(int numerator=0, int denominator=1) :
+        m_numerator(numerator), m_denominator(denominator) {
+        assert(denominator != 0);
+    }
+};
+```
+
+shallow v.s. deep copying
+
+* shallow copy: C++ copies each member of the class individually
+* deep copy: allocates memory for the copy and then copies the actual value
+
+```c++
+MyString::MyString(const MyString& source) { // Copy constructor
+    // because m_length is not a pointer, we can shallow copy it
+    m_length = source.m_length;
+ 
+    // m_data is a pointer, so we need to deep copy it if it is non-null
+    if (source.m_data) {
+        // allocate memory for our copy
+        m_data = new char[m_length];
+        // do the copy
+        for (int i=0; i < m_length; ++i)
+            m_data[i] = source.m_data[i];
+    }
+    else
+        m_data = 0;
+}
 ```
 
 static member variable
@@ -643,6 +619,37 @@ dynamic_cast vs static_cast
 * use dynamic_cast for downcasting
 * use static_cast otherwise, faster and dangerous
 * In a word, avoid using them altogether, use virtual function instead
+
+
+#### Template
+
+overload operator when template deals with class
+
+expression parameter
+```c++
+template <class T, int size> // size is the expression parameter
+class StaticArray {
+private:
+    // The expression parameter controls the size of the array
+    T m_array[size];
+    ...
+}
+```
+
+template specialization
+```c++
+template <> // the following is a template class with no templated parameters
+class Storage8<bool> {// we're specializing Storage8 for bool
+// What follows is just standard class implementation details
+private:
+    unsigned char m_data;
+    ...
+}
+```
+
+#### Exception handling
+
+
 
 ### Notes in python
 
