@@ -162,12 +162,6 @@ void deleteNode(ListNode* node) {
 }
 ```
 
-auto
-```c++
-for (auto i : v) // access by value, the type of i is int
-for (auto&& i : v) // access by reference, the type of i is int&
-```
-
 customized sort function, e.g. 219
 ```c++
 static bool cmp(pair<int, int> a, pair<int, int> b) {
@@ -225,32 +219,6 @@ to avoid **overflow**
 p = (unsigned long long) p * m / n ...
 ```
 
-string
-```c++
-string.substr(2, 2) # abcdefg -> cd
-string.substr(2) # abcdefg -> cdefg
-
-string.push_back('a');
-string.append("abc");
-```
-```c++
-queue<TreeNode*> rather than queue<TreeNode>
-```
-
-istringstream
-```c++
-// convert ostringstream to a set of variables
-istringstream s(string); // to initialize
-int val; // or other types
-s >> val; // set value
-if (! (s >> val)) // to determine if it has reached the end
-```
-
-ostringstream 
-```c++
-// convert output (analogy) to string
-see example c++ 165, 297
-```
 pass by reference/ value
 
 ```c++
@@ -275,16 +243,6 @@ struct Interval {
     Interval() : start(0), end(0) {}
     Interval(int s, int e) : start(s), end(e) {}
 };
-```
-
-convert string to int
-```c++
-stoi
-```
-
-null pointer in C++11
-```c++
-nullptr
 ```
 
 for loop
@@ -480,13 +438,7 @@ int main() {
     return 0;
 }
 ```
-enum class
-```c++
-enum FruitType {
-    APPLE,
-    BANANA
-};
-```
+
 
 Polymorphism
 
@@ -616,9 +568,10 @@ Assert v.s. Exception
  * array, deque, string, list
 * associative container: automatically sort their inputs when those inputs are inserted into the container.
  * set, multiset, map, multimap
-* container adapter: 
+* container adapter: containers that are adapted to specific uses
  * stack, queue, priority_queue
- 
+
+special syntax
 * cbegin() returns a const (read-only) iterator representing the beginning of the elements in the container.
 * container::iterator provides a read/write iterator
 * container::const_iterator provides a read-only iterator
@@ -684,6 +637,166 @@ priority_queue<int> pq(nums.begin(), nums.end());
 for (int i = 0; i < k - 1; i++)
     pq.pop(); 
 int topK = pq.top();
+```
+
+#### std::string
+A big shortcoming of C-style strings is that you have to do all the memory management yourself.
+
+convert string to int
+```c++
+stoi
+```
+
+cerr: an ostream_withassign class tied to the standard error (typically the monitor)
+```c++
+cerr << "Oops, you entered an invalid age!" << endl;
+exit(1);
+```
+
+string
+```c++
+string.substr(2, 2) # abcdefg -> cd
+string.substr(2) # abcdefg -> cdefg
+
+string.push_back('a');
+string.append("abc");
+```
+```c++
+queue<TreeNode*> rather than queue<TreeNode>
+```
+
+#### I/O
+
+getline
+```c++
+string strBuf;
+getline(cin, strBuf);
+cout << strBuf << endl;
+```
+
+```c++
+cout << setprecision(4) << 123.456 << endl; // 123.4560
+```
+stringstream (**Conversion** between strings and numbers)
+```c++
+stringstream os;
+os << "123 456" << endl;
+
+int val1;
+os >> val1; // convert type
+
+string val2;
+os >> val2;
+```
+Clearing a stringstream for reuse
+```c++
+stringstream os;
+os << "Hello ";
+ 
+os.str(""); // or use os.str(string()), erase the buffer
+ 
+os << "World!";
+cout << os.str();
+```
+validation
+```c++
+isalnum() // Returns non-zero if the parameter is a letter or a digit
+isalpha() // Returns non-zero if the parameter is a letter
+isdigit() // Returns non-zero if the parameter is a digit
+isspace() 
+isprint() // Returns non-zero if the parameter is printable character (including whitespace)
+isxdigit() // Returns non-zero if the parameter is a hexadecimal digit (0-9, a-f, A-F)
+```
+
+istringstream
+```c++
+// convert ostringstream to a set of variables
+istringstream s(string); // to initialize
+int val; // or other types
+s >> val; // set value
+if (! (s >> val)) // to determine if it has reached the end
+```
+
+ostringstream 
+```c++
+// convert output (analogy) to string
+see example c++ 165, 297
+```
+
+**Basic file Output**
+
+```c++
+ofstream outf("Sample.dat"); // create a file for writing
+outf << "This is line " << endl;
+```
+**Basic file Input**
+```c++
+ifstream inf("Sample.dat");
+while (inf) {
+    // stringstream stm;
+    // inf >> stm; // this is indirect
+    string strInput;
+    getline(inf, strInput);
+    cout << stm << endl;
+}
+```
+
+**Random file I/O**
+```c++
+inf.seekg(14, ios::cur); // move forward 14 bytes
+inf.seekg(-18, ios::cur); // move backwards 18 bytes
+inf.seekg(22, ios::beg); // move to 22nd byte in file
+inf.seekg(24); // move to 24th byte in file
+inf.seekg(-28, ios::end); // move to the 28th byte before end of the file
+```
+
+#### C++11
+
+auto
+```c++
+for (auto i : v) // access by value, i is read-only
+for (auto&& i : v) // access by reference, i is modifiable
+```
+
+null pointer in C++11
+```c++
+nullptr
+```
+
+enum types, dangerous
+```c++
+enum Color {
+    RED,
+    BLUE
+};
+
+enum Fruit {
+    BANANA,
+    APPLE
+};
+
+Color a = RED;
+Fruit b = BANANA;
+
+if (a == b) // The compiler will compare a and b as integers, and find they are equal
+```
+enum class
+```c++
+enum class Color {
+    RED,
+    BLUE
+};
+enum class Fruit {
+    BANANA,
+    APPLE
+};
+ 
+Color a = Color::RED; // note: RED is not accessible any more, we have to use Color::RED
+Fruit b = Fruit::BANANA; // note: BANANA is not accessible any more, we have to use Fruit::BANANA
+```
+initializer_list
+```c++
+vector<int> vArray[5] = {3, 2, 7, 5, 8}; // // calls constructor vector<int>(initializer_list<int>);
 ```
 
 ### Notes in python
