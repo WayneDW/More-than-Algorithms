@@ -800,16 +800,9 @@ vector<int> vArray[5] = {3, 2, 7, 5, 8}; // // calls constructor vector<int>(ini
 
 Tuples can be thought of as **read-only** lists
 
-**lambda function**
-lambda arguments: expression
-```python
-sum = lambda arg1, arg2: arg1 + arg2;
-print sum( 10, 20 )
-```
-
 exception
 ```python
-assert 1>0 # same with c++
+assert 1 > 0 # same with c++
 
 try:
     a = 1 + 2
@@ -863,7 +856,6 @@ regular expression
  * search: search the first occurence
 
 
-
 ```python
 >>> b = []
 >>> a = [1]
@@ -872,6 +864,7 @@ regular expression
 >>> b
 [[]]
 ```
+
 **Funtional Programming**
 * iterator
 ```python
@@ -892,7 +885,7 @@ regular expression
 >>> t
 (1, 2, 3)
 ```
-Generator & List expression
+* Generator & List expression
 ```python
 # Generator expression -- returns iterator
 stripped_iter = (line.strip() for line in line_list)
@@ -900,7 +893,7 @@ stripped_iter = (line.strip() for line in line_list)
 # List comprehension -- returns list
 stripped_list = [line.strip() for line in line_list]
 ```
-Generator: these two iterators are the same
+* Generator: these two iterators are the same
 ```python
 it = iter([0, 1, 2])
 
@@ -910,7 +903,7 @@ def generate_ints(N):
 it = generate_ints(3)
 ```
 
-Built-in functions: map
+* **Built-in functions: map**
 ```python
 def upper(s): return s.upper()
 print map(upper, ["a", "d"])
@@ -918,7 +911,7 @@ print map(upper, ["a", "d"])
 # it is the same with the following
 print [upper(s) for s in ['a', 'd']]
 ```
-Built-in functions: filter
+* **Built-in functions: filter**
 ```python
 def is_even(x): return (x % 2) == 0
 filter(is_even, range(10))
@@ -926,13 +919,13 @@ filter(is_even, range(10))
 # it is the same with the following
 [x for x in range(10) if is_even(x)]
 ```
-Built-in functions: reduce
+* **Built-in functions: reduce**
 ```python
 import operator
 print reduce(operator.concat, ['A', 'BB', 'C']) # func(func(A, B), C)
 >> 'ABBC'
 ```
-lambda expression
+* **lambda expression**
 ```python
 adder = lambda x, y: x+y
 >> print adder(1,2)
