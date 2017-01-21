@@ -859,11 +859,10 @@ __secretCount = 0 # make it private
 ```
 
 regular expression
- * Match: a match **only at the beginning** of the string
+ * match: a match **only at the beginning** of the string
  * search: search the first occurence
 
-multithreading
- * 
+
 
 ```python
 >>> b = []
@@ -873,45 +872,70 @@ multithreading
 >>> b
 [[]]
 ```
-
-Tips in iterables, generators, yield
-http://stackoverflow.com/questions/231767what-does-the-yield-keyword-do
-Iterables
+**Funtional Programming**
+* iterator
 ```python
->>> mylist = [1, 2, 3]
->>> for i in mylist:
-...    print(i)
+>>> L = [1,2,3]
+>>> it = iter(L)
+>>> print it
+<...iterator object at ...>
+>>> it.next()
 1
+>>> it.next()
 2
-3
 ```
 
-Generators: iterators, but you can only iterate over them once. It's because they do not store all the values in memory, they generate the values on the fly:
 ```python
->>> mygenerator = (x*x for x in range(3))
->>> for i in mygenerator:
-...    print(i)
-0
-1
-4
+>>> L = [1,2,3]
+>>> iterator = iter(L)
+>>> t = tuple(iterator)
+>>> t
+(1, 2, 3)
+```
+Generator & List expression
+```python
+# Generator expression -- returns iterator
+stripped_iter = (line.strip() for line in line_list)
+
+# List comprehension -- returns list
+stripped_list = [line.strip() for line in line_list]
+```
+Generator: these two iterators are the same
+```python
+it = iter([0, 1, 2])
+
+def generate_ints(N):
+    for i in range(N):
+        yield i
+it = generate_ints(3)
 ```
 
-Yield: a keyword that is used like return, except the function will return a generator.
+Built-in functions: map
 ```python
->>> def createGenerator():
-...    mylist = range(3)
-...    for i in mylist:
-...        yield i*i
-...
->>> mygenerator = createGenerator() # create a generator
->>> print(mygenerator) # mygenerator is an object!
-<generator object createGenerator at 0xb7555c34>
->>> for i in mygenerator:
-...     print(i)
-0
-1
-4
-
+def upper(s): return s.upper()
+print map(upper, ["a", "d"])
+>> ['A', 'D']
+# it is the same with the following
+print [upper(s) for s in ['a', 'd']]
+```
+Built-in functions: filter
+```python
+def is_even(x): return (x % 2) == 0
+filter(is_even, range(10))
+>> [0, 2, 4, 6, 8]
+# it is the same with the following
+[x for x in range(10) if is_even(x)]
+```
+Built-in functions: reduce
+```python
+import operator
+print reduce(operator.concat, ['A', 'BB', 'C']) # func(func(A, B), C)
+>> 'ABBC'
+```
+lambda expression
+```python
+adder = lambda x, y: x+y
+>> print adder(1,2)
 ```
 
 
