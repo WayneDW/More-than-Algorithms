@@ -798,6 +798,73 @@ vector<int> vArray[5] = {3, 2, 7, 5, 8}; // // calls constructor vector<int>(ini
 
 ### Notes in python
 
+Tuples can be thought of as **read-only** lists
+
+**lambda function**
+lambda arguments: expression
+```python
+sum = lambda arg1, arg2: arg1 + arg2;
+print sum( 10, 20 )
+```
+
+exception
+```python
+assert 1>0 # same with c++
+
+try:
+    a = 1 + 2
+    a = b
+except NameError, e:
+    print e
+>> name 'b' is not defined
+```
+
+constructor & destructor
+```python
+class Point:
+   def __init( self, x=0, y=0):
+      self.x = x
+      self.y = y
+   def __del__(self):
+      class_name = self.__class__.__name__
+      print class_name, "destroyed"
+```
+
+inheritance and polymorphism
+```python
+class Animal:
+   def __init__(self, name=''):
+      self.name = name
+
+   def talk(self):
+      pass
+
+class Cat(Animal):
+   def talk(self):
+      print "Meow!"
+      
+c = Cat("Missy")
+c.talk()
+```
+
+special functions: overloading
+```python
+__add__(self, other): # +
+__sub__(self, other): # -
+```
+
+data Hiding: add a double underscore prefix
+```python
+__secretCount = 0 # make it private
+```
+
+regular expression
+ * Match: a match **only at the beginning** of the string
+ * search: search the first occurence
+
+multithreading
+ * 
+
 ```python
 >>> b = []
 >>> a = [1]
