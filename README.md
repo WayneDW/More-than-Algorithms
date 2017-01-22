@@ -569,20 +569,12 @@ special syntax
 * container::iterator provides a read/write iterator
 * container::const_iterator provides a read-only iterator
 
-vector Initialization
-```c++
-vector<int> vec(10, 1); // initialize 10 number of 1
-vector<int> vec(10); // initialize 10 number of 0
-vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
+**Vector time complexity**
+* Random access - constant O(1)
+* Insert/ Delete at the end: constant to delete or insert at the end
+* Insert/ Delete otherwise: linear time relative to the distance to the end of the vector
 
-// simple way to initialization
-vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
-vec.push(vector<int>{0, 1, 2, 3, 4, 5});
-int dat[] = {0, 1};
-vector<int> vec(dat, dat + sizeof(dat) / sizeof(int)); // unwieldy way
-```
-
-vector operation, constant insertion at the end, o(n) otherwise
+vector operation
 ```c++
 vec.erase(vec.begin() + 1); // delete the 2nd element
 vec.erase(vec.end() - 1); // erase the last element
@@ -594,6 +586,19 @@ for (int i = 0; i < vec.size(); i++)  // wrong way if we do vector operations in
 int len = vec.size();
 for (int i = 0; i < len; i++)
     ***
+```
+
+vector Initialization
+```c++
+vector<int> vec(10, 1); // initialize 10 number of 1
+vector<int> vec(10); // initialize 10 number of 0
+vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
+
+// simple way to initialization
+vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
+vec.push(vector<int>{0, 1, 2, 3, 4, 5});
+int dat[] = {0, 1};
+vector<int> vec(dat, dat + sizeof(dat) / sizeof(int)); // unwieldy way
 ```
 
 map, unordered_map
