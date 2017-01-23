@@ -33,9 +33,6 @@ public:
     bool canConstruct(string ransomNote, string magazine) {
         int dp[26] = {0};
         for (auto c: magazine) dp[c - 'a']++;
-        for (auto d: dp) {
-            cout << d << endl;
-        }
         for (auto c: ransomNote) if (--dp[c - 'a'] < 0) return false;
         return true;
     }
