@@ -750,10 +750,13 @@ inf.seekg(-28, ios::end); // move to the 28th byte before end of the file
 
 #### C++11
 
-auto
+auto: access by value, i is **read-only**
 ```c++
-for (auto i : v) // access by value, i is read-only
-for (auto&& i : v) // access by reference, i is modifiable
+for (auto i : v)
+```
+auto: access by reference, i is **modifiable**
+```c++
+for (auto &i : v)
 ```
 
 null pointer
