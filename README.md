@@ -203,6 +203,19 @@ myflags &= ~option4; // turn option 4 off
 myflags ^= option4; // flip option4 from on to off, or vice versa
 ```
 
+Bitset
+```c++
+bitset<16> foo; // foo: 0000000000000000
+bitset<16> bar (0xfa2); // bar: 0000111110100010
+bitset<16> baz (string("0101111001")); // baz: 0000000101111001
+
+bitset<4> foo;                   // 0000
+cout << foo.set() << '\n';       // 1111
+cout << foo.set(2,0) << '\n';    // 1011
+cout << foo.set(2) << '\n';      // 1111
+cout << foo.count() << endl;     // 4
+```
+
 
 parameter in a inner loop
 ```c++
