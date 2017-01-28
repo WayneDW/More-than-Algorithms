@@ -650,6 +650,14 @@ for (int i = 0; i < k - 1; i++)
 int topK = pq.top();
 ```
 
+lower_bound & upper_bound
+```c++
+// [first,last)
+// 10 10 10 20 20 20 30 30
+            ^
+                      ^
+```
+
 #### std::string
 A big shortcoming of C-style strings is that you have to do all the memory management yourself.
 
