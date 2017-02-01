@@ -53,6 +53,7 @@
 424 Longest Repeating Character Replacement         38.6%   Medium  
 425 Word Squares        39.7%   Hard    
 432 All O`one Data Structure        27.1%   Hard    
+434 Number of Segments in a String          37.3%   Easy    
 435 Non-overlapping Intervals       39.2%   Medium  
 436 Find Right Interval         43.0%   Medium  
 437 Path Sum III        38.2%   Easy    
@@ -64,8 +65,50 @@
 445 Add Two Numbers 2 20% Medium
 446 Arithmetic Slices II - Subsequence          16.3%   Hard    
 447 Number of Boomerangs        39.4%   Easy    
+
+448 Find All Numbers Disappeared in an Array        54.2%   Easy    
+449 Serialize and Deserialize BST       42.0%   Medium  
+450 Delete Node in a BST        35.3%   Medium  
+451 Sort Characters By Frequency        50.3%   Medium  
+
+
 452 Minimum Number of Arrows to Burst Balloons          41.7%   Medium  
-453 Minimum Moves to Equal Array Elements       44.2%   Easy    
+453 Minimum Moves to Equal Array Elements       46.7%   Easy    
+454 4Sum II         43.8%   Medium  
+455 Assign Cookies          47.3%   Easy    
+456 132 Pattern         27.8%   Medium  
+459 Repeated Substring Pattern          39.0%   Easy    
+460 LFU Cache       19.9%   Hard    
+461 Hamming Distance        71.7%   Easy    
+462 Minimum Moves to Equal Array Elements II        50.8%   Medium  
+463 Island Perimeter        55.7%   Easy    
+464 Can I Win       23.1%   Medium  
+465 Optimal Account Balancing       30.8%   Hard    
+466 Count The Repetitions       24.3%   Hard    
+467 Unique Substrings in Wraparound String          31.0%   Medium  
+468 Validate IP Address         21.0%   Medium  
+469 Convex Polygon          29.2%   Medium  
+471 Encode String with Shortest Length          43.0%   Hard    
+472 Concatenated Words          29.9%   Hard    
+473 Matchsticks to Square       32.8%   Medium  
+474 Ones and Zeroes         36.2%   Medium  
+475 Heaters         30.1%   Easy    
+476 Number Complement       60.7%   Easy    
+477 Total Hamming Distance          45.7%   Medium  
+480 Sliding Window Median       31.3%   Hard    
+481 Magical String          47.4%   Medium  
+482 License Key Formatting          42.1%   Medium  
+483 Smallest Good Base          28.6%   Hard    
+484 Find Permutation        49.0%   Medium  
+485 Max Consecutive Ones        56.8%   Easy    
+486 Predict the Winner          43.1%   Medium  
+487 Max Consecutive Ones II         41.2%   Medium  
+488 Zuma Game       39.7%   Hard    
+491 Increasing Subsequences         40.3%   Medium  
+492 Construct the Rectangle         51.9%   Easy    
+494 Target Sum          45.0%   Medium
+
+
 371 Sum of Two Integers 52.0%       Easy
 370 Range Addition  49.0%       Medium
 369 Plus One Linked List    50.0%       Medium
