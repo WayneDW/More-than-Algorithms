@@ -70,7 +70,6 @@ public:
     }
 };
 
-
 class Solution {
 public:
     int arrangeCoins_better(int n) { // concise version
