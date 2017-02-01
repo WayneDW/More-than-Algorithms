@@ -54,7 +54,15 @@ const int * == int const *
 const int * const == int const * const
 ```
 
-inline
+inline v.s. macro
+* they are both used to avoid function calls
+* inline is parsed by compiler, macro is expanded by the preprocessor
+* macro may be harder debug, see [here](http://www.programmerinterview.com/index.php/c-cplusplus/inline-vs-macro/), thus inline is easier
+
+```c++
+#define MAX(a, b) a > b? a: b
+```
+
 ```c++
 // pros: speed up execution of a C++ function, best for short function
 // cons: compiled code quite a bit larger
