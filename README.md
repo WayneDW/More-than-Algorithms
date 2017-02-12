@@ -939,6 +939,16 @@ def generate_ints(N):
         yield i
 it = generate_ints(3)
 ```
+* **Built-in functions: zip**
+```python
+x = [1, 2, 3]
+y = [4, 5, 6]
+zipped = zip(x, y)
+print(zipped)
+print(zip(*zipped))
+>> [(1, 4), (2, 5), (3, 6)]
+>> [(1, 2, 3), (4, 5, 6)]
+```
 
 * **Built-in functions: map**
 ```python
