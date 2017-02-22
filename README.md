@@ -1030,5 +1030,8 @@ KMP algorithm
 Segment Tree
 
 Red Black Tree
+
+Reservoir sampling: choose i from a sample randomly (n is uncertain)
+Case: sample size 1: when i-th element comes, keep it with prob = 1/i, throw it with prob = 1-1/i
  
 
