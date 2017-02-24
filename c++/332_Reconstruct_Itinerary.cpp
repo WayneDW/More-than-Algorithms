@@ -39,7 +39,7 @@ public:
     vector<string> findItinerary(vector<pair<string, string>> tickets) {
         vector<string> itinerary;
         if (!tickets.size()) return itinerary;
-        unordered_map<string, multiset<string>> mp;
+        unordered_map<string, multiset<string>> mp; // multiset can have duplicates, the trick here is that the words have been sorted
         for (auto i: tickets) mp[i.first].insert(i.second);
         stack<string> stk;
         stk.push("JFK");
@@ -50,7 +50,7 @@ public:
                 mp[cur].erase(mp[cur].begin()); // delete visited path
             }
             else {
-                itinerary.push_back(cur);
+                itinerary.push_back(cur); // take care of isolated point
                 stk.pop();
             }
         }
@@ -61,7 +61,7 @@ public:
 
 
 int main() {
-    Solution s;
+    Solution *s;
     Examples eg;
     vector<pair<string, string>> tickets;
     tickets.push_back(make_pair("JFK","SFO"));
@@ -69,6 +69,6 @@ int main() {
     tickets.push_back(make_pair("SFO","ATL"));
     tickets.push_back(make_pair("ATL","JFK"));
     tickets.push_back(make_pair("ATL","SFO"));
-    print(s.findItinerary(tickets));
+    print(s->findItinerary(tickets));
 }
 
