@@ -27,7 +27,7 @@ public:
         queue<UndirectedGraphNode*> q;
         unordered_map<UndirectedGraphNode*, UndirectedGraphNode*> ht;
         ht[node] = copy;
-        q.push(node);
+        q.push(node); // use BFS to visit all the nodes, then copy while visiting
         while (!q.empty()) {
             UndirectedGraphNode* node = q.front(); q.pop();
             copy = ht[node];
@@ -76,6 +76,4 @@ int main() {
     g2->neighbors = v2;
     g3->neighbors = v3;
     UndirectedGraphNode* res = s.cloneGraph(g1);
-
-
 }
