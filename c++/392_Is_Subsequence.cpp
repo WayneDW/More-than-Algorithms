@@ -63,6 +63,12 @@ public:
     }
 };
 
+/* binary search for follow up 
+   save the idx of every charactor of t
+   use binary search to find the postition of a certain character in t, this speeds up finding the right matched chararacter
+*/
+
+
 
 int main() {
     Solution s;
