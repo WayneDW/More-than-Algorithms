@@ -1033,5 +1033,42 @@ Red Black Tree
 
 Reservoir sampling: choose i from a sample randomly (n is uncertain)
 Case: sample size 1: when i-th element comes, keep it with prob = 1/i, throw it with prob = 1-1/i
+
+Topological sort
+
+```
+    Using BFS
+    L: empty list that contain sorted elements
+    put all the nodes that has 0-indegree to stack S
+    for every node n in S:
+        remove n from S
+        add n to the tail of L
+        for any subnode m that satisfies n->m:
+            remove edge of n->m
+            if node m has 0-indegree
+                add it to S
+    if graph has edges:
+        cycle exists
+    else:
+        return cycle
+```
+ 
+```
+    Using DFS
+    
+    for all n:
+        if node n has not been visited:
+            dfs(n)
+    
+    dfs(n):
+        if n has been visited temporarily: return false // cycle exists
+        set node n as temporary
+        for m with n->m:
+            dfs(m)
+        set node n as permanant
+        add n to the List
+ ```
+    
+    
  
 
