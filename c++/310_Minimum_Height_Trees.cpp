@@ -54,6 +54,15 @@ return [3, 4]*/
 How many MHTs can a graph have at most?*/
 
 
+/* l           l                                 
+    \         /                                   
+     x       x                                    l       l
+      \     /                                      \     /
+       x - x             -> remove leaves   ->      x - x        -> continue to remove leaves ->   x - x
+      /     \               level by level         /     \
+     x       x                                    l       l
+    /         \
+   l           l*/
 
 class Solution {
 public:
@@ -80,11 +89,11 @@ public:
             vector<int> inner_LeafSet;
             for (int i : leafSet) {
                 for (int neigh : graph[i]) {
-                    graph[neigh].erase(i);
-                    if (graph[neigh].size() == 1) inner_LeafSet.push_back(neigh);
+                    graph[neigh].erase(i); // cut edges between leaves and their neighbors
+                    if (graph[neigh].size() == 1) inner_LeafSet.push_back(neigh); // build new leaf set
                 }
             }
-            if (inner_LeafSet.empty()) return leafSet;
+            if (inner_LeafSet.empty()) return leafSet; // for case when only 2 nodes left, their neighs are both 0, thus inner_LeafSet is also empty
             leafSet = inner_LeafSet;
         }
     }
