@@ -835,7 +835,7 @@ vector<int> vArray[5] = {3, 2, 7, 5, 8}; // // calls constructor vector<int>(ini
 
 ### Notes in python
 
-Tuples can be thought of as **read-only** lists
+Tuples can be thought of as **read-only** lists, and is faster
 
 exception
 ```python
@@ -892,6 +892,37 @@ regular expression
  * match: a match **only at the beginning** of the string
  * search: search the first occurence
 
+Pass by reference vs value
+All parameters (arguments) in the Python language are passed by reference. It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. 
+
+```python
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist.append([1,2,3,4]);
+   print "Values inside the function: ", mylist # [10, 20, 30, [1, 2, 3, 4]]
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist   # [10, 20, 30, [1, 2, 3, 4]]
+```
+
+The parameter mylist is local to the function changeme. Changing mylist within the function does not affect mylist. 
+```python
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist = [1,2,3,4]; # This would assig new reference in mylist
+   print "Values inside the function: ", mylist  # [1, 2, 3, 4]
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist    # [10, 20, 30]
+```
 
 ```python
 >>> b = []
