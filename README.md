@@ -658,6 +658,17 @@ for (int i = 0; i < k - 1; i++)
 int topK = pq.top();
 ```
 
+```
+
+// customized priority queue
+struct compare { // this is a functor, real advantage is that a functor can hold state.
+    bool operator()(const pair<int,pair<int, int> >& a, const pair<int,pair<int, int> >& b) {
+        return a.first>b.first;
+    }
+};
+priority_queue< pair<int,pair<int, int> >, vector<pair<int, pair<int, int> > >, compare > p;
+```
+
 lower_bound & upper_bound
 ```c++
 // [first,last)
