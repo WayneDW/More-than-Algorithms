@@ -211,6 +211,10 @@ myflags &= ~option4; // turn option 4 off
 myflags ^= option4; // flip option4 from on to off, or vice versa
 ```
 
+```c++
+0b1010 // binary representation
+```
+
 Bitset
 ```c++
 bitset<16> foo; // foo: 0000000000000000
