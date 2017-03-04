@@ -92,7 +92,7 @@ public:
             else { // for cases of , and ]
                 if (ifHas) stk.top().add(sign * num);
                 num = 0, sign = 1, ifHas = false;
-                if (c == ']' && stk.size() > 1) {
+                if (c == ']' && stk.size() > 1) { // make all the structure into just 1
                     NestedInteger item = stk.top(); stk.pop();
                     stk.top().add(item);
                 }
