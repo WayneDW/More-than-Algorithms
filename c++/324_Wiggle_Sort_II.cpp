@@ -45,7 +45,7 @@ public:
         
         // Find a median.
         auto midptr = nums.begin() + n / 2;
-        nth_element(nums.begin(), midptr, nums.end());
+        nth_element(nums.begin(), midptr, nums.end()); // this part in fact is not o(n) time complexity
         int mid = *midptr;
         
         // Index-rewiring.
