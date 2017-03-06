@@ -44,7 +44,24 @@ public:
     }
 };
 
+// Could you do it without extra space and in O(n) runtime? You may assume the returned list does not count as extra space.
 
+class Solution {
+public:
+    vector<int> findDisappearedNumbers(vector<int>& nums) {
+        vector<int> res;
+        for (int i = 0; i < nums.size(); i++) {
+            int idx = abs(nums[i]) - 1; // take care of abs
+            nums[idx] = -abs(nums[idx]);
+        }
+
+        for (int i = 0; i < nums.size(); i++) {
+            if (nums[i] > 0) res.push_back(i + 1);
+            else nums[i] = -nums[i]; // without destroying the array
+        }
+        return res;
+    }
+};
 
 int main() {
     Solution s;
