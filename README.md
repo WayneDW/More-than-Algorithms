@@ -179,6 +179,12 @@ static bool cmp(pair<int, int> a, pair<int, int> b) {
 sort(vec.begin(), vec.end(), cmp);
 ```
 
+```c++ 
+// https://discuss.leetcode.com/topic/65629/concise-c-solution
+auto cmp = []( Interval& a,  Interval& b) {return a.start < b.start; };
+sort(intervals.begin(), intervals.end(), cmp);
+```
+
 bitwise operation
 ```c++
 Symbol  Operator
@@ -662,7 +668,8 @@ for (int i = 0; i < k - 1; i++)
 int topK = pq.top();
 ```
 
-priority_queue custom sort
+priority_queue custom 
+
 ```
 struct compare { // this is a functor, real advantage is that a functor can hold state.
     bool operator()(const pair<int,pair<int, int> >& a, const pair<int,pair<int, int> >& b) {
