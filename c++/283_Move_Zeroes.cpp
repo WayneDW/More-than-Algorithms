@@ -45,6 +45,17 @@ public:
     }
 };
 
+class Solution { // more concise
+public:
+    void moveZeroes(vector<int>& nums) {
+        for (int nonzero = 0, cur = 0; cur < nums.size(); cur++) {
+            if (nums[cur] != 0) {
+                swap(nums[nonzero++], nums[cur]);
+            }
+        }
+    }
+};
+
 int main() {
     Solution s;
     Examples eg;
