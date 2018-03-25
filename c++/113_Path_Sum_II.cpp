@@ -27,8 +27,8 @@ public:
         }
         int v = root->val;
         tmp.push_back(v);
-        if (root->left) dfs(root->left, sum - v, tmp, res);
-        if (root->right) dfs(root->right, sum - v, tmp, res);
+        if (root->left) dfs(root->left, sum - v, tmp, res); // if-condition helps delete repetition
+        if (root->right) dfs(root->right, sum - v, tmp, res); // ...
         if (!root->left && !root->right) { // take care the node without child
             if (sum == v) res.push_back(tmp);
             return;
