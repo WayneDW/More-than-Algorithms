@@ -25,14 +25,14 @@ public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         map<string, vector<string> > dt;
 
-        for (int i = 0; i < strs.size(); i++) {
-            string sortedWord = strs[i];
+        for (auto str: strs) {
+            string sortedWord = str;
             sort(sortedWord.begin(), sortedWord.end());
-            dt[sortedWord].push_back(strs[i]); // every key has a vector<string>
+            dt[sortedWord].push_back(str); // every key has a vector<string>
         }
 
         vector<vector<string> > res;
-        for (map<string, vector<string> >::iterator it = dt.begin(); it != dt.end(); it++) {
+        for (auto it = dt.begin(); it != dt.end(); it++) {
             res.push_back(it->second); // just take the values
         }
         return res;
