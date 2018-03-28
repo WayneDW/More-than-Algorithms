@@ -50,7 +50,7 @@ public:
         }
 
         for (l1 = head; l1; l1 = l1->next->next) {
-            if (l1->random != NULL) l1->next->random = l1->random->next; 
+            if (l1->random != NULL) l1->next->random = l1->random->next; // next after random (random->next) is to use G rather than C
         }
 
         for (l1 = head; l1; l1 = l1->next) {
