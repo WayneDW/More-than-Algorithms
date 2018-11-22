@@ -646,8 +646,18 @@ for(map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
     int k = iter->first;
     int v = iter->second;
 }
+
+map
+->first !!!!!
+
+unordered_map
+iterator  it.first, it.second
 // map.rbegin() # from the reverse direction
-// -> rather than .
+```
+
+```c++
+unordered_map<int, int> mp;
+mp[key]++; // don't have to initialize.
 ```
 
 set
