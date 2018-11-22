@@ -646,6 +646,8 @@ for(map<int, int>::iterator iter = dt.begin(); iter != dt.end(); ++iter) {
     int k = iter->first;
     int v = iter->second;
 }
+// map.rbegin() # from the reverse direction
+// -> rather than .
 ```
 
 set
