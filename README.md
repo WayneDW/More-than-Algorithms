@@ -619,6 +619,14 @@ for (int i = 0; i < len; i++)
     ***
 ```
 
+map erase
+```c++
+mymap.erase (it.begin());
+mymap.erase ( mymap.begin() );      // erasing by iterator
+mymap.erase ("France");             // erasing by key
+mymap.erase ( mymap.find("China"), mymap.end() ); // erasing by range
+```
+
 vector Initialization
 ```c++
 vector<int> vec(10, 1); // initialize 10 number of 1
