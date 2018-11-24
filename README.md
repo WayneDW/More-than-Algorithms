@@ -1064,6 +1064,15 @@ adder = lambda x, y: x+y
 
 ### Notes in Algorithms
 
+```
+DFS traversal
+Don't confuse inorder preorder postorder
+inorder(root->left);
+xxxx
+inorder(root->right);
+```
+
+
 Master Theorem
 ```
 T(n) = aT(n/b) + n^c
