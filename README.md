@@ -619,6 +619,12 @@ for (int i = 0; i < len; i++)
     ***
 ```
 
+'->' vs '.'
+```c++
+object->pointer
+object.attribute
+```
+
 map erase
 ```c++
 mymap.erase (it.begin());
