@@ -295,6 +295,11 @@ List: doubly linked list
 Deque: doubly queue
 ```
 
+Initialization
+```c++
+vector<vector<int>>(n, vector<int>(n, 0));
+```
+
 ### Objected Oriented Programming
 
 ```c++
