@@ -299,6 +299,7 @@ Initialization
 ```c++
 vector<vector<int>>(n, vector<int>(n, 0));
 string s(m, '0');
+pair<string, int> p = make_pair("ss", 1);
 ```
 
 ### Objected Oriented Programming
