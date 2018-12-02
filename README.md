@@ -297,7 +297,10 @@ Deque: doubly queue
 
 Initialization
 ```c++
-vector<vector<int>>(n, vector<int>(n, 0));
+vector<vector<int>> vec(n, vector<int>(n, 0));
+or 
+vector<vector<int>> vec;
+vec = vector<vector<int>>(n, vector<int>(n, 0));
 string s(m, '0');
 pair<string, int> p = make_pair("ss", 1);
 ```
