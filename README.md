@@ -267,14 +267,7 @@ However, if you end up with copying the data, then passing by value is better.
 ```
 
 
-struct initialization
-```c++
-struct Interval {
-    int start, end;
-    Interval() : start(0), end(0) {}
-    Interval(int s, int e) : start(s), end(e) {}
-};
-```
+
 
 for loop
 ```c++
@@ -295,7 +288,7 @@ List: doubly linked list
 Deque: doubly queue
 ```
 
-Initialization
+Initialization: Vector, Array, Struct, String
 ```c++
 vector<vector<int>> vec(n, vector<int>(n, 0));
 or 
@@ -303,6 +296,18 @@ vector<vector<int>> vec;
 vec = vector<vector<int>>(n, vector<int>(n, 0));
 string s(m, '0');
 pair<string, int> p = make_pair("ss", 1);
+
+string S[] = {"", "ABS"}; // string has type string "", "ABS"
+char str[3] = "abc"; // str has type char[3] and holds 'a', 'b', 'c'
+
+int x[] = {1,2,3}; // x has type int[3] and holds 1,2,3
+int y[5] = {1,2,3}; // y has type int[5] and holds 1,2,3,0,0
+int z[3] = {0}; // z has type int[3] and holds all zeroes
+struct Interval {
+    int start, end;
+    Interval() : start(0), end(0) {}
+    Interval(int s, int e) : start(s), end(e) {}
+};
 ```
 
 ### Objected Oriented Programming
