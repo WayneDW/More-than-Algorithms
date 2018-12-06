@@ -657,6 +657,7 @@ vector Initialization
 vector<int> vec(10, 1); // initialize 10 number of 1
 vector<int> vec(10); // initialize 10 number of 0
 vector<vector<int> > vec(2, vector<int>(2, INT_MAX)); // 2d initialization
+vector<int> vec{1,2,3};
 
 // simple way to initialization
 vector<int> v = {0, 1, 2, 3, 4, 5}; // good way
