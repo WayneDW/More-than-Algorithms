@@ -294,6 +294,10 @@ vector<vector<int>> vec(n, vector<int>(n, 0));
 or 
 vector<vector<int>> vec;
 vec = vector<vector<int>>(n, vector<int>(n, 0));
+
+vector<int> vect{10, 20, 30};
+
+
 string s(m, '0');
 pair<string, int> p = make_pair("ss", 1);
 
