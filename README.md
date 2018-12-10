@@ -288,7 +288,7 @@ List: doubly linked list
 Deque: doubly queue
 ```
 
-Initialization: Vector, Array, Struct, String
+Initialization: Vector, Array, Struct, String, Map
 ```c++
 vector<vector<int>> vec(n, vector<int>(n, 0));
 or 
@@ -300,6 +300,8 @@ vector<int> vect{10, 20, 30};
 
 string s(m, '0');
 pair<string, int> p = make_pair("ss", 1);
+
+map<int, int> mp={{1,2}, {3,4}};
 
 string S[] = {"", "ABS"}; // string has type string "", "ABS"
 char str[3] = "abc"; // str has type char[3] and holds 'a', 'b', 'c'
