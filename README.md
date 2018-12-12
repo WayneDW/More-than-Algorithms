@@ -813,6 +813,7 @@ isdigit() // Returns non-zero if the parameter is a digit
 isspace() 
 isprint() // Returns non-zero if the parameter is printable character (including whitespace)
 isxdigit() // Returns non-zero if the parameter is a hexadecimal digit (0-9, a-f, A-F)
+tolower()
 ```
 
 istringstream
