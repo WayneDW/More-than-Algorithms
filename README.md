@@ -29,7 +29,7 @@ Type in the question number and the commit words as the rest of the parameters
 
 ### Notes in C++, [tutorial](http://www.learncpp.com/)
 
-The memory a program uses typically contains the following areas: 
+The memory of a program contains the following areas: 
 * code segment, where the compiled program sits in memory
 * bss segment, where zero-initialized **global** and **static variables** are stored.
 * data segment, where initialized **global** and **static variables** are stored
