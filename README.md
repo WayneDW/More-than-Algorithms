@@ -1014,6 +1014,15 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 [[]]
 ```
 
+
+Sort an array based on some rule
+
+```python
+def f(element):
+    return (x, x, x) if element satisfies else (xx, ...)
+sorted(array, key=f)
+```
+
 **Funtional Programming**
 * iterator
 ```python
