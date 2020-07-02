@@ -1,31 +1,203 @@
 # leetCodeOJ in C++ and Python
 
+### Notes in python
 
-### Generate framework 
+Tuples can be thought of as **read-only** lists, and is faster
+
+exception
+```python
+assert 1 > 0 # same with c++
+
+try:
+    a = 1 + 2
+    a = b
+except NameError, e:
+    print e
+>> name 'b' is not defined
+```
+
+constructor & destructor
+```python
+class Point:
+   def __init( self, x=0, y=0):
+      self.x = x
+      self.y = y
+   def __del__(self):
+      class_name = self.__class__.__name__
+      print class_name, "destroyed"
+```
+
+inheritance and polymorphism
+```python
+class Animal:
+   def __init__(self, name=''):
+      self.name = name
+
+   def talk(self):
+      pass
+
+class Cat(Animal):
+   def talk(self):
+      print "Meow!"
+      
+c = Cat("Missy")
+c.talk()
+```
+
+special functions: overloading
+```python
+__add__(self, other): # +
+__sub__(self, other): # -
+```
+
+data Hiding: add a double underscore prefix
+```python
+__secretCount = 0 # make it private
+```
+
+regular expression
+ * match: a match **only at the beginning** of the string
+ * search: search the first occurence
+
+Pass by reference vs value
+All parameters (arguments) in the Python language are passed by **reference**. It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. 
 
 ```python
-./framework.py 19
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist.append([1,2,3,4]);
+   print "Values inside the function: ", mylist # [10, 20, 30, [1, 2, 3, 4]]
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist   # [10, 20, 30, [1, 2, 3, 4]]
 ```
-Let's deal with 19_Remove_Nth_Node_From_End_of_List
-```
-19_Remove_Nth_Node_From_End_of_List.cpp generated successfully! 
-```
-If some file already existed, do nothing in that file
+
+
+The parameter mylist is local to the function changeme. Changing mylist within the function does not affect mylist. 
 ```python
-./framework.py 19
+# Function definition is here
+def changeme( mylist ):
+   "This changes a passed list into this function"
+   mylist = [1,2,3,4]; # This would assig new reference in mylist
+   print "Values inside the function: ", mylist  # [1, 2, 3, 4]
+   return
+
+# Now you can call changeme function
+mylist = [10,20,30];
+changeme( mylist );
+print "Values outside the function: ", mylist    # [10, 20, 30]
 ```
 
-```
->> Let's deal with 19_Remove_Nth_Node_From_End_of_List
-19_Remove_Nth_Node_From_End_of_List.cpp already existed!
+```python
+>>> b = []
+>>> a = [1]
+>>> b.append(a)
+>>> a.pop()
+>>> b
+[[]]
 ```
 
-### Upload script
 
-Type in the question number and the commit words as the rest of the parameters
+
+
+[Deque usage](https://www.educative.io/edpresso/how-to-use-a-deque-in-python)
+
+from collections import deque
+deque.append()
+deque.pop()
+
+
+
+
+Sort an array based on some rule
+
+```python
+def f(element):
+    return (x, x, x) if element satisfies else (xx, ...)
+sorted(array, key=f)
 ```
-./upload.sh 19 Linked List double pointer
+
+**Funtional Programming**
+* iterator
+```python
+>>> L = [1,2,3]
+>>> it = iter(L)
+>>> print it
+<...iterator object at ...>
+>>> it.next()
+1
+>>> it.next()
+2
 ```
+
+```python
+>>> L = [1,2,3]
+>>> iterator = iter(L)
+>>> t = tuple(iterator)
+>>> t
+(1, 2, 3)
+```
+* Generator & List expression
+```python
+# Generator expression -- returns iterator
+stripped_iter = (line.strip() for line in line_list)
+
+# List comprehension -- returns list
+stripped_list = [line.strip() for line in line_list]
+```
+* Generator: these two iterators are the same
+```python
+it = iter([0, 1, 2])
+
+def generate_ints(N):
+    for i in range(N):
+        yield i
+it = generate_ints(3)
+```
+* **Built-in functions: zip**
+```python
+x = [1, 2, 3]
+y = [4, 5, 6]
+zipped = zip(x, y)
+print(zipped)
+print(zip(*zipped))
+>> [(1, 4), (2, 5), (3, 6)]
+>> [(1, 2, 3), (4, 5, 6)]
+```
+
+* **Built-in functions: map**
+```python
+def upper(s): return s.upper()
+print map(upper, ["a", "d"])
+>> ['A', 'D']
+# it is the same with the following
+print [upper(s) for s in ['a', 'd']]
+```
+* **Built-in functions: filter**
+```python
+def is_even(x): return (x % 2) == 0
+filter(is_even, range(10))
+>> [0, 2, 4, 6, 8]
+# it is the same with the following
+[x for x in range(10) if is_even(x)]
+```
+* **Built-in functions: reduce**
+```python
+import operator
+print reduce(operator.concat, ['A', 'BB', 'C']) # func(func(A, B), C)
+>> 'ABBC'
+```
+* **lambda expression**
+```python
+adder = lambda x, y: x+y
+>> print adder(1,2)
+```
+
+
 
 ### Notes in C++, [tutorial](http://www.learncpp.com/)
 
@@ -914,190 +1086,6 @@ vector<int> vArray[5] = {3, 2, 7, 5, 8}; // // calls constructor vector<int>(ini
 * final: restrict the user from overriding a function
 
 
-### Notes in python
-
-Tuples can be thought of as **read-only** lists, and is faster
-
-exception
-```python
-assert 1 > 0 # same with c++
-
-try:
-    a = 1 + 2
-    a = b
-except NameError, e:
-    print e
->> name 'b' is not defined
-```
-
-constructor & destructor
-```python
-class Point:
-   def __init( self, x=0, y=0):
-      self.x = x
-      self.y = y
-   def __del__(self):
-      class_name = self.__class__.__name__
-      print class_name, "destroyed"
-```
-
-inheritance and polymorphism
-```python
-class Animal:
-   def __init__(self, name=''):
-      self.name = name
-
-   def talk(self):
-      pass
-
-class Cat(Animal):
-   def talk(self):
-      print "Meow!"
-      
-c = Cat("Missy")
-c.talk()
-```
-
-special functions: overloading
-```python
-__add__(self, other): # +
-__sub__(self, other): # -
-```
-
-data Hiding: add a double underscore prefix
-```python
-__secretCount = 0 # make it private
-```
-
-regular expression
- * match: a match **only at the beginning** of the string
- * search: search the first occurence
-
-Pass by reference vs value
-All parameters (arguments) in the Python language are passed by reference. It means if you change what a parameter refers to within a function, the change also reflects back in the calling function. 
-
-```python
-# Function definition is here
-def changeme( mylist ):
-   "This changes a passed list into this function"
-   mylist.append([1,2,3,4]);
-   print "Values inside the function: ", mylist # [10, 20, 30, [1, 2, 3, 4]]
-   return
-
-# Now you can call changeme function
-mylist = [10,20,30];
-changeme( mylist );
-print "Values outside the function: ", mylist   # [10, 20, 30, [1, 2, 3, 4]]
-```
-
-The parameter mylist is local to the function changeme. Changing mylist within the function does not affect mylist. 
-```python
-# Function definition is here
-def changeme( mylist ):
-   "This changes a passed list into this function"
-   mylist = [1,2,3,4]; # This would assig new reference in mylist
-   print "Values inside the function: ", mylist  # [1, 2, 3, 4]
-   return
-
-# Now you can call changeme function
-mylist = [10,20,30];
-changeme( mylist );
-print "Values outside the function: ", mylist    # [10, 20, 30]
-```
-
-```python
->>> b = []
->>> a = [1]
->>> b.append(a)
->>> a.pop()
->>> b
-[[]]
-```
-
-
-Sort an array based on some rule
-
-```python
-def f(element):
-    return (x, x, x) if element satisfies else (xx, ...)
-sorted(array, key=f)
-```
-
-**Funtional Programming**
-* iterator
-```python
->>> L = [1,2,3]
->>> it = iter(L)
->>> print it
-<...iterator object at ...>
->>> it.next()
-1
->>> it.next()
-2
-```
-
-```python
->>> L = [1,2,3]
->>> iterator = iter(L)
->>> t = tuple(iterator)
->>> t
-(1, 2, 3)
-```
-* Generator & List expression
-```python
-# Generator expression -- returns iterator
-stripped_iter = (line.strip() for line in line_list)
-
-# List comprehension -- returns list
-stripped_list = [line.strip() for line in line_list]
-```
-* Generator: these two iterators are the same
-```python
-it = iter([0, 1, 2])
-
-def generate_ints(N):
-    for i in range(N):
-        yield i
-it = generate_ints(3)
-```
-* **Built-in functions: zip**
-```python
-x = [1, 2, 3]
-y = [4, 5, 6]
-zipped = zip(x, y)
-print(zipped)
-print(zip(*zipped))
->> [(1, 4), (2, 5), (3, 6)]
->> [(1, 2, 3), (4, 5, 6)]
-```
-
-* **Built-in functions: map**
-```python
-def upper(s): return s.upper()
-print map(upper, ["a", "d"])
->> ['A', 'D']
-# it is the same with the following
-print [upper(s) for s in ['a', 'd']]
-```
-* **Built-in functions: filter**
-```python
-def is_even(x): return (x % 2) == 0
-filter(is_even, range(10))
->> [0, 2, 4, 6, 8]
-# it is the same with the following
-[x for x in range(10) if is_even(x)]
-```
-* **Built-in functions: reduce**
-```python
-import operator
-print reduce(operator.concat, ['A', 'BB', 'C']) # func(func(A, B), C)
->> 'ABBC'
-```
-* **lambda expression**
-```python
-adder = lambda x, y: x+y
->> print adder(1,2)
-```
 
 
 ### Notes in Algorithms
