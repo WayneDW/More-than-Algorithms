@@ -106,10 +106,12 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 
 [Deque usage](https://www.educative.io/edpresso/how-to-use-a-deque-in-python)
 
+```python
 from collections import deque
-deque.append()
-deque.pop()
-
+dq = deque()
+dq.append()
+dq.pop()
+```
 
 
 
