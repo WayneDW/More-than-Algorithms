@@ -101,8 +101,17 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 [[]]
 ```
 
+### collections
 
-
+Counter
+```python
+$ from collections import Counter
+$ a = [2,2,1,3]
+$ print Counter(a)
+  Counter({2: 2, 1: 1, 3: 1})
+$ print Counter(a).keys()
+  [1, 2, 3]
+```
 
 [Deque usage](https://www.educative.io/edpresso/how-to-use-a-deque-in-python)
 
@@ -115,12 +124,34 @@ dq.pop()
 
 
 
-Sort an array based on some rule
+**Sort** an array based on some rule
 
 ```python
 def f(element):
     return (x, x, x) if element satisfies else (xx, ...)
 sorted(array, key=f)
+```
+
+```python
+$ A = [1,3,2]
+$ A[::-1]
+[2, 3, 1]
+```
+
+**heapq** (priority queue) where heap[0] is always its smallest element.
+
+```python
+$ from heapq import heappush, heappop
+$ heap = []
+$ items = [(1, 'J'), (2, 'C'), (0, 'I')]
+$ for v in items:
+$     heappush(heap, v)
+
+$ while heap:
+$     heappop(heap)
+(0, 'I')
+(1, 'J')
+(2, 'C')
 ```
 
 **Funtional Programming**
