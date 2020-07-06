@@ -132,6 +132,10 @@ def f(element):
 sorted(array, key=f)
 ```
 
+```
+sorted(array, key=lambda w: (xxx))
+```
+
 ```python
 $ A = [1,3,2]
 $ A[::-1]
