@@ -131,6 +131,7 @@ from collections import deque
 dq = deque()
 dq.append()
 dq.pop()
+dq.popleft()
 ```
 
 
