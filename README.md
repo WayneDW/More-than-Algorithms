@@ -113,6 +113,17 @@ $ print Counter(a).keys()
   [1, 2, 3]
 ```
 
+Dict output key with maximum counts
+```python
+$ dt = {'a': 3, 'b': 2}
+$ max(dt, key=dt.get}
+```
+List pop the first element actually takes a lot of time, thus, deque is better.
+```python
+a = [1,2,3]
+a.pop(0)
+```
+
 [Deque usage](https://www.educative.io/edpresso/how-to-use-a-deque-in-python)
 
 ```python
