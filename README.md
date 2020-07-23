@@ -134,7 +134,13 @@ dq.pop()
 dq.popleft()
 ```
 
-
+Extend
+```python
+$ dt = [1,2,3]
+$ dt.extend([4,5])
+$ print(dt)
+[1,2,3,4,5]
+```
 
 **Sort** an array based on some rule
 
