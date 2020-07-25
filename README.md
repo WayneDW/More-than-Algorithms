@@ -122,7 +122,7 @@ $     print(x)
 $ foo()
 >> Error: 'x' referenced before assignment (treats x as a local variable and x is also not defined inside foo())
 ```
-
+**global **
 ```python
 $ x = "global "
 
@@ -139,7 +139,7 @@ $ print(x)
 >> global global
 ```
 
-nonlocal fits in **nested function**
+**nonlocal** fits in **nested function**
 ```python
 $ def outer():
 $     x = "local"
@@ -179,7 +179,7 @@ a = [1,2,3]
 a.pop(0)
 ```
 
-[Deque usage](https://www.educative.io/edpresso/how-to-use-a-deque-in-python)
+### [Deque usage](https://www.educative.io/edpresso/how-to-use-a-deque-in-python)
 
 ```python
 from collections import deque
@@ -189,7 +189,7 @@ dq.pop()
 dq.popleft()
 ```
 
-Extend
+### Extend
 ```python
 $ dt = [1,2,3]
 $ dt.extend([4,5])
@@ -197,7 +197,7 @@ $ print(dt)
 [1,2,3,4,5]
 ```
 
-**Sort** an array based on some rule
+### **Sort** an array based on some rule
 
 ```python
 def f(element):
@@ -215,7 +215,7 @@ $ A[::-1]
 [2, 3, 1]
 ```
 
-**heapq** (priority queue) where heap[0] is always its smallest element.
+### **heapq** (priority queue) where heap[0] is always its smallest element.
 
 ```python
 $ from heapq import heappush, heappop
@@ -231,7 +231,7 @@ $     heappop(heap)
 (2, 'C')
 ```
 
-**Funtional Programming**
+### **Funtional Programming**
 * iterator
 ```python
 >>> L = [1,2,3]
@@ -268,7 +268,7 @@ def generate_ints(N):
         yield i
 it = generate_ints(3)
 ```
-* **Built-in functions: zip**
+### * **Built-in functions: zip**
 ```python
 x = [1, 2, 3]
 y = [4, 5, 6]
