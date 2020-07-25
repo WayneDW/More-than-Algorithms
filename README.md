@@ -101,6 +101,61 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 [[]]
 ```
 
+### local v.s. nonlocal v.s. global
+
+```python
+$ x = "global"
+$ def foo():
+$     print("x inside:", x)
+    
+$ foo()
+$ print("x outside:", x)
+>> x inside: global
+>> x outside: global
+```
+
+```python
+$ x = "global"
+$ def foo():
+$     x = x * 2
+$     print(x)
+$ foo()
+>> Error: 'x' referenced before assignment (treats x as a local variable and x is also not defined inside foo())
+```
+
+```python
+$ x = "global "
+
+$ def foo():
+$     global x
+$     y = "local"
+$     x = x * 2
+$     print(x)
+$     print(y)
+$ foo()
+$ print(x)
+>> global global 
+>> local
+>> global global
+```
+
+nonlocal fits in **nested function**
+```python
+$ def outer():
+$     x = "local"
+
+$     def inner():
+$         nonlocal x
+$         x = "nonlocal"
+$         print("inner:", x)
+
+$     inner()
+$     print("outer:", x)
+$ outer()
+>> inner: nonlocal
+>> outer: nonlocal
+```
+
 ### collections
 
 Counter
