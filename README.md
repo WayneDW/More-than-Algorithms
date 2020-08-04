@@ -101,6 +101,12 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 [[]]
 ```
 
+### acceleration technique
+
+```python
+$ ord('b') - ord('a')
+>> 1
+```
 
 ### list vs. tuple
 
