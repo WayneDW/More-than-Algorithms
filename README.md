@@ -101,6 +101,27 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 [[]]
 ```
 
+
+### list vs. tuple
+
+```python
+$ list(set([1,1]))
+>> [1]
+$ set([[1], [1]])
+>> error
+$ set([(1,2), (1,2)])
+>> [(1,2)]
+```
+Moreover, list cannot be used as key in a dict, but typle can
+```python
+$ dt = {[1]:1}
+>> error
+$ dt = {(1,2): 1}
+>> {(1, 2): 1}
+```
+
+
+
 ### local v.s. nonlocal v.s. global
 
 ```python
