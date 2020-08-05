@@ -101,6 +101,15 @@ print "Values outside the function: ", mylist    # [10, 20, 30]
 [[]]
 ```
 
+### common mistakes
+
+```python
+$ a = [[0] * 3] * 3
+$ a[0][1] = 1
+>> [[0, 1, 0], [0, 1, 0], [0, 1, 0]]
+instead of [[0, 1, 0], [0, 0, 0], [0, 0, 0]]
+```
+
 ### acceleration technique
 
 ```python
