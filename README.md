@@ -110,6 +110,11 @@ $ a[0][1] = 1
 instead of [[0, 1, 0], [0, 0, 0], [0, 0, 0]]
 ```
 
+To fix this problem, you can use
+```python
+$ [[0] * n for _ in range(n)]
+```
+
 ### acceleration technique
 
 ```python
