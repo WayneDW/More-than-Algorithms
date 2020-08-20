@@ -145,6 +145,22 @@ $ dt = {(1,2): 1}
 ### local v.s. nonlocal v.s. global
 
 ```python
+$ n = 5
+$ def f(x): n = n + 1
+$ f(1)
+UnboundLocalError: local variable 'n' referenced before assignment
+```
+
+```python
+$ n = 5
+$ def f(x):
+$   m = n
+$   m = m + 1
+$ f(1)
+>> works
+```
+
+```python
 $ x = "global"
 $ def foo():
 $     print("x inside:", x)
