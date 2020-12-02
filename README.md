@@ -151,8 +151,10 @@ car = {
 
 x = car.get("color", "White")
 print(x)
-print(car)
 
+x = car.get("color")
+print(x)
+print(car)
 
 x = car.setdefault("color", "White")
 print(x)
@@ -162,6 +164,7 @@ print(car)
 get is similar to setdefault. However, get will not update car, but setdefault can.
 ```
 >> White
+>> None
 >> {'brand': 'Ford', 'model': 'Mustang', 'year': 1964}
 >> White
 >> {'brand': 'Ford', 'model': 'Mustang', 'year': 1964, 'color': 'White'}
