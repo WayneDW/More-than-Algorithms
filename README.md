@@ -2,6 +2,24 @@
 
 ### Notes in python
 
+
+#### functools
+
+from functools import cache 
+
+@cache
+def fibonacci(n):
+    if n == 1 or n == 2:
+        return n
+    else:
+        return fibonacci(n-1) + fibonacci(n-2)
+
+>>> fibonacci(10)
+
+
+
+
+
 Tuples can be thought of as **read-only** lists, and is faster
 
 exception
